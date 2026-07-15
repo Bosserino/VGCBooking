@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-15T16:54:10+00:00",
+ "generated_at": "2026-07-15T17:16:54+00:00",
  "origin": "ROM",
  "settings": {
   "max_distance_km": 2.0,
@@ -22,34 +22,23 @@
    "check_out": "2026-09-28",
    "nights": 3,
    "participants": [
-    "Alessandro B"
+    "Alessandro B",
+    "Jean"
    ],
-   "people_for_search": 1,
+   "people_for_search": 2,
    "links": {
-    "booking": "https://www.booking.com/searchresults.it.html?ss=Messe+Frankfurt%2C+Francoforte&checkin=2026-09-25&checkout=2026-09-28&group_adults=1&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
-    "airbnb": "https://www.airbnb.it/s/Francoforte/homes?checkin=2026-09-25&checkout=2026-09-28&adults=1&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=50.12887&ne_lng=8.67172&sw_lat=50.09293&sw_lng=8.61568",
-    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+FRA+on+2026-09-25+through+2026-09-28+for+1+passengers&curr=EUR&hl=it"
+    "booking": "https://www.booking.com/searchresults.it.html?ss=Messe+Frankfurt%2C+Francoforte&checkin=2026-09-25&checkout=2026-09-28&group_adults=2&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80%3Bdistance%3D3000&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Francoforte/homes?checkin=2026-09-25&checkout=2026-09-28&adults=2&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=50.12887&ne_lng=8.67172&sw_lat=50.09293&sw_lng=8.61568",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+FRA+on+2026-09-25+through+2026-09-28+for+2+passengers&curr=EUR&hl=it"
    },
    "flights": [],
    "stays": [
     {
      "source": "booking.com",
-     "name": "WestEnd#102",
-     "total_price": 66.0,
-     "per_night": 22.0,
-     "per_person_night": 22.0,
-     "review_score": 8.2,
-     "review_count": 5,
-     "distance_km": 0.4,
-     "free_cancellation": true,
-     "url": "https://www.booking.com/hotel/de/westend-102.it.html"
-    },
-    {
-     "source": "booking.com",
      "name": "Brera Serviced Apartments Frankfurt West",
-     "total_price": 78.0,
-     "per_night": 26.0,
-     "per_person_night": 26.0,
+     "total_price": 251.0,
+     "per_night": 83.67,
+     "per_person_night": 41.83,
      "review_score": 8.5,
      "review_count": 1039,
      "distance_km": 1.9,
@@ -59,9 +48,9 @@
     {
      "source": "booking.com",
      "name": "Aparthotel Adagio Frankfurt City Messe",
-     "total_price": 88.0,
-     "per_night": 29.33,
-     "per_person_night": 29.33,
+     "total_price": 263.0,
+     "per_night": 87.67,
+     "per_person_night": 43.83,
      "review_score": 8.6,
      "review_count": 1952,
      "distance_km": 0.4,
@@ -71,9 +60,9 @@
     {
      "source": "booking.com",
      "name": "MASEVEN Frankfurt Messe",
-     "total_price": 106.0,
-     "per_night": 35.33,
-     "per_person_night": 35.33,
+     "total_price": 277.0,
+     "per_night": 92.33,
+     "per_person_night": 46.17,
      "review_score": 8.8,
      "review_count": 4748,
      "distance_km": 1.7,
@@ -83,9 +72,9 @@
     {
      "source": "booking.com",
      "name": "Zentrale Wohnung im Herzen von Frankfurt am Main",
-     "total_price": 109.0,
-     "per_night": 36.33,
-     "per_person_night": 36.33,
+     "total_price": 340.0,
+     "per_night": 113.33,
+     "per_person_night": 56.67,
      "review_score": 8.0,
      "review_count": 2,
      "distance_km": 1.2,
@@ -95,24 +84,35 @@
     {
      "source": "booking.com",
      "name": "ipartment Frankfurt City Centre",
-     "total_price": 117.0,
-     "per_night": 39.0,
-     "per_person_night": 39.0,
+     "total_price": 360.0,
+     "per_night": 120.0,
+     "per_person_night": 60.0,
      "review_score": 8.1,
      "review_count": 104,
      "distance_km": 0.5,
      "free_cancellation": true,
      "url": "https://www.booking.com/hotel/de/ipartment-frankfurt-city.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Citadines City Centre Frankfurt",
+     "total_price": 390.0,
+     "per_night": 130.0,
+     "per_person_night": 65.0,
+     "review_score": 8.8,
+     "review_count": 2566,
+     "distance_km": 0.45,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/de/citadines-city-centre-frankfurt.it.html"
     }
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 66.0,
+    "stay": 125.49,
     "total": null
    },
    "errors": [
-    "google-flights: nessun dato (riprova dal runner USA)",
-    "airbnb: nessun dato"
+    "google-flights: No module named 'fast_flights.core'"
    ]
   },
   {
@@ -130,22 +130,23 @@
    "check_out": "2026-10-19",
    "nights": 3,
    "participants": [
-    "Alessandro B"
+    "Alessandro B",
+    "Jean"
    ],
-   "people_for_search": 1,
+   "people_for_search": 2,
    "links": {
-    "booking": "https://www.booking.com/searchresults.it.html?ss=Palais+des+Expositions%2C+Nizza&checkin=2026-10-16&checkout=2026-10-19&group_adults=1&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
-    "airbnb": "https://www.airbnb.it/s/Nizza/homes?checkin=2026-10-16&checkout=2026-10-19&adults=1&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=43.72137&ne_lng=7.30305&sw_lat=43.68543&sw_lng=7.25335",
-    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+NCE+on+2026-10-16+through+2026-10-19+for+1+passengers&curr=EUR&hl=it"
+    "booking": "https://www.booking.com/searchresults.it.html?ss=Palais+des+Expositions%2C+Nizza&checkin=2026-10-16&checkout=2026-10-19&group_adults=2&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80%3Bdistance%3D3000&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Nizza/homes?checkin=2026-10-16&checkout=2026-10-19&adults=2&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=43.72137&ne_lng=7.30305&sw_lat=43.68543&sw_lng=7.25335",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+NCE+on+2026-10-16+through+2026-10-19+for+2+passengers&curr=EUR&hl=it"
    },
    "flights": [],
    "stays": [
     {
      "source": "booking.com",
      "name": "Le Serre",
-     "total_price": 42.0,
-     "per_night": 14.0,
-     "per_person_night": 14.0,
+     "total_price": 140.0,
+     "per_night": 46.67,
+     "per_person_night": 23.33,
      "review_score": 8.7,
      "review_count": 41,
      "distance_km": null,
@@ -154,34 +155,10 @@
     },
     {
      "source": "booking.com",
-     "name": "Le meublé de belvédère",
-     "total_price": 46.0,
-     "per_night": 15.33,
-     "per_person_night": 15.33,
-     "review_score": 9.5,
-     "review_count": 27,
-     "distance_km": null,
-     "free_cancellation": true,
-     "url": "https://www.booking.com/hotel/fr/le-meuble-de-belvedere.it.html"
-    },
-    {
-     "source": "booking.com",
-     "name": "Terre Bianche Appartamenti",
-     "total_price": 48.0,
-     "per_night": 16.0,
-     "per_person_night": 16.0,
-     "review_score": 9.1,
-     "review_count": 125,
-     "distance_km": null,
-     "free_cancellation": true,
-     "url": "https://www.booking.com/hotel/it/terre-bianche-agriturismo-dolceacqua.it.html"
-    },
-    {
-     "source": "booking.com",
      "name": "Logement indépendant proche St Paul de Vence",
-     "total_price": 48.0,
-     "per_night": 16.0,
-     "per_person_night": 16.0,
+     "total_price": 145.0,
+     "per_night": 48.33,
+     "per_person_night": 24.17,
      "review_score": 8.3,
      "review_count": 3,
      "distance_km": null,
@@ -191,9 +168,9 @@
     {
      "source": "booking.com",
      "name": "studio bas de villa, jardin et spa (été seulement)",
-     "total_price": 50.0,
-     "per_night": 16.67,
-     "per_person_night": 16.67,
+     "total_price": 150.0,
+     "per_night": 50.0,
+     "per_person_night": 25.0,
      "review_score": 8.2,
      "review_count": 39,
      "distance_km": null,
@@ -203,24 +180,47 @@
     {
      "source": "booking.com",
      "name": "Charmant studio en résidence au calme",
-     "total_price": 50.0,
-     "per_night": 16.67,
-     "per_person_night": 16.67,
+     "total_price": 150.0,
+     "per_night": 50.0,
+     "per_person_night": 25.0,
      "review_score": 9.2,
      "review_count": 10,
      "distance_km": null,
      "free_cancellation": true,
      "url": "https://www.booking.com/hotel/fr/charmant-studio-en-residence-au-calme.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Nid douillet sous les toits",
+     "total_price": 151.0,
+     "per_night": 50.33,
+     "per_person_night": 25.17,
+     "review_score": 8.2,
+     "review_count": 57,
+     "distance_km": null,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/fr/nid-douillet-sous-les-toits-grasse.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "City Résidence Sophia",
+     "total_price": 158.0,
+     "per_night": 52.67,
+     "per_person_night": 26.33,
+     "review_score": 8.0,
+     "review_count": 986,
+     "distance_km": null,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/fr/einstein-sophia.it.html"
     }
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 42.0,
+    "stay": 69.99,
     "total": null
    },
    "errors": [
-    "google-flights: nessun dato (riprova dal runner USA)",
-    "airbnb: nessun dato"
+    "google-flights: No module named 'fast_flights.core'"
    ]
   },
   {
@@ -242,7 +242,7 @@
    ],
    "people_for_search": 1,
    "links": {
-    "booking": "https://www.booking.com/searchresults.it.html?ss=AmberExpo%2C+Danzica&checkin=2026-10-30&checkout=2026-11-02&group_adults=1&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "booking": "https://www.booking.com/searchresults.it.html?ss=AmberExpo%2C+Danzica&checkin=2026-10-30&checkout=2026-11-02&group_adults=1&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80%3Bdistance%3D3000&selected_currency=EUR",
     "airbnb": "https://www.airbnb.it/s/Danzica/homes?checkin=2026-10-30&checkout=2026-11-02&adults=1&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=54.39427&ne_lng=18.65925&sw_lat=54.35833&sw_lng=18.59755",
     "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+GDN+on+2026-10-30+through+2026-11-02+for+1+passengers&curr=EUR&hl=it"
    },
@@ -251,24 +251,83 @@
     {
      "source": "booking.com",
      "name": "Sea Breeze Apartments by Platinium Lofts",
-     "total_price": 46.0,
-     "per_night": 15.33,
-     "per_person_night": 15.33,
+     "total_price": 138.0,
+     "per_night": 46.0,
+     "per_person_night": 46.0,
      "review_score": 8.9,
      "review_count": 65,
      "distance_km": 2.0,
      "free_cancellation": true,
      "url": "https://www.booking.com/hotel/pl/sea-breeze-apartments-by-platinium-lofts.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Horizon - Gdansk Seaside by Lion Apartments",
+     "total_price": 200.0,
+     "per_night": 66.67,
+     "per_person_night": 66.67,
+     "review_score": 8.0,
+     "review_count": null,
+     "distance_km": 1.3,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/pl/horizon-gdansk-seaside-by-lion-apartments.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Horizon 31 by MYPART in your apartment",
+     "total_price": 205.0,
+     "per_night": 68.33,
+     "per_person_night": 68.33,
+     "review_score": 9.6,
+     "review_count": 27,
+     "distance_km": 1.3,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/pl/amber-vibes.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Laura Apartment with Sauna & Gym, 5 Min to Baltic Sea & Polsat Plus Arena",
+     "total_price": 206.0,
+     "per_night": 68.67,
+     "per_person_night": 68.67,
+     "review_score": 8.2,
+     "review_count": 95,
+     "distance_km": 1.3,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/pl/nowa-starowiejska.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Porto Mare Seaside Apartment with Parking and Gym by Lion Apartments",
+     "total_price": 215.0,
+     "per_night": 71.67,
+     "per_person_night": 71.67,
+     "review_score": 9.6,
+     "review_count": 26,
+     "distance_km": 2.0,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/pl/porto-letnica-with-parking-by-lion-apartments.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Mila Baltica, Sun & Snow",
+     "total_price": 215.0,
+     "per_night": 71.67,
+     "per_person_night": 71.67,
+     "review_score": 8.2,
+     "review_count": 6,
+     "distance_km": 1.7,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/pl/apartamenty-sun-amp-snow-mila-baltica.it.html"
     }
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 45.99,
+    "stay": 138.0,
     "total": null
    },
    "errors": [
-    "google-flights: nessun dato (riprova dal runner USA)",
-    "airbnb: nessun dato"
+    "google-flights: No module named 'fast_flights.core'"
    ]
   },
   {
@@ -290,21 +349,92 @@
    ],
    "people_for_search": 1,
    "links": {
-    "booking": "https://www.booking.com/searchresults.it.html?ss=Expo+Center+Norte%2C+San+Paolo&checkin=2026-11-19&checkout=2026-11-23&group_adults=1&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "booking": "https://www.booking.com/searchresults.it.html?ss=Expo+Center+Norte%2C+San+Paolo&checkin=2026-11-19&checkout=2026-11-23&group_adults=1&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80%3Bdistance%3D3000&selected_currency=EUR",
     "airbnb": "https://www.airbnb.it/s/San%20Paolo/homes?checkin=2026-11-19&checkout=2026-11-23&adults=1&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=-23.49263&ne_lng=-46.59391&sw_lat=-23.52857&sw_lng=-46.63309",
     "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+GRU+on+2026-11-19+through+2026-11-23+for+1+passengers&curr=EUR&hl=it"
    },
    "flights": [],
-   "stays": [],
+   "stays": [
+    {
+     "source": "booking.com",
+     "name": "Loft-Expo Norte-Brás-Anhembi",
+     "total_price": 131.0,
+     "per_night": 32.75,
+     "per_person_night": 32.75,
+     "review_score": 8.0,
+     "review_count": 35,
+     "distance_km": 1.8,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/br/loft-expo-norte-bras-anhembi.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Pousada Confort",
+     "total_price": 136.0,
+     "per_night": 34.0,
+     "per_person_night": 34.0,
+     "review_score": 9.0,
+     "review_count": 20,
+     "distance_km": 1.3,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/br/pousada-confort-sao-paulo.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "SP Santana - Anhembi, Expo Center Norte, Campo de Marte",
+     "total_price": 148.0,
+     "per_night": 37.0,
+     "per_person_night": 37.0,
+     "review_score": 9.5,
+     "review_count": 2,
+     "distance_km": 1.9,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/br/sp-santana-anhembi-expo-center-norte-campo-de-marte.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "SanLoft Expo Tietê Inn 06 - Preferido!",
+     "total_price": 186.0,
+     "per_night": 46.5,
+     "per_person_night": 46.5,
+     "review_score": 8.2,
+     "review_count": 4,
+     "distance_km": 1.4,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/br/sanloft-expo-tiete-inn-06.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Flat WiseSP - Expo Anhembi two",
+     "total_price": 196.0,
+     "per_night": 49.0,
+     "per_person_night": 49.0,
+     "review_score": 8.8,
+     "review_count": 302,
+     "distance_km": 1.4,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/br/flat-wisesp-expo-anhembi-eco.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "SanLoft Expo Inn Tietê 03 Top 1",
+     "total_price": 205.0,
+     "per_night": 51.25,
+     "per_person_night": 51.25,
+     "review_score": 9.0,
+     "review_count": 72,
+     "distance_km": 1.4,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/br/apartamento-anhembi-expo-rod-tiete-top-1.it.html"
+    }
+   ],
    "estimate_pp": {
     "flight": null,
-    "stay": null,
+    "stay": 131.0,
     "total": null
    },
    "errors": [
-    "google-flights: nessun dato (riprova dal runner USA)",
-    "booking.com: nessun dato",
-    "airbnb: nessun dato"
+    "google-flights: No module named 'fast_flights.core'"
    ]
   },
   {
@@ -321,36 +451,49 @@
    "check_in": "2026-11-27",
    "check_out": "2026-11-30",
    "nights": 3,
-   "participants": [],
-   "people_for_search": 4,
+   "participants": [
+    "Jean"
+   ],
+   "people_for_search": 1,
    "links": {
-    "booking": "https://www.booking.com/searchresults.it.html?ss=Messe+Stuttgart%2C+Stoccarda&checkin=2026-11-27&checkout=2026-11-30&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
-    "airbnb": "https://www.airbnb.it/s/Stoccarda/homes?checkin=2026-11-27&checkout=2026-11-30&adults=4&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=48.73127&ne_lng=9.21023&sw_lat=48.69533&sw_lng=9.15577",
-    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+STR+on+2026-11-27+through+2026-11-30+for+4+passengers&curr=EUR&hl=it"
+    "booking": "https://www.booking.com/searchresults.it.html?ss=Messe+Stuttgart%2C+Stoccarda&checkin=2026-11-27&checkout=2026-11-30&group_adults=1&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80%3Bdistance%3D3000&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Stoccarda/homes?checkin=2026-11-27&checkout=2026-11-30&adults=1&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=48.73127&ne_lng=9.21023&sw_lat=48.69533&sw_lng=9.15577",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+STR+on+2026-11-27+through+2026-11-30+for+1+passengers&curr=EUR&hl=it"
    },
    "flights": [],
    "stays": [
     {
      "source": "booking.com",
      "name": "Adagio Access Stuttgart Airport Messe",
-     "total_price": 330.0,
-     "per_night": 110.0,
-     "per_person_night": 27.5,
+     "total_price": 495.0,
+     "per_night": 165.0,
+     "per_person_night": 165.0,
      "review_score": 8.4,
      "review_count": 2455,
      "distance_km": 1.8,
      "free_cancellation": true,
      "url": "https://www.booking.com/hotel/de/adagio-access-stuttgart.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Deluxe Business Apartment 90qm 2 SZ und Büro Tiefgarage 3 Min Flughafen",
+     "total_price": 1646.0,
+     "per_night": 548.67,
+     "per_person_night": 548.67,
+     "review_score": 9.1,
+     "review_count": 40,
+     "distance_km": 1.9,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/de/deluxe-apartment-90m2-messe-stellplatz-balkon-netflix-ruhige-lage.it.html"
     }
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 82.5,
+    "stay": 495.0,
     "total": null
    },
    "errors": [
-    "google-flights: nessun dato (riprova dal runner USA)",
-    "airbnb: nessun dato"
+    "google-flights: No module named 'fast_flights.core'"
    ]
   },
   {
@@ -370,21 +513,92 @@
    "participants": [],
    "people_for_search": 4,
    "links": {
-    "booking": "https://www.booking.com/searchresults.it.html?ss=NEC+Birmingham%2C+Birmingham&checkin=2027-01-29&checkout=2027-02-01&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "booking": "https://www.booking.com/searchresults.it.html?ss=NEC+Birmingham%2C+Birmingham&checkin=2027-01-29&checkout=2027-02-01&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80%3Bdistance%3D3000&selected_currency=EUR",
     "airbnb": "https://www.airbnb.it/s/Birmingham/homes?checkin=2027-01-29&checkout=2027-02-01&adults=4&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=52.47097&ne_lng=-1.68872&sw_lat=52.43503&sw_lng=-1.74768",
     "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+BHX+on+2027-01-29+through+2027-02-01+for+4+passengers&curr=EUR&hl=it"
    },
    "flights": [],
-   "stays": [],
+   "stays": [
+    {
+     "source": "booking.com",
+     "name": "Leamington Spa Boutique Two Bedroom Flat",
+     "total_price": 205.0,
+     "per_night": 68.33,
+     "per_person_night": 17.08,
+     "review_score": 9.2,
+     "review_count": 10,
+     "distance_km": null,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/gb/leamington-spa-boutique-two-bedroom-flat.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Cosy 1 Bed Boutique City Stay",
+     "total_price": 208.0,
+     "per_night": 69.33,
+     "per_person_night": 17.33,
+     "review_score": 8.6,
+     "review_count": 58,
+     "distance_km": null,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/gb/cosy-1-bed-boutique-city-stay.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Modern flat in Stratford upon Avon",
+     "total_price": 220.0,
+     "per_night": 73.33,
+     "per_person_night": 18.33,
+     "review_score": 9.0,
+     "review_count": 2,
+     "distance_km": null,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/gb/modern-flat-in-stratford-upon-avon.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Gosford Park Studio 7 - Coventry",
+     "total_price": 221.0,
+     "per_night": 73.67,
+     "per_person_night": 18.42,
+     "review_score": 8.8,
+     "review_count": 13,
+     "distance_km": null,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/gb/gosford-park-studio-7-coventry.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Richmond Nights",
+     "total_price": 237.0,
+     "per_night": 79.0,
+     "per_person_night": 19.75,
+     "review_score": 9.3,
+     "review_count": 15,
+     "distance_km": null,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/gb/richmond-nights.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Modern 1 Bed Apartment Near Warwick Uni Free Parking Fast WIFI",
+     "total_price": 242.0,
+     "per_night": 80.67,
+     "per_person_night": 20.17,
+     "review_score": 9.0,
+     "review_count": 4,
+     "distance_km": null,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/gb/1-bed-apartment-near-warwick-uni-long-stay-discounts.it.html"
+    }
+   ],
    "estimate_pp": {
     "flight": null,
-    "stay": null,
+    "stay": 51.24,
     "total": null
    },
    "errors": [
-    "google-flights: nessun dato (riprova dal runner USA)",
-    "booking.com: nessun dato",
-    "airbnb: nessun dato"
+    "google-flights: No module named 'fast_flights.core'"
    ]
   },
   {
@@ -402,25 +616,97 @@
    "check_out": "2027-02-22",
    "nights": 4,
    "participants": [
-    "Alessandro B"
+    "Alessandro B",
+    "Jean"
    ],
-   "people_for_search": 1,
+   "people_for_search": 2,
    "links": {
-    "booking": "https://www.booking.com/searchresults.it.html?ss=ExCeL+London%2C+Londra&checkin=2027-02-18&checkout=2027-02-22&group_adults=1&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
-    "airbnb": "https://www.airbnb.it/s/Londra/homes?checkin=2027-02-18&checkout=2027-02-22&adults=1&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=51.52607&ne_lng=0.05827&sw_lat=51.49013&sw_lng=0.00053",
-    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+LON+on+2027-02-18+through+2027-02-22+for+1+passengers&curr=EUR&hl=it"
+    "booking": "https://www.booking.com/searchresults.it.html?ss=ExCeL+London%2C+Londra&checkin=2027-02-18&checkout=2027-02-22&group_adults=2&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80%3Bdistance%3D3000&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Londra/homes?checkin=2027-02-18&checkout=2027-02-22&adults=2&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=51.52607&ne_lng=0.05827&sw_lat=51.49013&sw_lng=0.00053",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+LON+on+2027-02-18+through+2027-02-22+for+2+passengers&curr=EUR&hl=it"
    },
    "flights": [],
-   "stays": [],
+   "stays": [
+    {
+     "source": "booking.com",
+     "name": "Modern Studio with Free Parking Near City Airport and ExCeL",
+     "total_price": 465.0,
+     "per_night": 116.25,
+     "per_person_night": 58.12,
+     "review_score": 8.7,
+     "review_count": 14,
+     "distance_km": 1.8,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/gb/modern-east-london-studio-hideaway.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Modern stylish 2 bedroom apartment in East London",
+     "total_price": 549.0,
+     "per_night": 137.25,
+     "per_person_night": 68.62,
+     "review_score": 8.4,
+     "review_count": 15,
+     "distance_km": 1.5,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/gb/modern-stylish-2-bedroom-apartment-in-east-london.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Malijeed Services limited",
+     "total_price": 549.0,
+     "per_night": 137.25,
+     "per_person_night": 68.62,
+     "review_score": 9.4,
+     "review_count": 12,
+     "distance_km": 1.7,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/gb/malijeed-services-limited.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "1 Bedroom apartment near Canning Town",
+     "total_price": 575.0,
+     "per_night": 143.75,
+     "per_person_night": 71.88,
+     "review_score": 9.5,
+     "review_count": 26,
+     "distance_km": 0.9,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/gb/1-bedroom-apartment-near-canning-town.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Stylish and Cosy 1 bed Apartment East London",
+     "total_price": 584.0,
+     "per_night": 146.0,
+     "per_person_night": 73.0,
+     "review_score": 9.8,
+     "review_count": 5,
+     "distance_km": 2.0,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/gb/stylish-and-cosy-1-bed-apartment-east-london.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "SPOTLESs APARTmENT",
+     "total_price": 586.0,
+     "per_night": 146.5,
+     "per_person_night": 73.25,
+     "review_score": 8.4,
+     "review_count": 5,
+     "distance_km": 1.6,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/gb/spotless-apartment-greater-london.it.html"
+    }
+   ],
    "estimate_pp": {
     "flight": null,
-    "stay": null,
+    "stay": 232.48,
     "total": null
    },
    "errors": [
-    "google-flights: nessun dato (riprova dal runner USA)",
-    "booking.com: nessun dato",
-    "airbnb: nessun dato"
+    "google-flights: No module named 'fast_flights.core'"
    ]
   },
   {
@@ -438,25 +724,97 @@
    "check_out": "2027-04-12",
    "nights": 3,
    "participants": [
-    "Alessandro B"
+    "Alessandro B",
+    "Jean"
    ],
-   "people_for_search": 1,
+   "people_for_search": 2,
    "links": {
-    "booking": "https://www.booking.com/searchresults.it.html?ss=da+annunciare+%28centro+citt%C3%A0%29%2C+Lisbona&checkin=2027-04-09&checkout=2027-04-12&group_adults=1&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
-    "airbnb": "https://www.airbnb.it/s/Lisbona/homes?checkin=2027-04-09&checkout=2027-04-12&adults=1&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=38.74027&ne_lng=-9.11627&sw_lat=38.70433&sw_lng=-9.16233",
-    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+LIS+on+2027-04-09+through+2027-04-12+for+1+passengers&curr=EUR&hl=it"
+    "booking": "https://www.booking.com/searchresults.it.html?ss=da+annunciare+%28centro+citt%C3%A0%29%2C+Lisbona&checkin=2027-04-09&checkout=2027-04-12&group_adults=2&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80%3Bdistance%3D3000&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Lisbona/homes?checkin=2027-04-09&checkout=2027-04-12&adults=2&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=38.74027&ne_lng=-9.11627&sw_lat=38.70433&sw_lng=-9.16233",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+LIS+on+2027-04-09+through+2027-04-12+for+2+passengers&curr=EUR&hl=it"
    },
    "flights": [],
-   "stays": [],
+   "stays": [
+    {
+     "source": "booking.com",
+     "name": "Apartment Ploiesti",
+     "total_price": 87.0,
+     "per_night": 29.0,
+     "per_person_night": 14.5,
+     "review_score": 8.6,
+     "review_count": 82,
+     "distance_km": null,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/ro/apartment-ploiesti.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Stela's Home",
+     "total_price": 101.0,
+     "per_night": 33.67,
+     "per_person_night": 16.83,
+     "review_score": 9.8,
+     "review_count": 36,
+     "distance_km": null,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/ro/stelas-home.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "La Plantă-Therme Airport Bucharest",
+     "total_price": 102.0,
+     "per_night": 34.0,
+     "per_person_night": 17.0,
+     "review_score": 9.2,
+     "review_count": 262,
+     "distance_km": null,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/ro/la-planta-therme-airport-bucharest.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Astra Residence Ultracentral",
+     "total_price": 102.0,
+     "per_night": 34.0,
+     "per_person_night": 17.0,
+     "review_score": 9.8,
+     "review_count": 62,
+     "distance_km": null,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/ro/astra-residence-ultracentral.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Ultracentral apartament privat",
+     "total_price": 102.0,
+     "per_night": 34.0,
+     "per_person_night": 17.0,
+     "review_score": 9.6,
+     "review_count": 258,
+     "distance_km": null,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/ro/ultracentral-parcare-privata-gratuita-cu-bariera.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Adina C1 - Deluxe Apartment",
+     "total_price": 103.0,
+     "per_night": 34.33,
+     "per_person_night": 17.17,
+     "review_score": 9.9,
+     "review_count": 11,
+     "distance_km": null,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/ro/adina-c1-deluxe-apartment.it.html"
+    }
+   ],
    "estimate_pp": {
     "flight": null,
-    "stay": null,
+    "stay": 43.5,
     "total": null
    },
    "errors": [
-    "google-flights: nessun dato (riprova dal runner USA)",
-    "booking.com: nessun dato",
-    "airbnb: nessun dato"
+    "google-flights: No module named 'fast_flights.core'"
    ]
   },
   {
@@ -478,7 +836,7 @@
    ],
    "people_for_search": 1,
    "links": {
-    "booking": "https://www.booking.com/searchresults.it.html?ss=PVA+Expo+Praha%2C+Praga&checkin=2027-05-07&checkout=2027-05-10&group_adults=1&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "booking": "https://www.booking.com/searchresults.it.html?ss=PVA+Expo+Praha%2C+Praga&checkin=2027-05-07&checkout=2027-05-10&group_adults=1&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80%3Bdistance%3D3000&selected_currency=EUR",
     "airbnb": "https://www.airbnb.it/s/Praga/homes?checkin=2027-05-07&checkout=2027-05-10&adults=1&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=50.14477&ne_lng=14.54322&sw_lat=50.10883&sw_lng=14.48718",
     "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+PRG+on+2027-05-07+through+2027-05-10+for+1+passengers&curr=EUR&hl=it"
    },
@@ -487,24 +845,83 @@
     {
      "source": "booking.com",
      "name": "Prime Chief Suite",
-     "total_price": 76.0,
-     "per_night": 25.33,
-     "per_person_night": 25.33,
+     "total_price": 228.0,
+     "per_night": 76.0,
+     "per_person_night": 76.0,
      "review_score": 8.5,
      "review_count": 12,
      "distance_km": 1.4,
      "free_cancellation": true,
      "url": "https://www.booking.com/hotel/cz/prime-chief-suite.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "1 Bed Flat - Sleeps 2 - Pets - Smoking on terrace",
+     "total_price": 270.0,
+     "per_night": 90.0,
+     "per_person_night": 90.0,
+     "review_score": 8.8,
+     "review_count": 14,
+     "distance_km": 1.8,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/cz/captivating-1-bed-apartment-in-praha.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "1 Bed Flat - Sleeps 2 - Pets - Smoking on terrace",
+     "total_price": 283.0,
+     "per_night": 94.33,
+     "per_person_night": 94.33,
+     "review_score": 8.0,
+     "review_count": 2,
+     "distance_km": 1.8,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/cz/cool-apartment-with-small-balcony-near-florenc.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Studio - Sleeps 2 -Smoking on balcony - Pets -Wifi",
+     "total_price": 284.0,
+     "per_night": 94.67,
+     "per_person_night": 94.67,
+     "review_score": 8.5,
+     "review_count": 12,
+     "distance_km": 1.8,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/cz/cosy-studio-with-terrace-near-florenc-praha.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Letna Garden Suites",
+     "total_price": 300.0,
+     "per_night": 100.0,
+     "per_person_night": 100.0,
+     "review_score": 8.5,
+     "review_count": 2211,
+     "distance_km": 0.9,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/cz/letna-garden-suites.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Stylish & Quiet Studio in Vibrant Letná",
+     "total_price": 304.0,
+     "per_night": 101.33,
+     "per_person_night": 101.33,
+     "review_score": 8.3,
+     "review_count": 6,
+     "distance_km": 0.9,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/cz/stylish-amp-quiet-studio-in-vibrant-letna.it.html"
     }
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 75.99,
+    "stay": 228.0,
     "total": null
    },
    "errors": [
-    "google-flights: nessun dato (riprova dal runner USA)",
-    "airbnb: nessun dato"
+    "google-flights: No module named 'fast_flights.core'"
    ]
   },
   {
@@ -522,22 +939,23 @@
    "check_out": "2027-06-07",
    "nights": 3,
    "participants": [
-    "Alessandro B"
+    "Alessandro B",
+    "Jean"
    ],
-   "people_for_search": 1,
+   "people_for_search": 2,
    "links": {
-    "booking": "https://www.booking.com/searchresults.it.html?ss=BolognaFiere%2C+Bologna&checkin=2027-06-04&checkout=2027-06-07&group_adults=1&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
-    "airbnb": "https://www.airbnb.it/s/Bologna/homes?checkin=2027-06-04&checkout=2027-06-07&adults=1&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=44.52547&ne_lng=11.39429&sw_lat=44.48953&sw_lng=11.34391",
-    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+BLQ+on+2027-06-04+through+2027-06-07+for+1+passengers&curr=EUR&hl=it"
+    "booking": "https://www.booking.com/searchresults.it.html?ss=BolognaFiere%2C+Bologna&checkin=2027-06-04&checkout=2027-06-07&group_adults=2&group_children=0&no_rooms=1&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80%3Bdistance%3D3000&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Bologna/homes?checkin=2027-06-04&checkout=2027-06-07&adults=2&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=44.52547&ne_lng=11.39429&sw_lat=44.48953&sw_lng=11.34391",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+BLQ+on+2027-06-04+through+2027-06-07+for+2+passengers&curr=EUR&hl=it"
    },
    "flights": [],
    "stays": [
     {
      "source": "booking.com",
      "name": "La Soffitta",
-     "total_price": 88.0,
-     "per_night": 29.33,
-     "per_person_night": 29.33,
+     "total_price": 246.0,
+     "per_night": 82.0,
+     "per_person_night": 41.0,
      "review_score": 8.9,
      "review_count": 168,
      "distance_km": 1.9,
@@ -546,22 +964,10 @@
     },
     {
      "source": "booking.com",
-     "name": "Am Liv' (mi alzo)",
-     "total_price": 102.0,
-     "per_night": 34.0,
-     "per_person_night": 34.0,
-     "review_score": 9.4,
-     "review_count": 44,
-     "distance_km": 1.7,
-     "free_cancellation": true,
-     "url": "https://www.booking.com/hotel/it/am-liv-39-mi-alzo.it.html"
-    },
-    {
-     "source": "booking.com",
      "name": "Appartamento con parcheggio comodo",
-     "total_price": 114.0,
-     "per_night": 38.0,
-     "per_person_night": 38.0,
+     "total_price": 318.0,
+     "per_night": 106.0,
+     "per_person_night": 53.0,
      "review_score": 9.0,
      "review_count": 58,
      "distance_km": 1.9,
@@ -571,9 +977,9 @@
     {
      "source": "booking.com",
      "name": "Appartamento La Corte Nascosta",
-     "total_price": 131.0,
-     "per_night": 43.67,
-     "per_person_night": 43.67,
+     "total_price": 365.0,
+     "per_night": 121.67,
+     "per_person_night": 60.83,
      "review_score": 8.9,
      "review_count": 30,
      "distance_km": 1.9,
@@ -583,9 +989,9 @@
     {
      "source": "booking.com",
      "name": "Sara's house",
-     "total_price": 131.0,
-     "per_night": 43.67,
-     "per_person_night": 43.67,
+     "total_price": 365.0,
+     "per_night": 121.67,
+     "per_person_night": 60.83,
      "review_score": 8.8,
      "review_count": 13,
      "distance_km": 1.9,
@@ -594,25 +1000,36 @@
     },
     {
      "source": "booking.com",
-     "name": "The Nest Bologna - Fiera District & Central Station",
-     "total_price": 86.0,
-     "per_night": 28.67,
-     "per_person_night": 28.67,
-     "review_score": null,
-     "review_count": 3,
+     "name": "CASA VIOLANTE",
+     "total_price": 376.0,
+     "per_night": 125.33,
+     "per_person_night": 62.67,
+     "review_score": 8.3,
+     "review_count": 136,
      "distance_km": 1.5,
      "free_cancellation": true,
-     "url": "https://www.booking.com/hotel/it/the-nest-bologna-bologna.it.html"
+     "url": "https://www.booking.com/hotel/it/casa-violante-citta-metropolitana-di-bologna.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "San Pietro House by Studio Vita",
+     "total_price": 383.0,
+     "per_night": 127.67,
+     "per_person_night": 63.83,
+     "review_score": 9.0,
+     "review_count": 17,
+     "distance_km": 1.7,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/it/san-pietro-house-bologna.it.html"
     }
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 86.01,
+    "stay": 123.0,
     "total": null
    },
    "errors": [
-    "google-flights: nessun dato (riprova dal runner USA)",
-    "airbnb: nessun dato"
+    "google-flights: No module named 'fast_flights.core'"
    ]
   },
   {
@@ -632,7 +1049,7 @@
    "participants": [],
    "people_for_search": 4,
    "links": {
-    "booking": "https://www.booking.com/searchresults.it.html?ss=McCormick+Place%2C+Chicago&checkin=2027-06-17&checkout=2027-06-21&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "booking": "https://www.booking.com/searchresults.it.html?ss=McCormick+Place%2C+Chicago&checkin=2027-06-17&checkout=2027-06-21&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80%3Bdistance%3D3000&selected_currency=EUR",
     "airbnb": "https://www.airbnb.it/s/Chicago/homes?checkin=2027-06-17&checkout=2027-06-21&adults=4&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=41.86917&ne_lng=-87.59238&sw_lat=41.83323&sw_lng=-87.64062",
     "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+CHI+on+2027-06-17+through+2027-06-21+for+4+passengers&curr=EUR&hl=it"
    },
@@ -641,24 +1058,35 @@
     {
      "source": "booking.com",
      "name": "Stylish friendly 3BR Suite near McCormick",
-     "total_price": 430.0,
-     "per_night": 107.5,
-     "per_person_night": 26.88,
+     "total_price": 1721.0,
+     "per_night": 430.25,
+     "per_person_night": 107.56,
      "review_score": 8.5,
      "review_count": 2,
      "distance_km": 1.2,
      "free_cancellation": true,
      "url": "https://www.booking.com/hotel/us/stylish-friendly-3br-suite-near-mccormick-2001-s-state-st-2c.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "McCormick 4BR Huge Unit w/ Pool Table | Sleeps 10",
+     "total_price": 4975.0,
+     "per_night": 1243.75,
+     "per_person_night": 310.94,
+     "review_score": 8.0,
+     "review_count": null,
+     "distance_km": 1.2,
+     "free_cancellation": true,
+     "url": "https://www.booking.com/hotel/us/mccormick-4br-huge-unit-with-pool-table-2010-south-wabash-ave-3r.it.html"
     }
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 107.52,
+    "stay": 430.24,
     "total": null
    },
    "errors": [
-    "google-flights: nessun dato (riprova dal runner USA)",
-    "airbnb: nessun dato"
+    "google-flights: No module named 'fast_flights.core'"
    ]
   }
  ]
