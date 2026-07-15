@@ -1,0 +1,47 @@
+```yaml
+# Aggiorna i prezzi ogni notte e li pubblica sulla dashboard (GitHub Pages).
+# Si può lanciare anche a mano: tab Actions -> "Aggiorna prezzi" -> Run workflow.
+name: Aggiorna prezzi
+
+on:
+  schedule:
+    - cron: "0 4 * * *"   # ogni giorno alle 06:00 italiane (04:00 UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-prices
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest   # runner USA: niente muro cookie UE su Google Flights
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installa dipendenze
+        run: |
+          pip install -e .
+          pip install fast-flights pyairbnb playwright
+          playwright install --with-deps chromium
+
+      - name: Snapshot prezzi
+        env:
+          SIGNUP_CSV_URL: ${{ vars.SIGNUP_CSV_URL }}
+        run: python -m vgcbooking snapshot
+
+      - name: Pubblica i dati aggiornati
+        run: |
+          git config user.name "vgc-bot"
+          git config user.email "actions@github.com"
+          git add docs/data/prices.json docs/data/history.json
+          git diff --cached --quiet || git commit -m "Aggiorna prezzi $(date -u +%F)"
+          git push
+```
