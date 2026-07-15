@@ -39,7 +39,12 @@ def search_flights(origin: str, destination: str, depart: str, ret: str, adults:
             try:
                 flights.extend(_search_one(orig, dest, depart, ret))
             except Exception as exc:  # noqa: BLE001
-                last_error = str(exc)[:120]
+                msg = str(exc)
+                if "No flights found" in msg:
+                    # tipico per date oltre la finestra di vendita (~11 mesi) o tratte senza voli
+                    last_error = "nessun volo in vendita per queste date/tratta"
+                else:
+                    last_error = msg[:120]
                 log.warning("google-flights %s->%s: %s", orig, dest, last_error)
     if not flights:
         raise RuntimeError(last_error or "nessun volo trovato")
@@ -73,7 +78,7 @@ def _search_one(origin: str, destination: str, depart: str, ret: str) -> list[di
     flights = []
     for f in result.flights:
         price = _parse_price(f.price)
-        if price is None:
+        if not price:  # None o 0 = tariffa non disponibile
             continue
         flights.append(
             {

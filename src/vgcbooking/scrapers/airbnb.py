@@ -53,9 +53,13 @@ def _to_stays(results, lat, lon, nights, people, max_distance_km) -> list[dict]:
     stays = []
     for r in results:
         coords = r.get("coordinates") or {}
-        r_lat, r_lon = coords.get("latitude"), coords.get("longitude")
+        # "longitud" senza 'e' è un refuso storico di pyairbnb, tenuto per compatibilità
+        r_lat = coords.get("latitude")
+        r_lon = coords.get("longitud", coords.get("longitude"))
+        if not r_lat or not r_lon:  # 0 = coordinate mancanti
+            continue
         total = _amount(r)
-        if total is None or r_lat is None or r_lon is None:
+        if total is None:
             continue
         distance = haversine_km(lat, lon, float(r_lat), float(r_lon))
         if distance > max_distance_km:
