@@ -1,0 +1,1650 @@
+{
+ "generated_at": "2026-07-15T16:31:51+00:00",
+ "origin": "ROM",
+ "settings": {
+  "max_distance_km": 2.0,
+  "min_review_score": 8.0,
+  "currency": "EUR"
+ },
+ "events": [
+  {
+   "slug": "frankfurt",
+   "name": "Regionale Francoforte",
+   "type": "regional",
+   "city": "Francoforte",
+   "country": "Germania",
+   "start": "2026-09-26",
+   "end": "2026-09-27",
+   "venue": "Messe Frankfurt (presunta)",
+   "venue_confirmed": false,
+   "airport": "FRA",
+   "check_in": "2026-09-25",
+   "check_out": "2026-09-28",
+   "nights": 3,
+   "participants": [],
+   "people_for_search": 4,
+   "links": {
+    "booking": "https://www.booking.com/searchresults.it.html?ss=Messe+Frankfurt%2C+Francoforte&checkin=2026-09-25&checkout=2026-09-28&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Francoforte/homes?checkin=2026-09-25&checkout=2026-09-28&adults=4&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=50.12887&ne_lng=8.67172&sw_lat=50.09293&sw_lng=8.61568",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+FRA+on+2026-09-25+through+2026-09-28+for+4+passengers&curr=EUR&hl=it"
+   },
+   "flights": [
+    {
+     "airline": "United",
+     "departure": "2026-09-25 07:33",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "1h49",
+     "price_pp": 53.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Lufthansa",
+     "departure": "2026-09-25 06:31",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "1h55",
+     "price_pp": 73.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "United",
+     "departure": "2026-09-25 09:18",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "1h41",
+     "price_pp": 110.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "ITA Airways",
+     "departure": "2026-09-25 09:51",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "1h53",
+     "price_pp": 173.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Lufthansa",
+     "departure": "2026-09-25 06:36",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "1h28",
+     "price_pp": 177.0,
+     "source": "[MOCK] google-flights"
+    }
+   ],
+   "stays": [
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Francoforte 3",
+     "total_price": 405.0,
+     "per_night": 135.0,
+     "per_person_night": 33.75,
+     "review_score": 8.1,
+     "review_count": 415,
+     "distance_km": 1.58,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Francoforte 5",
+     "total_price": 457.0,
+     "per_night": 152.33,
+     "per_person_night": 38.08,
+     "review_score": 8.7,
+     "review_count": 62,
+     "distance_km": 1.3,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Francoforte 1",
+     "total_price": 561.0,
+     "per_night": 187.0,
+     "per_person_night": 46.75,
+     "review_score": 8.4,
+     "review_count": 77,
+     "distance_km": 1.21,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Francoforte 6",
+     "total_price": 273.0,
+     "per_night": 91.0,
+     "per_person_night": 22.75,
+     "review_score": 7.5,
+     "review_count": 153,
+     "distance_km": 1.01,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Francoforte 2",
+     "total_price": 504.0,
+     "per_night": 168.0,
+     "per_person_night": 42.0,
+     "review_score": 7.9,
+     "review_count": 616,
+     "distance_km": 0.24,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Francoforte 4",
+     "total_price": 660.0,
+     "per_night": 220.0,
+     "per_person_night": 55.0,
+     "review_score": 7.7,
+     "review_count": 386,
+     "distance_km": 1.75,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    }
+   ],
+   "estimate_pp": {
+    "flight": 53.0,
+    "stay": 68.25,
+    "total": 121.25
+   },
+   "errors": []
+  },
+  {
+   "slug": "nice",
+   "name": "Regionale Nizza",
+   "type": "regional",
+   "city": "Nizza",
+   "country": "Francia",
+   "start": "2026-10-17",
+   "end": "2026-10-18",
+   "venue": "Palais des Expositions (presunta)",
+   "venue_confirmed": false,
+   "airport": "NCE",
+   "check_in": "2026-10-16",
+   "check_out": "2026-10-19",
+   "nights": 3,
+   "participants": [],
+   "people_for_search": 4,
+   "links": {
+    "booking": "https://www.booking.com/searchresults.it.html?ss=Palais+des+Expositions%2C+Nizza&checkin=2026-10-16&checkout=2026-10-19&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Nizza/homes?checkin=2026-10-16&checkout=2026-10-19&adults=4&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=43.72137&ne_lng=7.30305&sw_lat=43.68543&sw_lng=7.25335",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+NCE+on+2026-10-16+through+2026-10-19+for+4+passengers&curr=EUR&hl=it"
+   },
+   "flights": [
+    {
+     "airline": "ITA Airways",
+     "departure": "2026-10-16 08:54",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "2h39",
+     "price_pp": 57.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "LATAM",
+     "departure": "2026-10-16 06:39",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "1h55",
+     "price_pp": 63.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "United",
+     "departure": "2026-10-16 07:43",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "3h13",
+     "price_pp": 111.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "LATAM",
+     "departure": "2026-10-16 06:54",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "2h52",
+     "price_pp": 152.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "United",
+     "departure": "2026-10-16 09:32",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "3h48",
+     "price_pp": 170.0,
+     "source": "[MOCK] google-flights"
+    }
+   ],
+   "stays": [
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Nizza 5",
+     "total_price": 354.0,
+     "per_night": 118.0,
+     "per_person_night": 29.5,
+     "review_score": 8.0,
+     "review_count": 677,
+     "distance_km": 1.06,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Nizza 3",
+     "total_price": 399.0,
+     "per_night": 133.0,
+     "per_person_night": 33.25,
+     "review_score": 9.2,
+     "review_count": 773,
+     "distance_km": 1.27,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Nizza 6",
+     "total_price": 456.0,
+     "per_night": 152.0,
+     "per_person_night": 38.0,
+     "review_score": 8.3,
+     "review_count": 552,
+     "distance_km": 1.09,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Nizza 2",
+     "total_price": 473.0,
+     "per_night": 157.67,
+     "per_person_night": 39.42,
+     "review_score": 8.5,
+     "review_count": 418,
+     "distance_km": 1.38,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Nizza 1",
+     "total_price": 606.0,
+     "per_night": 202.0,
+     "per_person_night": 50.5,
+     "review_score": 8.2,
+     "review_count": 29,
+     "distance_km": 1.36,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Nizza 4",
+     "total_price": 642.0,
+     "per_night": 214.0,
+     "per_person_night": 53.5,
+     "review_score": 8.9,
+     "review_count": 387,
+     "distance_km": 0.27,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    }
+   ],
+   "estimate_pp": {
+    "flight": 57.0,
+    "stay": 88.5,
+    "total": 145.5
+   },
+   "errors": []
+  },
+  {
+   "slug": "gdansk",
+   "name": "Regionale Danzica",
+   "type": "regional",
+   "city": "Danzica",
+   "country": "Polonia",
+   "start": "2026-10-31",
+   "end": "2026-11-01",
+   "venue": "AmberExpo (presunta)",
+   "venue_confirmed": false,
+   "airport": "GDN",
+   "check_in": "2026-10-30",
+   "check_out": "2026-11-02",
+   "nights": 3,
+   "participants": [],
+   "people_for_search": 4,
+   "links": {
+    "booking": "https://www.booking.com/searchresults.it.html?ss=AmberExpo%2C+Danzica&checkin=2026-10-30&checkout=2026-11-02&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Danzica/homes?checkin=2026-10-30&checkout=2026-11-02&adults=4&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=54.39427&ne_lng=18.65925&sw_lat=54.35833&sw_lng=18.59755",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+GDN+on+2026-10-30+through+2026-11-02+for+4+passengers&curr=EUR&hl=it"
+   },
+   "flights": [
+    {
+     "airline": "LATAM",
+     "departure": "2026-10-30 09:44",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "2h49",
+     "price_pp": 61.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Ryanair",
+     "departure": "2026-10-30 06:52",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "2h46",
+     "price_pp": 62.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Ryanair",
+     "departure": "2026-10-30 07:22",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "1h54",
+     "price_pp": 87.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Ryanair",
+     "departure": "2026-10-30 07:20",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "1h34",
+     "price_pp": 109.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "ITA Airways",
+     "departure": "2026-10-30 08:51",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "2h41",
+     "price_pp": 113.0,
+     "source": "[MOCK] google-flights"
+    }
+   ],
+   "stays": [
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Danzica 1",
+     "total_price": 388.0,
+     "per_night": 129.33,
+     "per_person_night": 32.33,
+     "review_score": 9.6,
+     "review_count": 690,
+     "distance_km": 1.13,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Danzica 5",
+     "total_price": 402.0,
+     "per_night": 134.0,
+     "per_person_night": 33.5,
+     "review_score": 9.3,
+     "review_count": 603,
+     "distance_km": 0.69,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Danzica 4",
+     "total_price": 515.0,
+     "per_night": 171.67,
+     "per_person_night": 42.92,
+     "review_score": 9.1,
+     "review_count": 793,
+     "distance_km": 1.38,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Danzica 2",
+     "total_price": 570.0,
+     "per_night": 190.0,
+     "per_person_night": 47.5,
+     "review_score": 9.0,
+     "review_count": 128,
+     "distance_km": 0.35,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Danzica 6",
+     "total_price": 621.0,
+     "per_night": 207.0,
+     "per_person_night": 51.75,
+     "review_score": 9.0,
+     "review_count": 176,
+     "distance_km": 1.15,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Danzica 3",
+     "total_price": 640.0,
+     "per_night": 213.33,
+     "per_person_night": 53.33,
+     "review_score": 9.1,
+     "review_count": 62,
+     "distance_km": 0.54,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    }
+   ],
+   "estimate_pp": {
+    "flight": 61.0,
+    "stay": 96.99,
+    "total": 157.99
+   },
+   "errors": []
+  },
+  {
+   "slug": "laic-sao-paulo",
+   "name": "Campionati Internazionali Latinoamericani 2027 (LAIC)",
+   "type": "international",
+   "city": "San Paolo",
+   "country": "Brasile",
+   "start": "2026-11-20",
+   "end": "2026-11-22",
+   "venue": "Expo Center Norte (presunta)",
+   "venue_confirmed": false,
+   "airport": "GRU",
+   "check_in": "2026-11-19",
+   "check_out": "2026-11-23",
+   "nights": 4,
+   "participants": [],
+   "people_for_search": 4,
+   "links": {
+    "booking": "https://www.booking.com/searchresults.it.html?ss=Expo+Center+Norte%2C+San+Paolo&checkin=2026-11-19&checkout=2026-11-23&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/San%20Paolo/homes?checkin=2026-11-19&checkout=2026-11-23&adults=4&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=-23.49263&ne_lng=-46.59391&sw_lat=-23.52857&sw_lng=-46.63309",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+GRU+on+2026-11-19+through+2026-11-23+for+4+passengers&curr=EUR&hl=it"
+   },
+   "flights": [
+    {
+     "airline": "LATAM",
+     "departure": "2026-11-19 06:20",
+     "arrival": "—",
+     "stops": 2,
+     "duration": "14h",
+     "price_pp": 608.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "ITA Airways",
+     "departure": "2026-11-19 09:29",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "16h",
+     "price_pp": 698.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Ryanair",
+     "departure": "2026-11-19 07:31",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "11h",
+     "price_pp": 739.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Ryanair",
+     "departure": "2026-11-19 08:32",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "12h",
+     "price_pp": 749.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Ryanair",
+     "departure": "2026-11-19 06:36",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "15h",
+     "price_pp": 825.0,
+     "source": "[MOCK] google-flights"
+    }
+   ],
+   "stays": [
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt San Paolo 6",
+     "total_price": 442.0,
+     "per_night": 110.5,
+     "per_person_night": 27.62,
+     "review_score": 8.1,
+     "review_count": 409,
+     "distance_km": 0.69,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt San Paolo 2",
+     "total_price": 566.0,
+     "per_night": 141.5,
+     "per_person_night": 35.38,
+     "review_score": 9.4,
+     "review_count": 651,
+     "distance_km": 0.81,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt San Paolo 3",
+     "total_price": 624.0,
+     "per_night": 156.0,
+     "per_person_night": 39.0,
+     "review_score": 8.1,
+     "review_count": 551,
+     "distance_km": 1.38,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt San Paolo 4",
+     "total_price": 701.0,
+     "per_night": 175.25,
+     "per_person_night": 43.81,
+     "review_score": 8.6,
+     "review_count": 106,
+     "distance_km": 0.45,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt San Paolo 1",
+     "total_price": 726.0,
+     "per_night": 181.5,
+     "per_person_night": 45.38,
+     "review_score": 8.8,
+     "review_count": 508,
+     "distance_km": 0.8,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt San Paolo 5",
+     "total_price": 743.0,
+     "per_night": 185.75,
+     "per_person_night": 46.44,
+     "review_score": 7.5,
+     "review_count": 89,
+     "distance_km": 0.5,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    }
+   ],
+   "estimate_pp": {
+    "flight": 608.0,
+    "stay": 110.48,
+    "total": 718.48
+   },
+   "errors": []
+  },
+  {
+   "slug": "stuttgart",
+   "name": "Regionale Stoccarda",
+   "type": "regional",
+   "city": "Stoccarda",
+   "country": "Germania",
+   "start": "2026-11-28",
+   "end": "2026-11-29",
+   "venue": "Messe Stuttgart (presunta)",
+   "venue_confirmed": false,
+   "airport": "STR",
+   "check_in": "2026-11-27",
+   "check_out": "2026-11-30",
+   "nights": 3,
+   "participants": [],
+   "people_for_search": 4,
+   "links": {
+    "booking": "https://www.booking.com/searchresults.it.html?ss=Messe+Stuttgart%2C+Stoccarda&checkin=2026-11-27&checkout=2026-11-30&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Stoccarda/homes?checkin=2026-11-27&checkout=2026-11-30&adults=4&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=48.73127&ne_lng=9.21023&sw_lat=48.69533&sw_lng=9.15577",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+STR+on+2026-11-27+through+2026-11-30+for+4+passengers&curr=EUR&hl=it"
+   },
+   "flights": [
+    {
+     "airline": "United",
+     "departure": "2026-11-27 08:38",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "2h28",
+     "price_pp": 90.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "ITA Airways",
+     "departure": "2026-11-27 06:21",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "3h21",
+     "price_pp": 116.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Ryanair",
+     "departure": "2026-11-27 08:38",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "3h40",
+     "price_pp": 127.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Ryanair",
+     "departure": "2026-11-27 08:17",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "2h44",
+     "price_pp": 139.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Lufthansa",
+     "departure": "2026-11-27 06:28",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "1h15",
+     "price_pp": 163.0,
+     "source": "[MOCK] google-flights"
+    }
+   ],
+   "stays": [
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Stoccarda 3",
+     "total_price": 352.0,
+     "per_night": 117.33,
+     "per_person_night": 29.33,
+     "review_score": 8.9,
+     "review_count": 499,
+     "distance_km": 0.37,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Stoccarda 6",
+     "total_price": 448.0,
+     "per_night": 149.33,
+     "per_person_night": 37.33,
+     "review_score": 8.0,
+     "review_count": 693,
+     "distance_km": 1.16,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Stoccarda 5",
+     "total_price": 479.0,
+     "per_night": 159.67,
+     "per_person_night": 39.92,
+     "review_score": 8.7,
+     "review_count": 769,
+     "distance_km": 1.11,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Stoccarda 4",
+     "total_price": 557.0,
+     "per_night": 185.67,
+     "per_person_night": 46.42,
+     "review_score": 8.2,
+     "review_count": 670,
+     "distance_km": 0.41,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Stoccarda 2",
+     "total_price": 577.0,
+     "per_night": 192.33,
+     "per_person_night": 48.08,
+     "review_score": 8.9,
+     "review_count": 188,
+     "distance_km": 1.58,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Stoccarda 1",
+     "total_price": 616.0,
+     "per_night": 205.33,
+     "per_person_night": 51.33,
+     "review_score": 9.7,
+     "review_count": 419,
+     "distance_km": 0.78,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    }
+   ],
+   "estimate_pp": {
+    "flight": 90.0,
+    "stay": 87.99,
+    "total": 177.99
+   },
+   "errors": []
+  },
+  {
+   "slug": "birmingham",
+   "name": "Regionale Birmingham",
+   "type": "regional",
+   "city": "Birmingham",
+   "country": "Regno Unito",
+   "start": "2027-01-30",
+   "end": "2027-01-31",
+   "venue": "NEC Birmingham (presunta)",
+   "venue_confirmed": false,
+   "airport": "BHX",
+   "check_in": "2027-01-29",
+   "check_out": "2027-02-01",
+   "nights": 3,
+   "participants": [],
+   "people_for_search": 4,
+   "links": {
+    "booking": "https://www.booking.com/searchresults.it.html?ss=NEC+Birmingham%2C+Birmingham&checkin=2027-01-29&checkout=2027-02-01&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Birmingham/homes?checkin=2027-01-29&checkout=2027-02-01&adults=4&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=52.47097&ne_lng=-1.68872&sw_lat=52.43503&sw_lng=-1.74768",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+BHX+on+2027-01-29+through+2027-02-01+for+4+passengers&curr=EUR&hl=it"
+   },
+   "flights": [
+    {
+     "airline": "United",
+     "departure": "2027-01-29 08:35",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "2h25",
+     "price_pp": 50.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "LATAM",
+     "departure": "2027-01-29 07:50",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "1h41",
+     "price_pp": 75.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "ITA Airways",
+     "departure": "2027-01-29 06:39",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "3h36",
+     "price_pp": 102.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "United",
+     "departure": "2027-01-29 06:30",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "3h48",
+     "price_pp": 108.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "LATAM",
+     "departure": "2027-01-29 06:18",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "1h35",
+     "price_pp": 158.0,
+     "source": "[MOCK] google-flights"
+    }
+   ],
+   "stays": [
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Birmingham 1",
+     "total_price": 278.0,
+     "per_night": 92.67,
+     "per_person_night": 23.17,
+     "review_score": 8.5,
+     "review_count": 205,
+     "distance_km": 1.53,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Birmingham 4",
+     "total_price": 571.0,
+     "per_night": 190.33,
+     "per_person_night": 47.58,
+     "review_score": 8.4,
+     "review_count": 36,
+     "distance_km": 0.25,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Birmingham 3",
+     "total_price": 595.0,
+     "per_night": 198.33,
+     "per_person_night": 49.58,
+     "review_score": 9.1,
+     "review_count": 659,
+     "distance_km": 0.42,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Birmingham 6",
+     "total_price": 635.0,
+     "per_night": 211.67,
+     "per_person_night": 52.92,
+     "review_score": 9.1,
+     "review_count": 507,
+     "distance_km": 0.77,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Birmingham 2",
+     "total_price": 647.0,
+     "per_night": 215.67,
+     "per_person_night": 53.92,
+     "review_score": 8.7,
+     "review_count": 697,
+     "distance_km": 1.02,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Birmingham 5",
+     "total_price": 585.0,
+     "per_night": 195.0,
+     "per_person_night": 48.75,
+     "review_score": 7.6,
+     "review_count": 290,
+     "distance_km": 1.04,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    }
+   ],
+   "estimate_pp": {
+    "flight": 50.0,
+    "stay": 69.51,
+    "total": 119.51
+   },
+   "errors": []
+  },
+  {
+   "slug": "euic-london",
+   "name": "Campionati Internazionali Europei 2027 (EUIC)",
+   "type": "international",
+   "city": "Londra",
+   "country": "Regno Unito",
+   "start": "2027-02-19",
+   "end": "2027-02-21",
+   "venue": "ExCeL London (presunta)",
+   "venue_confirmed": false,
+   "airport": "LON",
+   "check_in": "2027-02-18",
+   "check_out": "2027-02-22",
+   "nights": 4,
+   "participants": [],
+   "people_for_search": 4,
+   "links": {
+    "booking": "https://www.booking.com/searchresults.it.html?ss=ExCeL+London%2C+Londra&checkin=2027-02-18&checkout=2027-02-22&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Londra/homes?checkin=2027-02-18&checkout=2027-02-22&adults=4&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=51.52607&ne_lng=0.05827&sw_lat=51.49013&sw_lng=0.00053",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+LON+on+2027-02-18+through+2027-02-22+for+4+passengers&curr=EUR&hl=it"
+   },
+   "flights": [
+    {
+     "airline": "ITA Airways",
+     "departure": "2027-02-18 09:46",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "3h18",
+     "price_pp": 54.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "LATAM",
+     "departure": "2027-02-18 08:25",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "1h50",
+     "price_pp": 71.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "United",
+     "departure": "2027-02-18 06:41",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "2h19",
+     "price_pp": 79.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "United",
+     "departure": "2027-02-18 08:49",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "1h19",
+     "price_pp": 138.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "LATAM",
+     "departure": "2027-02-18 08:32",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "3h34",
+     "price_pp": 164.0,
+     "source": "[MOCK] google-flights"
+    }
+   ],
+   "stays": [
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Londra 3",
+     "total_price": 375.0,
+     "per_night": 93.75,
+     "per_person_night": 23.44,
+     "review_score": 8.6,
+     "review_count": 165,
+     "distance_km": 0.25,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Londra 5",
+     "total_price": 542.0,
+     "per_night": 135.5,
+     "per_person_night": 33.88,
+     "review_score": 9.0,
+     "review_count": 781,
+     "distance_km": 1.21,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Londra 4",
+     "total_price": 691.0,
+     "per_night": 172.75,
+     "per_person_night": 43.19,
+     "review_score": 8.9,
+     "review_count": 611,
+     "distance_km": 1.76,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Londra 6",
+     "total_price": 694.0,
+     "per_night": 173.5,
+     "per_person_night": 43.38,
+     "review_score": 9.6,
+     "review_count": 238,
+     "distance_km": 1.25,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Londra 1",
+     "total_price": 802.0,
+     "per_night": 200.5,
+     "per_person_night": 50.12,
+     "review_score": 8.6,
+     "review_count": 584,
+     "distance_km": 1.57,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Londra 2",
+     "total_price": 856.0,
+     "per_night": 214.0,
+     "per_person_night": 53.5,
+     "review_score": 8.2,
+     "review_count": 237,
+     "distance_km": 1.2,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    }
+   ],
+   "estimate_pp": {
+    "flight": 54.0,
+    "stay": 93.76,
+    "total": 147.76
+   },
+   "errors": []
+  },
+  {
+   "slug": "lisbon",
+   "name": "Speciale Lisbona",
+   "type": "special",
+   "city": "Lisbona",
+   "country": "Portogallo",
+   "start": "2027-04-10",
+   "end": "2027-04-11",
+   "venue": "da annunciare (centro città)",
+   "venue_confirmed": false,
+   "airport": "LIS",
+   "check_in": "2027-04-09",
+   "check_out": "2027-04-12",
+   "nights": 3,
+   "participants": [],
+   "people_for_search": 4,
+   "links": {
+    "booking": "https://www.booking.com/searchresults.it.html?ss=da+annunciare+%28centro+citt%C3%A0%29%2C+Lisbona&checkin=2027-04-09&checkout=2027-04-12&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Lisbona/homes?checkin=2027-04-09&checkout=2027-04-12&adults=4&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=38.74027&ne_lng=-9.11627&sw_lat=38.70433&sw_lng=-9.16233",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+LIS+on+2027-04-09+through+2027-04-12+for+4+passengers&curr=EUR&hl=it"
+   },
+   "flights": [
+    {
+     "airline": "Ryanair",
+     "departure": "2027-04-09 09:47",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "3h17",
+     "price_pp": 45.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Ryanair",
+     "departure": "2027-04-09 08:31",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "3h32",
+     "price_pp": 85.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Lufthansa",
+     "departure": "2027-04-09 07:41",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "1h43",
+     "price_pp": 166.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "United",
+     "departure": "2027-04-09 07:34",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "3h35",
+     "price_pp": 167.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Ryanair",
+     "departure": "2027-04-09 08:13",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "1h43",
+     "price_pp": 176.0,
+     "source": "[MOCK] google-flights"
+    }
+   ],
+   "stays": [
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Lisbona 1",
+     "total_price": 542.0,
+     "per_night": 180.67,
+     "per_person_night": 45.17,
+     "review_score": 9.7,
+     "review_count": 776,
+     "distance_km": 0.96,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Lisbona 6",
+     "total_price": 554.0,
+     "per_night": 184.67,
+     "per_person_night": 46.17,
+     "review_score": 9.3,
+     "review_count": 240,
+     "distance_km": 0.65,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Lisbona 4",
+     "total_price": 628.0,
+     "per_night": 209.33,
+     "per_person_night": 52.33,
+     "review_score": 8.1,
+     "review_count": 296,
+     "distance_km": 0.62,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Lisbona 2",
+     "total_price": 636.0,
+     "per_night": 212.0,
+     "per_person_night": 53.0,
+     "review_score": 9.3,
+     "review_count": 277,
+     "distance_km": 1.08,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Lisbona 3",
+     "total_price": 643.0,
+     "per_night": 214.33,
+     "per_person_night": 53.58,
+     "review_score": 9.3,
+     "review_count": 25,
+     "distance_km": 0.68,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Lisbona 5",
+     "total_price": 614.0,
+     "per_night": 204.67,
+     "per_person_night": 51.17,
+     "review_score": 7.6,
+     "review_count": 273,
+     "distance_km": 0.34,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    }
+   ],
+   "estimate_pp": {
+    "flight": 45.0,
+    "stay": 135.51,
+    "total": 180.51
+   },
+   "errors": []
+  },
+  {
+   "slug": "prague",
+   "name": "Regionale Praga",
+   "type": "regional",
+   "city": "Praga",
+   "country": "Repubblica Ceca",
+   "start": "2027-05-08",
+   "end": "2027-05-09",
+   "venue": "PVA Expo Praha (presunta)",
+   "venue_confirmed": false,
+   "airport": "PRG",
+   "check_in": "2027-05-07",
+   "check_out": "2027-05-10",
+   "nights": 3,
+   "participants": [],
+   "people_for_search": 4,
+   "links": {
+    "booking": "https://www.booking.com/searchresults.it.html?ss=PVA+Expo+Praha%2C+Praga&checkin=2027-05-07&checkout=2027-05-10&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Praga/homes?checkin=2027-05-07&checkout=2027-05-10&adults=4&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=50.14477&ne_lng=14.54322&sw_lat=50.10883&sw_lng=14.48718",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+PRG+on+2027-05-07+through+2027-05-10+for+4+passengers&curr=EUR&hl=it"
+   },
+   "flights": [
+    {
+     "airline": "Lufthansa",
+     "departure": "2027-05-07 07:34",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "2h13",
+     "price_pp": 98.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Ryanair",
+     "departure": "2027-05-07 09:16",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "3h12",
+     "price_pp": 104.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Ryanair",
+     "departure": "2027-05-07 07:28",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "2h46",
+     "price_pp": 116.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "United",
+     "departure": "2027-05-07 08:18",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "1h11",
+     "price_pp": 129.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "LATAM",
+     "departure": "2027-05-07 09:47",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "2h33",
+     "price_pp": 130.0,
+     "source": "[MOCK] google-flights"
+    }
+   ],
+   "stays": [
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Praga 4",
+     "total_price": 336.0,
+     "per_night": 112.0,
+     "per_person_night": 28.0,
+     "review_score": 9.1,
+     "review_count": 593,
+     "distance_km": 1.05,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Praga 1",
+     "total_price": 350.0,
+     "per_night": 116.67,
+     "per_person_night": 29.17,
+     "review_score": 8.8,
+     "review_count": 748,
+     "distance_km": 1.23,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Praga 3",
+     "total_price": 352.0,
+     "per_night": 117.33,
+     "per_person_night": 29.33,
+     "review_score": 8.0,
+     "review_count": 605,
+     "distance_km": 0.6,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Praga 6",
+     "total_price": 384.0,
+     "per_night": 128.0,
+     "per_person_night": 32.0,
+     "review_score": 8.0,
+     "review_count": 92,
+     "distance_km": 1.41,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Praga 5",
+     "total_price": 596.0,
+     "per_night": 198.67,
+     "per_person_night": 49.67,
+     "review_score": 9.5,
+     "review_count": 603,
+     "distance_km": 1.78,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Praga 2",
+     "total_price": 323.0,
+     "per_night": 107.67,
+     "per_person_night": 26.92,
+     "review_score": 7.9,
+     "review_count": 547,
+     "distance_km": 0.95,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    }
+   ],
+   "estimate_pp": {
+    "flight": 98.0,
+    "stay": 80.76,
+    "total": 178.76
+   },
+   "errors": []
+  },
+  {
+   "slug": "bologna",
+   "name": "Speciale Bologna",
+   "type": "special",
+   "city": "Bologna",
+   "country": "Italia",
+   "start": "2027-06-05",
+   "end": "2027-06-06",
+   "venue": "BolognaFiere (presunta)",
+   "venue_confirmed": false,
+   "airport": "BLQ",
+   "check_in": "2027-06-04",
+   "check_out": "2027-06-07",
+   "nights": 3,
+   "participants": [],
+   "people_for_search": 4,
+   "links": {
+    "booking": "https://www.booking.com/searchresults.it.html?ss=BolognaFiere%2C+Bologna&checkin=2027-06-04&checkout=2027-06-07&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Bologna/homes?checkin=2027-06-04&checkout=2027-06-07&adults=4&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=44.52547&ne_lng=11.39429&sw_lat=44.48953&sw_lng=11.34391",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+BLQ+on+2027-06-04+through+2027-06-07+for+4+passengers&curr=EUR&hl=it"
+   },
+   "flights": [
+    {
+     "airline": "United",
+     "departure": "2027-06-04 08:35",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "2h48",
+     "price_pp": 121.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "ITA Airways",
+     "departure": "2027-06-04 06:38",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "2h24",
+     "price_pp": 130.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "LATAM",
+     "departure": "2027-06-04 07:29",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "2h39",
+     "price_pp": 146.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "Ryanair",
+     "departure": "2027-06-04 07:53",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "1h15",
+     "price_pp": 146.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "ITA Airways",
+     "departure": "2027-06-04 09:33",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "1h39",
+     "price_pp": 149.0,
+     "source": "[MOCK] google-flights"
+    }
+   ],
+   "stays": [
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Bologna 4",
+     "total_price": 644.0,
+     "per_night": 214.67,
+     "per_person_night": 53.67,
+     "review_score": 9.7,
+     "review_count": 696,
+     "distance_km": 1.28,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Bologna 5",
+     "total_price": 338.0,
+     "per_night": 112.67,
+     "per_person_night": 28.17,
+     "review_score": 7.8,
+     "review_count": 637,
+     "distance_km": 0.79,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Bologna 2",
+     "total_price": 458.0,
+     "per_night": 152.67,
+     "per_person_night": 38.17,
+     "review_score": 7.5,
+     "review_count": 283,
+     "distance_km": 1.32,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Bologna 6",
+     "total_price": 480.0,
+     "per_night": 160.0,
+     "per_person_night": 40.0,
+     "review_score": 7.8,
+     "review_count": 507,
+     "distance_km": 1.23,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Bologna 3",
+     "total_price": 528.0,
+     "per_night": 176.0,
+     "per_person_night": 44.0,
+     "review_score": 7.8,
+     "review_count": 76,
+     "distance_km": 1.3,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Bologna 1",
+     "total_price": 537.0,
+     "per_night": 179.0,
+     "per_person_night": 44.75,
+     "review_score": 7.8,
+     "review_count": 600,
+     "distance_km": 1.34,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    }
+   ],
+   "estimate_pp": {
+    "flight": 121.0,
+    "stay": 84.51,
+    "total": 205.51
+   },
+   "errors": []
+  },
+  {
+   "slug": "naic-chicago",
+   "name": "Campionati Internazionali Nordamericani 2027 (NAIC)",
+   "type": "international",
+   "city": "Chicago",
+   "country": "USA",
+   "start": "2027-06-18",
+   "end": "2027-06-20",
+   "venue": "McCormick Place (presunta)",
+   "venue_confirmed": false,
+   "airport": "CHI",
+   "check_in": "2027-06-17",
+   "check_out": "2027-06-21",
+   "nights": 4,
+   "participants": [],
+   "people_for_search": 4,
+   "links": {
+    "booking": "https://www.booking.com/searchresults.it.html?ss=McCormick+Place%2C+Chicago&checkin=2027-06-17&checkout=2027-06-21&group_adults=4&group_children=0&no_rooms=2&order=price&nflt=ht_id%3D201%3Bht_id%3D226%3Bfc%3D2%3Breview_score%3D80&selected_currency=EUR",
+    "airbnb": "https://www.airbnb.it/s/Chicago/homes?checkin=2027-06-17&checkout=2027-06-21&adults=4&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=41.86917&ne_lng=-87.59238&sw_lat=41.83323&sw_lng=-87.64062",
+    "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+CHI+on+2027-06-17+through+2027-06-21+for+4+passengers&curr=EUR&hl=it"
+   },
+   "flights": [
+    {
+     "airline": "Ryanair",
+     "departure": "2027-06-17 06:30",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "12h",
+     "price_pp": 566.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "LATAM",
+     "departure": "2027-06-17 08:21",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "11h",
+     "price_pp": 570.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "ITA Airways",
+     "departure": "2027-06-17 08:14",
+     "arrival": "—",
+     "stops": 0,
+     "duration": "13h",
+     "price_pp": 588.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "United",
+     "departure": "2027-06-17 09:16",
+     "arrival": "—",
+     "stops": 2,
+     "duration": "12h",
+     "price_pp": 613.0,
+     "source": "[MOCK] google-flights"
+    },
+    {
+     "airline": "ITA Airways",
+     "departure": "2027-06-17 08:22",
+     "arrival": "—",
+     "stops": 1,
+     "duration": "14h",
+     "price_pp": 673.0,
+     "source": "[MOCK] google-flights"
+    }
+   ],
+   "stays": [
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Chicago 4",
+     "total_price": 361.0,
+     "per_night": 90.25,
+     "per_person_night": 22.56,
+     "review_score": 9.6,
+     "review_count": 144,
+     "distance_km": 0.22,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Chicago 6",
+     "total_price": 426.0,
+     "per_night": 106.5,
+     "per_person_night": 26.62,
+     "review_score": 8.5,
+     "review_count": 232,
+     "distance_km": 1.25,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Chicago 2",
+     "total_price": 694.0,
+     "per_night": 173.5,
+     "per_person_night": 43.38,
+     "review_score": 9.3,
+     "review_count": 368,
+     "distance_km": 1.67,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Chicago 1",
+     "total_price": 725.0,
+     "per_night": 181.25,
+     "per_person_night": 45.31,
+     "review_score": 8.4,
+     "review_count": 355,
+     "distance_km": 1.55,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    },
+    {
+     "source": "airbnb",
+     "name": "[MOCK] Apt Chicago 5",
+     "total_price": 766.0,
+     "per_night": 191.5,
+     "per_person_night": 47.88,
+     "review_score": 9.3,
+     "review_count": 276,
+     "distance_km": 0.45,
+     "free_cancellation": null,
+     "url": "https://example.com"
+    },
+    {
+     "source": "booking.com",
+     "name": "[MOCK] Apt Chicago 3",
+     "total_price": 777.0,
+     "per_night": 194.25,
+     "per_person_night": 48.56,
+     "review_score": 8.3,
+     "review_count": 727,
+     "distance_km": 0.75,
+     "free_cancellation": true,
+     "url": "https://example.com"
+    }
+   ],
+   "estimate_pp": {
+    "flight": 566.0,
+    "stay": 90.24,
+    "total": 656.24
+   },
+   "errors": []
+  }
+ ]
+}

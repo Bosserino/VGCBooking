@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trasferte VGC 2027</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page:        #f9f9f7;
+    --surface:     #fcfcfb;
+    --ink:         #0b0b0b;
+    --ink-2:       #52514e;
+    --muted:       #898781;
+    --hairline:    #e1e0d9;
+    --border:      rgba(11,11,11,.10);
+    --accent:      #2a78d6;
+    --good:        #006300;
+    --bad:         #d03b3b;
+    --warn-bg:     #fdf3e0;
+    --warn-ink:    #8a5a00;
+    --badge-int-bg: #fbe6dc; --badge-int-ink: #a33c12;
+    --badge-reg-bg: #dfeafa; --badge-reg-ink: #1c5cab;
+    --badge-spe-bg: #e6e2f8; --badge-spe-ink: #4a3aa7;
+    --row-hl:      #eef5fd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page:        #0d0d0d;
+      --surface:     #1a1a19;
+      --ink:         #ffffff;
+      --ink-2:       #c3c2b7;
+      --muted:       #898781;
+      --hairline:    #2c2c2a;
+      --border:      rgba(255,255,255,.10);
+      --accent:      #3987e5;
+      --good:        #0ca30c;
+      --bad:         #e66767;
+      --warn-bg:     #3a2d10;
+      --warn-ink:    #f0c979;
+      --badge-int-bg: #47231a; --badge-int-ink: #f0a184;
+      --badge-reg-bg: #17293f; --badge-reg-ink: #86b6ef;
+      --badge-spe-bg: #292345; --badge-spe-ink: #b0a8ef;
+      --row-hl:      #1e2a38;
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 16px 12px 48px; }
+
+  header h1 { font-size: 1.6rem; letter-spacing: -.01em; }
+  header .sub { color: var(--ink-2); font-size: .9rem; margin-top: 4px; }
+
+  .banner {
+    margin: 12px 0 0; padding: 10px 14px; border-radius: 10px;
+    background: var(--warn-bg); color: var(--warn-ink); font-size: .9rem;
+  }
+
+  /* filtri */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 10px; }
+  .filters button {
+    border: 1px solid var(--border); background: var(--surface); color: var(--ink-2);
+    border-radius: 999px; padding: 6px 14px; font: inherit; font-size: .85rem; cursor: pointer;
+  }
+  .filters button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* riepilogo */
+  .summary {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 8px; margin-bottom: 20px;
+  }
+  .summary .tile {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 10px 14px;
+  }
+  .summary .tile .k { color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; }
+  .summary .tile .v { font-size: 1.05rem; font-weight: 650; margin-top: 2px; }
+
+  /* card evento */
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 16px; margin-bottom: 16px;
+  }
+  .card-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; justify-content: space-between; }
+  .card-head h2 { font-size: 1.12rem; flex: 1 1 auto; min-width: 60%; }
+  .badge {
+    font-size: .72rem; font-weight: 650; padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+  }
+  .badge.international { background: var(--badge-int-bg); color: var(--badge-int-ink); }
+  .badge.regional      { background: var(--badge-reg-bg); color: var(--badge-reg-ink); }
+  .badge.special       { background: var(--badge-spe-bg); color: var(--badge-spe-ink); }
+
+  .meta { color: var(--ink-2); font-size: .88rem; margin-top: 6px; }
+  .meta div { margin-top: 2px; }
+  .venue-warn { color: var(--warn-ink); font-size: .82rem; }
+
+  .estimate {
+    display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    margin: 14px 0; padding: 12px 14px; border-radius: 10px;
+    border: 1px dashed var(--hairline);
+  }
+  .estimate .big { font-size: 1.7rem; font-weight: 700; }
+  .estimate .lbl { color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; width: 100%; }
+  .estimate .split { color: var(--ink-2); font-size: .85rem; }
+
+  .delta { font-size: .8rem; font-weight: 650; white-space: nowrap; }
+  .delta.down { color: var(--good); }
+  .delta.up   { color: var(--bad); }
+
+  .who { font-size: .88rem; margin-top: 8px; }
+  .who .chip {
+    display: inline-block; background: var(--page); border: 1px solid var(--hairline);
+    border-radius: 999px; padding: 2px 10px; margin: 2px 4px 2px 0; font-size: .8rem;
+  }
+  .who .none { color: var(--muted); font-style: italic; }
+
+  h3.sec { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 16px 0 6px; }
+
+  /* tabelle: scroll orizzontale dentro la card, mai la pagina */
+  .tblwrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--hairline); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: .84rem; }
+  th, td { text-align: left; padding: 7px 10px; white-space: nowrap; }
+  th { color: var(--muted); font-weight: 600; font-size: .72rem; text-transform: uppercase; letter-spacing: .03em;
+       border-bottom: 1px solid var(--hairline); }
+  tbody tr + tr td { border-top: 1px solid var(--hairline); }
+  td.num { font-variant-numeric: tabular-nums; }
+  tr.best { background: var(--row-hl); }
+  tr.best td:first-child::before { content: "★ "; color: var(--accent); }
+  td a { color: var(--accent); text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+
+  .noprices { color: var(--ink-2); font-size: .9rem; margin: 10px 0; }
+  .linkrow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .linkrow a {
+    display: inline-block; padding: 8px 14px; border-radius: 10px; font-size: .85rem;
+    border: 1px solid var(--border); color: var(--accent); text-decoration: none; font-weight: 600;
+  }
+  .linkrow a:hover { border-color: var(--accent); }
+
+  .errors { margin-top: 14px; padding-top: 8px; border-top: 1px solid var(--hairline);
+            color: var(--muted); font-size: .76rem; }
+
+  .empty, .fatal { text-align: center; color: var(--muted); padding: 40px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Trasferte VGC 2027</h1>
+    <div class="sub" id="subheader">caricamento…</div>
+  </header>
+
+  <div class="banner" id="banner" hidden></div>
+
+  <nav class="filters" id="filters">
+    <button data-f="all" class="active">Tutti</button>
+    <button data-f="intl">Internazionali</button>
+    <button data-f="eu">Europei</button>
+    <button data-f="booked">Solo con prenotati</button>
+  </nav>
+
+  <section class="summary" id="summary"></section>
+  <main id="cards"></main>
+</div>
+
+<script>
+"use strict";
+(() => {
+  // ---- formattazione it-IT ----
+  const nf0 = new Intl.NumberFormat("it-IT", { maximumFractionDigits: 0 });
+  const nf2 = new Intl.NumberFormat("it-IT", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const euro = v => (v == null || isNaN(v)) ? "—" :
+    "€ " + (Number.isInteger(+v) ? nf0.format(v) : nf2.format(v));
+
+  const parseDay = s => new Date(s + "T12:00:00"); // evita slittamenti di fuso
+  const fmtDay = (d, opts) => d.toLocaleDateString("it-IT", opts || { day: "numeric", month: "short", year: "numeric" });
+  function fmtRange(a, b) {
+    const d1 = parseDay(a), d2 = parseDay(b);
+    if (a === b) return fmtDay(d1);
+    if (d1.getMonth() === d2.getMonth() && d1.getFullYear() === d2.getFullYear())
+      return d1.getDate() + "–" + fmtDay(d2, { day: "numeric", month: "long", year: "numeric" });
+    return fmtDay(d1) + " – " + fmtDay(d2);
+  }
+
+  const esc = s => String(s ?? "").replace(/[&<>"']/g,
+    c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  const TYPE_LABEL = { international: "Internazionale", regional: "Regionale", special: "Speciale" };
+  const ORIGIN_NAME = { ROM: "Roma", FCO: "Roma Fiumicino", MIL: "Milano" };
+
+  // ---- caricamento dati ----
+  async function loadJSON(url) {
+    const r = await fetch(url, { cache: "no-store" });
+    if (!r.ok) throw new Error(url + " → " + r.status);
+    return r.json();
+  }
+
+  // Variazioni rispetto allo snapshot precedente di history.json
+  function computeDeltas(history) {
+    const snaps = (history && Array.isArray(history.snapshots)) ? [...history.snapshots] : [];
+    if (snaps.length < 2) return {};
+    snaps.sort((a, b) => (a.date < b.date ? -1 : 1));
+    const prev = snaps[snaps.length - 2].events || {};
+    const last = snaps[snaps.length - 1].events || {};
+    const out = {};
+    for (const slug of Object.keys(last)) {
+      const p = prev[slug], l = last[slug];
+      if (!p || !l) continue;
+      const d = {};
+      if (typeof l.min_flight_pp === "number" && typeof p.min_flight_pp === "number")
+        d.flight = l.min_flight_pp - p.min_flight_pp;
+      if (typeof l.min_stay_pp_night === "number" && typeof p.min_stay_pp_night === "number")
+        d.stay = l.min_stay_pp_night - p.min_stay_pp_night;
+      if (Object.keys(d).length) out[slug] = d;
+    }
+    return out;
+  }
+
+  function deltaChip(diff, label) {
+    if (diff == null || Math.abs(diff) < 0.005) return "";
+    const up = diff > 0;
+    return `<span class="delta ${up ? "up" : "down"}" title="variazione dall'ultimo aggiornamento">
+      ${up ? "▲" : "▼"} ${esc(label)} ${euro(Math.abs(diff))}</span>`;
+  }
+
+  // ---- render card ----
+  function flightsTable(flights) {
+    const rows = [...flights].sort((a, b) => a.price_pp - b.price_pp).slice(0, 5);
+    const best = Math.min(...rows.map(f => f.price_pp));
+    return `<div class="tblwrap"><table>
+      <thead><tr><th>Compagnia</th><th>Partenza</th><th>Arrivo</th><th>Scali</th><th>Durata</th><th>€ a persona</th></tr></thead>
+      <tbody>${rows.map(f => `
+        <tr${f.price_pp === best ? ' class="best"' : ""}>
+          <td>${esc(f.airline)}</td>
+          <td>${esc(f.departure)}</td>
+          <td>${esc(f.arrival)}</td>
+          <td>${f.stops === 0 ? "Diretto" : f.stops + (f.stops === 1 ? " scalo" : " scali")}</td>
+          <td>${esc(f.duration)}</td>
+          <td class="num"><strong>${euro(f.price_pp)}</strong></td>
+        </tr>`).join("")}
+      </tbody></table></div>`;
+  }
+
+  function cancelLabel(v) {
+    if (v === true)  return '<span style="color:var(--good)">Sì</span>';
+    if (v === false) return "No";
+    return '<span style="color:var(--muted)">Da verificare</span>';
+  }
+
+  function staysTable(stays) {
+    const rows = [...stays].sort((a, b) => a.per_person_night - b.per_person_night).slice(0, 6);
+    const best = Math.min(...rows.map(s => s.per_person_night));
+    return `<div class="tblwrap"><table>
+      <thead><tr><th>Fonte</th><th>Alloggio</th><th>€/notte p.p.</th><th>Totale</th><th>Recensioni</th><th>Distanza</th><th>Cancellazione</th><th></th></tr></thead>
+      <tbody>${rows.map(s => `
+        <tr${s.per_person_night === best ? ' class="best"' : ""}>
+          <td>${esc(s.source)}</td>
+          <td style="white-space:normal;min-width:140px">${esc(s.name)}</td>
+          <td class="num"><strong>${euro(s.per_person_night)}</strong></td>
+          <td class="num">${euro(s.total_price)}</td>
+          <td>${s.review_score != null ? esc(s.review_score) + " (" + nf0.format(s.review_count || 0) + ")" : "—"}</td>
+          <td class="num">${s.distance_km != null ? nf2.format(s.distance_km) + " km" : "—"}</td>
+          <td>${cancelLabel(s.free_cancellation)}</td>
+          <td>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">apri</a>` : ""}</td>
+        </tr>`).join("")}
+      </tbody></table></div>`;
+  }
+
+  function searchLinks(links) {
+    const l = links || {};
+    const btn = (url, label) => url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${label}</a>` : "";
+    return `<div class="noprices">Prezzi non ancora disponibili.</div>
+      <div class="linkrow">
+        ${btn(l.booking, "Cerca su Booking")}
+        ${btn(l.airbnb, "Cerca su Airbnb")}
+        ${btn(l.flights, "Cerca su Google Flights")}
+      </div>`;
+  }
+
+  function eventCard(ev, deltas) {
+    const est = ev.estimate_pp || {};
+    const d = deltas[ev.slug] || {};
+    const hasPrices = (ev.flights && ev.flights.length) || (ev.stays && ev.stays.length);
+    const parts = ev.participants || [];
+
+    return `<article class="card">
+      <div class="card-head">
+        <h2>${esc(ev.name)}</h2>
+        <span class="badge ${esc(ev.type)}">${TYPE_LABEL[ev.type] || esc(ev.type)}</span>
+      </div>
+      <div class="meta">
+        <div>📍 ${esc(ev.city)}, ${esc(ev.country)} · ${fmtRange(ev.start, ev.end)}</div>
+        <div>🏟 ${esc(ev.venue)}${ev.venue_confirmed === false ? ' <span class="venue-warn">⚠ sede da confermare</span>' : ""}</div>
+        <div>🛏 ${ev.nights} ${ev.nights === 1 ? "notte" : "notti"} · check-in ${fmtDay(parseDay(ev.check_in))} → check-out ${fmtDay(parseDay(ev.check_out))}</div>
+      </div>
+
+      <div class="who">
+        ${parts.length
+          ? `Prenotati (${parts.length}): ${parts.map(p => `<span class="chip">${esc(p)}</span>`).join("")}`
+          : `<span class="none">Nessuno prenotato — ricerca base per ${ev.people_for_search || 4} persone</span>`}
+      </div>
+
+      <div class="estimate">
+        <span class="lbl">Stima a testa</span>
+        <span class="big">${euro(est.total)}</span>
+        ${est.total != null ? `<span class="split">volo ${euro(est.flight)} + alloggio ${euro(est.stay)}</span>` : ""}
+        ${deltaChip(d.flight, "volo")}
+        ${deltaChip(d.stay, "notte")}
+      </div>
+
+      ${hasPrices ? `
+        ${ev.flights && ev.flights.length ? `<h3 class="sec">Voli (a persona)</h3>${flightsTable(ev.flights)}` : ""}
+        ${ev.stays && ev.stays.length ? `<h3 class="sec">Alloggi</h3>${staysTable(ev.stays)}` : ""}
+      ` : searchLinks(ev.links)}
+
+      ${ev.errors && ev.errors.length
+        ? `<div class="errors">Avvisi raccolta dati: ${ev.errors.map(esc).join(" · ")}</div>` : ""}
+    </article>`;
+  }
+
+  // ---- filtri + riepilogo ----
+  const FILTERS = {
+    all:    () => true,
+    intl:   e => e.type === "international",
+    eu:     e => e.type === "regional" || e.type === "special",
+    booked: e => (e.participants || []).length > 0,
+  };
+
+  function renderList(events, deltas, filter) {
+    const shown = events.filter(FILTERS[filter] || FILTERS.all);
+
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const next = shown.find(e => parseDay(e.start) >= today);
+    const totale = shown.reduce((s, e) => s + (e.estimate_pp && e.estimate_pp.total != null ? e.estimate_pp.total : 0), 0);
+    const anyEst = shown.some(e => e.estimate_pp && e.estimate_pp.total != null);
+
+    document.getElementById("summary").innerHTML = `
+      <div class="tile"><div class="k">Eventi</div><div class="v">${shown.length}</div></div>
+      <div class="tile"><div class="k">Prossimo evento</div>
+        <div class="v" style="font-size:.9rem">${next ? esc(next.city) + " · " + fmtDay(parseDay(next.start)) : "—"}</div></div>
+      <div class="tile"><div class="k">Stima totale a testa</div>
+        <div class="v">${anyEst ? euro(totale) : "—"}</div></div>`;
+
+    document.getElementById("cards").innerHTML = shown.length
+      ? shown.map(e => eventCard(e, deltas)).join("")
+      : '<div class="empty">Nessun evento per questo filtro.</div>';
+  }
+
+  // ---- avvio ----
+  async function init() {
+    let data, isSample = false;
+    try {
+      data = await loadJSON("./data/prices.json");
+    } catch (_) {
+      try {
+        data = await loadJSON("./data/prices.sample.json");
+        isSample = true;
+      } catch (e2) {
+        document.getElementById("subheader").textContent = "";
+        document.getElementById("cards").innerHTML =
+          '<div class="fatal">Impossibile caricare i dati (' + esc(e2.message) + ').</div>';
+        return;
+      }
+    }
+
+    let history = null;
+    try { history = await loadJSON("./data/history.json"); } catch (_) { /* opzionale */ }
+    const deltas = computeDeltas(history);
+
+    if (isSample) {
+      const b = document.getElementById("banner");
+      b.hidden = false;
+      b.textContent = "⚠ Stai vedendo dati di esempio: prices.json non è ancora disponibile.";
+    }
+
+    const gen = data.generated_at ? new Date(data.generated_at) : null;
+    const genTxt = gen && !isNaN(gen)
+      ? gen.toLocaleString("it-IT", { dateStyle: "long", timeStyle: "short" }) : "—";
+    const origin = ORIGIN_NAME[data.origin] || data.origin || "—";
+    document.getElementById("subheader").textContent =
+      `aggiornato il ${genTxt} · partenza da ${origin}` + (data.origin && ORIGIN_NAME[data.origin] ? ` (${data.origin})` : "");
+
+    const events = [...(data.events || [])].sort((a, b) => (a.start < b.start ? -1 : 1));
+
+    let current = "all";
+    document.getElementById("filters").addEventListener("click", e => {
+      const btn = e.target.closest("button[data-f]");
+      if (!btn) return;
+      current = btn.dataset.f;
+      document.querySelectorAll("#filters button").forEach(x => x.classList.toggle("active", x === btn));
+      renderList(events, deltas, current);
+    });
+
+    renderList(events, deltas, current);
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>

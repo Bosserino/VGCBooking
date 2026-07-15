@@ -1,0 +1,153 @@
+# Calendario stagione VGC 2027 — fonte: https://championships.pokemon.com/it-it/events/
+# (API ufficiale /api/events.json, scaricato il 2026-07-15)
+#
+# Filtro applicato: tutti i Campionati Internazionali + Regionali/Speciali europei.
+# venue_confirmed: false => coordinate della fiera storica/presunta o del centro città.
+#   Quando RK9 pubblica la sede ufficiale, aggiorna venue/lat/lon e metti true.
+# check_in/check_out di default: giorno prima dell'inizio -> giorno dopo la fine.
+
+events:
+  # ── Campionati Internazionali ────────────────────────────────────────────
+  - slug: laic-sao-paulo
+    name: Campionati Internazionali Latinoamericani 2027 (LAIC)
+    type: international
+    city: San Paolo
+    country: Brasile
+    start: 2026-11-20
+    end: 2026-11-22
+    venue: Expo Center Norte (presunta)
+    venue_confirmed: false
+    lat: -23.5106
+    lon: -46.6135
+    airport: GRU
+
+  - slug: euic-london
+    name: Campionati Internazionali Europei 2027 (EUIC)
+    type: international
+    city: Londra
+    country: Regno Unito
+    start: 2027-02-19
+    end: 2027-02-21
+    venue: ExCeL London (presunta)
+    venue_confirmed: false
+    lat: 51.5081
+    lon: 0.0294
+    airport: LON
+
+  - slug: naic-chicago
+    name: Campionati Internazionali Nordamericani 2027 (NAIC)
+    type: international
+    city: Chicago
+    country: USA
+    start: 2027-06-18
+    end: 2027-06-20
+    venue: McCormick Place (presunta)
+    venue_confirmed: false
+    lat: 41.8512
+    lon: -87.6165
+    airport: CHI
+
+  # ── Regionali / Speciali Europa ──────────────────────────────────────────
+  - slug: frankfurt
+    name: Regionale Francoforte
+    type: regional
+    city: Francoforte
+    country: Germania
+    start: 2026-09-26
+    end: 2026-09-27
+    venue: Messe Frankfurt (presunta)
+    venue_confirmed: false
+    lat: 50.1109
+    lon: 8.6437
+    airport: FRA
+
+  - slug: nice
+    name: Regionale Nizza
+    type: regional
+    city: Nizza
+    country: Francia
+    start: 2026-10-17
+    end: 2026-10-18
+    venue: Palais des Expositions (presunta)
+    venue_confirmed: false
+    lat: 43.7034
+    lon: 7.2782
+    airport: NCE
+
+  - slug: gdansk
+    name: Regionale Danzica
+    type: regional
+    city: Danzica
+    country: Polonia
+    start: 2026-10-31
+    end: 2026-11-01
+    venue: AmberExpo (presunta)
+    venue_confirmed: false
+    lat: 54.3763
+    lon: 18.6284
+    airport: GDN
+
+  - slug: stuttgart
+    name: Regionale Stoccarda
+    type: regional
+    city: Stoccarda
+    country: Germania
+    start: 2026-11-28
+    end: 2026-11-29
+    venue: Messe Stuttgart (presunta)
+    venue_confirmed: false
+    lat: 48.7133
+    lon: 9.1830
+    airport: STR
+
+  - slug: birmingham
+    name: Regionale Birmingham
+    type: regional
+    city: Birmingham
+    country: Regno Unito
+    start: 2027-01-30
+    end: 2027-01-31
+    venue: NEC Birmingham (presunta)
+    venue_confirmed: false
+    lat: 52.4530
+    lon: -1.7182
+    airport: BHX
+
+  - slug: lisbon
+    name: Speciale Lisbona
+    type: special
+    city: Lisbona
+    country: Portogallo
+    start: 2027-04-10
+    end: 2027-04-11
+    venue: da annunciare (centro città)
+    venue_confirmed: false
+    lat: 38.7223
+    lon: -9.1393
+    airport: LIS
+
+  - slug: prague
+    name: Regionale Praga
+    type: regional
+    city: Praga
+    country: Repubblica Ceca
+    start: 2027-05-08
+    end: 2027-05-09
+    venue: PVA Expo Praha (presunta)
+    venue_confirmed: false
+    lat: 50.1268
+    lon: 14.5152
+    airport: PRG
+
+  - slug: bologna
+    name: Speciale Bologna
+    type: special
+    city: Bologna
+    country: Italia
+    start: 2027-06-05
+    end: 2027-06-06
+    venue: BolognaFiere (presunta)
+    venue_confirmed: false
+    lat: 44.5075
+    lon: 11.3691
+    airport: BLQ

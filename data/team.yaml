@@ -1,0 +1,20 @@
+# Membri del team VGC. `airport` = aeroporto di partenza preferito (IATA).
+# La pipeline raggruppa le ricerche voli per aeroporto di partenza.
+# ROM = city-code Google Flights che copre sia Fiumicino (FCO) sia Ciampino (CIA).
+default_airport: ROM
+
+members:
+  - { name: Alessio }
+  - { name: Federico }
+  - { name: Alessandro B }
+  - { name: Alessandro S }
+  - { name: Jean }
+  - { name: Francesco M }
+  - { name: Francesco N }
+  - { name: "Nicolò" }
+  - { name: Stefano }
+  - { name: Roberto }
+  - { name: Andrea }
+  - { name: Maurizio }
+  - { name: Giovanni }
+  - { name: Antonio }

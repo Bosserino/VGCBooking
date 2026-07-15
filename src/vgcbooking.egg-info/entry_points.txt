@@ -1,0 +1,2 @@
+[console_scripts]
+vgcbooking = vgcbooking.__main__:main
