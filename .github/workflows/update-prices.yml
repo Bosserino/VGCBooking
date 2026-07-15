@@ -1,4 +1,4 @@
-```yaml
+yaml
 # Aggiorna i prezzi ogni notte e li pubblica sulla dashboard (GitHub Pages).
 # Si può lanciare anche a mano: tab Actions -> "Aggiorna prezzi" -> Run workflow.
 name: Aggiorna prezzi
@@ -44,4 +44,4 @@ jobs:
           git add docs/data/prices.json docs/data/history.json
           git diff --cached --quiet || git commit -m "Aggiorna prezzi $(date -u +%F)"
           git push
-```
+
