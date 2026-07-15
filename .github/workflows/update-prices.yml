@@ -1,4 +1,3 @@
-yaml
 # Aggiorna i prezzi ogni notte e li pubblica sulla dashboard (GitHub Pages).
 # Si può lanciare anche a mano: tab Actions -> "Aggiorna prezzi" -> Run workflow.
 name: Aggiorna prezzi
