@@ -4,7 +4,7 @@
 default_airport: ROM
 
 members:
-  - { name: Alessio }
+  - { name: Alessio, airport: LYS }  # Alessio parte da Lione
   - { name: Federico }
   - { name: Alessandro B }
   - { name: Alessandro S }
