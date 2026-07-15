@@ -48,10 +48,15 @@ def search_flights(origin: str, destination: str, depart: str, ret: str, adults:
 
 
 def _search_one(origin: str, destination: str, depart: str, ret: str) -> list[dict]:
-    import fast_flights.core as ffcore
     from fast_flights import FlightData, Passengers, get_flights
 
-    ffcore.fetch = _patched_fetch
+    try:  # il patch del cookie serve solo dall'UE: se il layout cambia, si prosegue
+        import fast_flights.core as ffcore
+
+        ffcore.fetch = _patched_fetch
+    except Exception:  # noqa: BLE001
+        log.info("fast_flights.core non patchabile: uso il fetch di default")
+
     result = get_flights(
             flight_data=[
                 FlightData(date=depart, from_airport=origin, to_airport=destination),

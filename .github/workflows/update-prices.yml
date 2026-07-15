@@ -31,7 +31,11 @@ jobs:
       - name: Installa dipendenze
         run: |
           pip install -e .
-          pip install fast-flights pyairbnb playwright
+          # installazioni separate e versioni bloccate: il resolver pip, con
+          # entrambe insieme, può retrocedere fast-flights a una 1.x senza core.py
+          pip install "fast-flights==2.2"
+          pip install "pyairbnb==2.2.1"
+          pip install playwright
           playwright install --with-deps chromium
 
       - name: Snapshot prezzi

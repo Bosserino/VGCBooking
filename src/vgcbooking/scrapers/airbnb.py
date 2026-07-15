@@ -39,6 +39,17 @@ def search_airbnb(lat: float, lon: float, check_in: str, check_out: str,
     except Exception as exc:  # noqa: BLE001
         raise RuntimeError(f"ricerca fallita: {str(exc)[:120]}") from exc
 
+    stays = _to_stays(results, lat, lon, nights, people, max_distance_km)
+    if not stays:
+        # diagnostica: distingue "Airbnb non risponde" da "filtri troppo stretti/schema cambiato"
+        raise RuntimeError(
+            f"0 utilizzabili su {len(results)} risultati grezzi"
+            if results else "zero risultati dalla ricerca"
+        )
+    return stays
+
+
+def _to_stays(results, lat, lon, nights, people, max_distance_km) -> list[dict]:
     stays = []
     for r in results:
         coords = r.get("coordinates") or {}
@@ -74,6 +85,24 @@ def _amount(r: dict) -> float | None:
     for node in (price.get("total"), price.get("unit"), price):
         if isinstance(node, dict):
             v = node.get("amount")
-            if isinstance(v, (int, float)) and v > 0:
-                return round(float(v), 2)
+            parsed = _to_float(v)
+            if parsed is not None and parsed > 0:
+                return round(parsed, 2)
+    return None
+
+
+def _to_float(v) -> float | None:
+    """Il campo amount cambia tipo tra versioni: numero oppure stringa '€ 1.234,56'."""
+    if isinstance(v, (int, float)):
+        return float(v)
+    if isinstance(v, str):
+        import re
+
+        s = re.sub(r"[^\d.,]", "", v)
+        if "," in s:
+            s = s.replace(".", "").replace(",", ".")
+        try:
+            return float(s)
+        except ValueError:
+            return None
     return None
