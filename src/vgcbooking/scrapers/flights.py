@@ -32,20 +32,26 @@ def search_flights(origin: str, destination: str, depart: str, ret: str, adults:
     """Ritorna voli A/R ordinati per prezzo: [{airline, departure, arrival, stops, duration, price_pp, source}]
     Cerca su tutte le combinazioni di aeroporti dei city-code (es. ROM -> FCO e CIA).
     Alza RuntimeError col motivo se nessuna combinazione produce dati."""
+    import time
+
     flights: list[dict] = []
     last_error = None
     for orig in CITY_AIRPORTS.get(origin, [origin]):
         for dest in CITY_AIRPORTS.get(destination, [destination]):
-            try:
-                flights.extend(_search_one(orig, dest, depart, ret))
-            except Exception as exc:  # noqa: BLE001
-                msg = str(exc)
-                if "No flights found" in msg:
-                    # tipico per date oltre la finestra di vendita (~11 mesi) o tratte senza voli
-                    last_error = "nessun volo in vendita per queste date/tratta"
-                else:
-                    last_error = msg[:120]
-                log.warning("google-flights %s->%s: %s", orig, dest, last_error)
+            for attempt in range(2):  # Google a volte risponde vuoto sotto rate-limit
+                try:
+                    flights.extend(_search_one(orig, dest, depart, ret))
+                    break
+                except Exception as exc:  # noqa: BLE001
+                    msg = str(exc)
+                    if "No flights found" in msg:
+                        # date oltre la finestra di vendita (~11 mesi), tratta senza voli o rate-limit
+                        last_error = "nessun volo in vendita per queste date/tratta"
+                    else:
+                        last_error = msg[:120]
+                    log.warning("google-flights %s->%s (tent. %d): %s", orig, dest, attempt + 1, last_error)
+                    time.sleep(4)
+            time.sleep(2)  # respiro tra le combinazioni per non farsi limitare
     if not flights:
         raise RuntimeError(last_error or "nessun volo trovato")
     flights.sort(key=lambda x: x["price_pp"])
