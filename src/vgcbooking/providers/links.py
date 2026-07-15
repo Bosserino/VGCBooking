@@ -41,7 +41,8 @@ def stay_links(request: TripRequest) -> list[SearchLink]:
         "group_children": 0,
         "no_rooms": rooms,
         "order": "price",
-        "nflt": "ht_id=201;ht_id=226;fc=2;review_score=80",
+        # distance=3000: filtro Booking più vicino ai 2km (gradini 1/3/5 km)
+        "nflt": "ht_id=201;ht_id=226;fc=2;review_score=80;distance=3000",
         "selected_currency": settings.currency,
     }
     booking_url = f"https://www.booking.com/searchresults.{settings.locale}.html?{urlencode(booking_params)}"

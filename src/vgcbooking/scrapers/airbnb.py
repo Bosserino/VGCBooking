@@ -1,8 +1,9 @@
 """Interi alloggi reali da Airbnb via pyairbnb (gratuito, senza chiavi).
 
 pyairbnb richiede Python >= 3.10: sul runner GitHub Actions c'è il 3.12;
-su macchine con 3.9 l'import fallisce e la fonte viene saltata con un log.
-La cancellazione gratuita non è esposta nella ricerca: resta "da verificare".
+su macchine con 3.9 l'import fallisce e la fonte viene saltata.
+Filtri nativi usati: intero alloggio + cancellazione gratuita.
+In caso di errore alza RuntimeError col motivo (finisce in prices.json).
 """
 from __future__ import annotations
 
@@ -19,8 +20,7 @@ def search_airbnb(lat: float, lon: float, check_in: str, check_out: str,
     try:
         import pyairbnb
     except (ImportError, SyntaxError) as exc:
-        log.error("airbnb: pyairbnb non disponibile (%s)", exc)
-        return []
+        raise RuntimeError(f"pyairbnb non disponibile: {str(exc)[:80]}") from exc
 
     dlat = max_distance_km / 111.32
     dlon = max_distance_km / (111.32 * max(cos(radians(lat)), 0.01))
@@ -29,11 +29,15 @@ def search_airbnb(lat: float, lon: float, check_in: str, check_out: str,
             check_in=check_in, check_out=check_out,
             ne_lat=lat + dlat, ne_long=lon + dlon,
             sw_lat=lat - dlat, sw_long=lon - dlon,
-            zoom_value=14, currency=currency, language="it", proxy_url="",
+            zoom_value=14,
+            price_min=0, price_max=0,          # 0 = nessun limite di prezzo
+            place_type="Entire home/apt",
+            free_cancellation=True,
+            adults=people,
+            currency=currency, language="it", proxy_url="",
         )
     except Exception as exc:  # noqa: BLE001
-        log.error("airbnb: ricerca fallita (%s)", str(exc)[:160])
-        return []
+        raise RuntimeError(f"ricerca fallita: {str(exc)[:120]}") from exc
 
     stays = []
     for r in results:
@@ -58,7 +62,7 @@ def search_airbnb(lat: float, lon: float, check_in: str, check_out: str,
                 "review_score": round(float(score) * 2, 1) if score else None,
                 "review_count": rating.get("reviewCount"),
                 "distance_km": distance,
-                "free_cancellation": None,
+                "free_cancellation": True,  # filtro nativo attivo nella ricerca
                 "url": f"https://www.airbnb.it/rooms/{r.get('room_id') or r.get('id') or ''}",
             }
         )

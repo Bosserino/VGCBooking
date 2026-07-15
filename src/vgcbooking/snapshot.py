@@ -128,9 +128,13 @@ def _search_request(ev: Event, people: int, req: TripRequest | None) -> TripRequ
 def _collect_flights(ev, origin, check_in, check_out, people, errors) -> list[dict]:
     from .scrapers.flights import search_flights
 
-    flights = search_flights(origin, ev.airport, check_in, check_out, people)
+    try:
+        flights = search_flights(origin, ev.airport, check_in, check_out, people)
+    except Exception as exc:  # noqa: BLE001
+        errors.append(f"google-flights: {str(exc)[:120]}")
+        return []
     if not flights:
-        errors.append("google-flights: nessun dato (riprova dal runner USA)")
+        errors.append("google-flights: zero risultati")
     return flights
 
 
@@ -140,19 +144,17 @@ def _collect_stays(ev, search_req, check_in, check_out, nights, people, errors) 
 
     stays: list[dict] = []
     booking_url = _links(search_req, "")["booking"]
-    b = search_booking(booking_url, nights, people, settings.max_distance_km)
-    if b:
-        stays.extend(b)
-    else:
-        errors.append("booking.com: nessun dato")
-    a = search_airbnb(
-        ev.lat, ev.lon, check_in, check_out, nights, people,
-        settings.max_distance_km, settings.currency,
-    )
-    if a:
-        stays.extend(a)
-    else:
-        errors.append("airbnb: nessun dato")
+    try:
+        stays.extend(search_booking(booking_url, nights, people, settings.max_distance_km))
+    except Exception as exc:  # noqa: BLE001
+        errors.append(f"booking.com: {str(exc)[:120]}")
+    try:
+        stays.extend(
+            search_airbnb(ev.lat, ev.lon, check_in, check_out, nights, people,
+                          settings.max_distance_km, settings.currency)
+        )
+    except Exception as exc:  # noqa: BLE001
+        errors.append(f"airbnb: {str(exc)[:120]}")
     return stays
 
 

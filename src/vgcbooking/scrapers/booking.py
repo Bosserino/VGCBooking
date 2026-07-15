@@ -24,29 +24,37 @@ def search_booking(url: str, nights: int, people: int, max_distance_km: float) -
         return []
 
     cards: list[dict] = []
-    try:
-        with sync_playwright() as pw:
-            browser = pw.chromium.launch(headless=True)
-            page = browser.new_page(user_agent=UA, locale="it-IT")
-            page.goto(url, wait_until="domcontentloaded", timeout=60_000)
-            try:
-                page.wait_for_selector('[data-testid="property-card"]', timeout=25_000)
-            except Exception:  # noqa: BLE001
-                log.error("booking.com: nessuna card (WAF o zero risultati)")
-                browser.close()
-                return []
-            # accetta i cookie se compare il banner, per sbloccare il rendering
-            try:
-                page.click("#onetrust-accept-btn-handler", timeout=3_000)
-            except Exception:  # noqa: BLE001
-                pass
+    last_error = "WAF o zero risultati"
+    for attempt in range(3):  # il WAF di Booking è intermittente: riprova
+        try:
+            with sync_playwright() as pw:
+                browser = pw.chromium.launch(
+                    headless=True,
+                    args=["--disable-blink-features=AutomationControlled"],
+                )
+                page = browser.new_page(user_agent=UA, locale="it-IT")
+                page.goto(url, wait_until="domcontentloaded", timeout=60_000)
+                try:
+                    page.wait_for_selector('[data-testid="property-card"]', timeout=25_000)
+                except Exception:  # noqa: BLE001
+                    browser.close()
+                    log.warning("booking.com: nessuna card (tentativo %d)", attempt + 1)
+                    continue
+                # accetta i cookie se compare il banner, per sbloccare il rendering
+                try:
+                    page.click("#onetrust-accept-btn-handler", timeout=3_000)
+                except Exception:  # noqa: BLE001
+                    pass
 
-            for el in page.query_selector_all('[data-testid="property-card"]')[:25]:
-                cards.append(_parse_card(el))
-            browser.close()
-    except Exception as exc:  # noqa: BLE001
-        log.error("booking.com: %s", str(exc)[:160])
-        return []
+                for el in page.query_selector_all('[data-testid="property-card"]')[:25]:
+                    cards.append(_parse_card(el))
+                browser.close()
+                break
+        except Exception as exc:  # noqa: BLE001
+            last_error = str(exc)[:120]
+            log.warning("booking.com tentativo %d: %s", attempt + 1, last_error)
+    if not cards:
+        raise RuntimeError(last_error)
 
     stays = []
     for c in cards:
