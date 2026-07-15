@@ -32,7 +32,8 @@ def run_snapshot(mock: bool = False, only_event: str | None = None) -> dict:
     if only_event:
         events = [e for e in events if e.slug == only_event]
     signups = load_signups()
-    _, default_airport = load_team()
+    members, default_airport = load_team()
+    airport_of = {m["name"]: m["airport"] for m in members}
     origin = os.getenv("ORIGIN_AIRPORT", default_airport)
 
     out_events = []
@@ -53,6 +54,23 @@ def run_snapshot(mock: bool = False, only_event: str | None = None) -> dict:
         else:
             flights = _collect_flights(ev, origin, check_in, check_out, people, errors)
             stays = _collect_stays(ev, search_req, check_in, check_out, nights, people, errors)
+
+        # membri prenotati che partono da un altro aeroporto (es. Jean da Lione):
+        # uno specchietto voli dedicato per ciascun aeroporto alternativo
+        extra_origins = []
+        alt: dict[str, list[str]] = {}
+        for p in participants:
+            ap = airport_of.get(p, origin)
+            if ap != origin:
+                alt.setdefault(ap, []).append(p)
+        for ap, names in sorted(alt.items()):
+            if mock:
+                alt_flights = [dict(f, departure=f["departure"] + f" (da {ap})") for f in flights[:3]]
+            else:
+                alt_errors: list[str] = []
+                alt_flights = _collect_flights(ev, ap, check_in, check_out, len(names), alt_errors)
+                errors.extend(f"{ap}: {e}" for e in alt_errors)
+            extra_origins.append({"origin": ap, "participants": names, "flights": alt_flights})
 
         stays = _rank_stays(stays)[:MAX_STAYS]
         min_flight = min((f["price_pp"] for f in flights), default=None)
@@ -78,6 +96,7 @@ def run_snapshot(mock: bool = False, only_event: str | None = None) -> dict:
                 "people_for_search": people,
                 "links": _links(search_req, origin),
                 "flights": flights,
+                "extra_origins": extra_origins,
                 "stays": stays,
                 "estimate_pp": {
                     "flight": min_flight,

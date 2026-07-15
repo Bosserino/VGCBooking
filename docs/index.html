@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trasferte VGC 2027</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E">
 <style>
   :root {
     color-scheme: light;
@@ -62,13 +63,27 @@
     background: var(--warn-bg); color: var(--warn-ink); font-size: .9rem;
   }
 
-  /* filtri */
-  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 10px; }
+  /* barra filtri sticky */
+  .toolbar {
+    position: sticky; top: 0; z-index: 10;
+    margin: 14px -12px 10px; padding: 10px 12px;
+    background: var(--page);
+    background: color-mix(in srgb, var(--page) 84%, transparent);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; }
   .filters button {
     border: 1px solid var(--border); background: var(--surface); color: var(--ink-2);
     border-radius: 999px; padding: 6px 14px; font: inherit; font-size: .85rem; cursor: pointer;
   }
   .filters button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .member-row { display: flex; align-items: center; gap: 8px; margin-top: 8px; font-size: .85rem; color: var(--ink-2); }
+  .member-row select {
+    font: inherit; font-size: .85rem; color: var(--ink);
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 6px 10px; max-width: 230px; flex: 0 1 auto;
+  }
 
   /* riepilogo */
   .summary {
@@ -86,6 +101,10 @@
   .card {
     background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
     padding: 16px; margin-bottom: 16px;
+    transition: box-shadow .18s ease, transform .18s ease, border-color .18s ease;
+  }
+  @media (hover: hover) {
+    .card:hover { box-shadow: 0 6px 22px rgba(0,0,0,.10); transform: translateY(-1px); }
   }
   .card-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; justify-content: space-between; }
   .card-head h2 { font-size: 1.12rem; flex: 1 1 auto; min-width: 60%; }
@@ -95,6 +114,7 @@
   .badge.international { background: var(--badge-int-bg); color: var(--badge-int-ink); }
   .badge.regional      { background: var(--badge-reg-bg); color: var(--badge-reg-ink); }
   .badge.special       { background: var(--badge-spe-bg); color: var(--badge-spe-ink); }
+  .badge.next          { background: var(--accent); color: #fff; }
 
   .meta { color: var(--ink-2); font-size: .88rem; margin-top: 6px; }
   .meta div { margin-top: 2px; }
@@ -105,7 +125,7 @@
     margin: 14px 0; padding: 12px 14px; border-radius: 10px;
     border: 1px dashed var(--hairline);
   }
-  .estimate .big { font-size: 1.7rem; font-weight: 700; }
+  .estimate .big { font-size: 2.2rem; font-weight: 750; line-height: 1.1; letter-spacing: -.01em; }
   .estimate .lbl { color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; width: 100%; }
   .estimate .split { color: var(--ink-2); font-size: .85rem; }
 
@@ -119,6 +139,17 @@
     border-radius: 999px; padding: 2px 10px; margin: 2px 4px 2px 0; font-size: .8rem;
   }
   .who .none { color: var(--muted); font-style: italic; }
+  .who .chip.me { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 650; }
+
+  /* voli da aeroporti alternativi */
+  .extra-origin {
+    margin-top: 10px; padding: 10px 12px; border-radius: 10px;
+    border: 1px solid var(--hairline); border-left: 3px solid var(--badge-spe-ink);
+  }
+  .extra-origin h4 { font-size: .8rem; font-weight: 650; color: var(--ink-2); margin-bottom: 6px; }
+  .extra-origin.me { border-left-color: var(--accent); background: var(--row-hl); }
+  .extra-origin table { font-size: .8rem; min-width: 480px; }
+  .extra-none { color: var(--muted); font-size: .8rem; margin-top: 8px; }
 
   h3.sec { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 16px 0 6px; }
 
@@ -147,6 +178,7 @@
             color: var(--muted); font-size: .76rem; }
 
   .empty, .fatal { text-align: center; color: var(--muted); padding: 40px 0; }
+  .foot { text-align: center; color: var(--muted); font-size: .78rem; margin-top: 28px; }
 </style>
 </head>
 <body>
@@ -158,15 +190,22 @@
 
   <div class="banner" id="banner" hidden></div>
 
-  <nav class="filters" id="filters">
-    <button data-f="all" class="active">Tutti</button>
-    <button data-f="intl">Internazionali</button>
-    <button data-f="eu">Europei</button>
-    <button data-f="booked">Solo con prenotati</button>
-  </nav>
+  <div class="toolbar">
+    <nav class="filters" id="filters">
+      <button data-f="all" class="active">Tutti</button>
+      <button data-f="intl">Internazionali</button>
+      <button data-f="eu">Europei</button>
+      <button data-f="booked">Solo con prenotati</button>
+    </nav>
+    <div class="member-row">
+      <label for="member">Vedi come…</label>
+      <select id="member"><option value="">Tutti</option></select>
+    </div>
+  </div>
 
   <section class="summary" id="summary"></section>
   <main id="cards"></main>
+  <footer class="foot">Aggiornato automaticamente ogni notte · dati Booking/Airbnb/Google Flights</footer>
 </div>
 
 <script>
@@ -192,7 +231,14 @@
     c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   const TYPE_LABEL = { international: "Internazionale", regional: "Regionale", special: "Speciale" };
-  const ORIGIN_NAME = { ROM: "Roma", FCO: "Roma Fiumicino", MIL: "Milano" };
+  const AIRPORT_NAME = { ROM: "Roma", FCO: "Roma", CIA: "Roma", LYS: "Lione", MIL: "Milano", LON: "Londra", FRA: "Francoforte" };
+  const airportLabel = code => AIRPORT_NAME[code] ? `${AIRPORT_NAME[code]} (${code})` : String(code || "—");
+
+  // team completo (i nomi nei participants si aggiungono dinamicamente)
+  const TEAM = ["Alessio", "Federico", "Alessandro B", "Alessandro S", "Jean",
+    "Francesco M", "Francesco N", "Nicolò", "Stefano", "Roberto",
+    "Andrea", "Maurizio", "Giovanni", "Antonio"];
+  const LS_KEY = "vgc2027.member";
 
   // ---- caricamento dati ----
   async function loadJSON(url) {
@@ -272,6 +318,36 @@
       </tbody></table></div>`;
   }
 
+  // Voli da aeroporti alternativi (extra_origins)
+  function extraOriginFor(ev, member) {
+    if (!member) return null;
+    return (ev.extra_origins || []).find(o =>
+      (o.participants || []).includes(member) && (o.flights || []).length) || null;
+  }
+
+  // Stima a testa: se il membro parte da un aeroporto alternativo usa il suo volo minimo
+  function estimateFor(ev, member) {
+    const est = ev.estimate_pp || {};
+    const eo = extraOriginFor(ev, member);
+    if (!eo) return { flight: est.flight, stay: est.stay, total: est.total, origin: null };
+    const flight = Math.min(...eo.flights.map(f => f.price_pp));
+    return { flight, stay: est.stay, total: est.stay != null ? flight + est.stay : null, origin: eo.origin };
+  }
+
+  function extraOriginsBlock(ev, member) {
+    const list = ev.extra_origins || [];
+    if (!list.length) return "";
+    return list.map(o => {
+      if (!(o.flights || []).length)
+        return `<div class="extra-none">voli da ${esc(airportLabel(o.origin))} non disponibili</div>`;
+      const mine = member && (o.participants || []).includes(member);
+      const who = (o.participants || []).join(", ");
+      return `<div class="extra-origin${mine ? " me" : ""}">
+        <h4>✈ Voli da ${esc(airportLabel(o.origin))}${who ? " per " + esc(who) : ""}</h4>
+        ${flightsTable(o.flights)}</div>`;
+    }).join("");
+  }
+
   function searchLinks(links) {
     const l = links || {};
     const btn = (url, label) => url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${label}</a>` : "";
@@ -283,8 +359,8 @@
       </div>`;
   }
 
-  function eventCard(ev, deltas) {
-    const est = ev.estimate_pp || {};
+  function eventCard(ev, deltas, member, isNext) {
+    const est = estimateFor(ev, member);
     const d = deltas[ev.slug] || {};
     const hasPrices = (ev.flights && ev.flights.length) || (ev.stays && ev.stays.length);
     const parts = ev.participants || [];
@@ -292,6 +368,7 @@
     return `<article class="card">
       <div class="card-head">
         <h2>${esc(ev.name)}</h2>
+        ${isNext ? '<span class="badge next">Prossimo evento</span>' : ""}
         <span class="badge ${esc(ev.type)}">${TYPE_LABEL[ev.type] || esc(ev.type)}</span>
       </div>
       <div class="meta">
@@ -302,22 +379,25 @@
 
       <div class="who">
         ${parts.length
-          ? `Prenotati (${parts.length}): ${parts.map(p => `<span class="chip">${esc(p)}</span>`).join("")}`
+          ? `Prenotati (${parts.length}): ${parts.map(p =>
+              `<span class="chip${p === member ? " me" : ""}">${esc(p)}</span>`).join("")}`
           : `<span class="none">Nessuno prenotato — ricerca base per ${ev.people_for_search || 4} persone</span>`}
       </div>
 
       <div class="estimate">
-        <span class="lbl">Stima a testa</span>
+        <span class="lbl">Stima a testa${member ? " per " + esc(member) : ""}</span>
         <span class="big">${euro(est.total)}</span>
-        ${est.total != null ? `<span class="split">volo ${euro(est.flight)} + alloggio ${euro(est.stay)}</span>` : ""}
+        ${est.total != null
+          ? `<span class="split">volo${est.origin ? " da " + esc(airportLabel(est.origin)) : ""} ${euro(est.flight)} + alloggio ${euro(est.stay)}</span>` : ""}
         ${deltaChip(d.flight, "volo")}
         ${deltaChip(d.stay, "notte")}
       </div>
 
       ${hasPrices ? `
         ${ev.flights && ev.flights.length ? `<h3 class="sec">Voli (a persona)</h3>${flightsTable(ev.flights)}` : ""}
+        ${extraOriginsBlock(ev, member)}
         ${ev.stays && ev.stays.length ? `<h3 class="sec">Alloggi</h3>${staysTable(ev.stays)}` : ""}
-      ` : searchLinks(ev.links)}
+      ` : searchLinks(ev.links) + extraOriginsBlock(ev, member)}
 
       ${ev.errors && ev.errors.length
         ? `<div class="errors">Avvisi raccolta dati: ${ev.errors.map(esc).join(" · ")}</div>` : ""}
@@ -332,24 +412,38 @@
     booked: e => (e.participants || []).length > 0,
   };
 
-  function renderList(events, deltas, filter) {
-    const shown = events.filter(FILTERS[filter] || FILTERS.all);
+  function renderList(events, deltas, filter, member) {
+    const shown = events
+      .filter(FILTERS[filter] || FILTERS.all)
+      .filter(e => !member || (e.participants || []).includes(member));
 
     const today = new Date(); today.setHours(0, 0, 0, 0);
     const next = shown.find(e => parseDay(e.start) >= today);
-    const totale = shown.reduce((s, e) => s + (e.estimate_pp && e.estimate_pp.total != null ? e.estimate_pp.total : 0), 0);
-    const anyEst = shown.some(e => e.estimate_pp && e.estimate_pp.total != null);
+    const ests = shown.map(e => estimateFor(e, member));
+    const totale = ests.reduce((s, e) => s + (e.total != null ? e.total : 0), 0);
+    const anyEst = ests.some(e => e.total != null);
 
     document.getElementById("summary").innerHTML = `
       <div class="tile"><div class="k">Eventi</div><div class="v">${shown.length}</div></div>
       <div class="tile"><div class="k">Prossimo evento</div>
         <div class="v" style="font-size:.9rem">${next ? esc(next.city) + " · " + fmtDay(parseDay(next.start)) : "—"}</div></div>
-      <div class="tile"><div class="k">Stima totale a testa</div>
+      <div class="tile"><div class="k">${member ? "Stima totale per " + esc(member) : "Stima totale a testa"}</div>
         <div class="v">${anyEst ? euro(totale) : "—"}</div></div>`;
 
     document.getElementById("cards").innerHTML = shown.length
-      ? shown.map(e => eventCard(e, deltas)).join("")
+      ? shown.map(e => eventCard(e, deltas, member, e === next)).join("")
       : '<div class="empty">Nessun evento per questo filtro.</div>';
+  }
+
+  // Nomi per il selettore "Vedi come…": team fisso + eventuali nomi extra nei dati
+  function memberNames(events) {
+    const names = new Set(TEAM);
+    for (const e of events) {
+      (e.participants || []).forEach(n => names.add(n));
+      (e.extra_origins || []).forEach(o => (o.participants || []).forEach(n => names.add(n)));
+    }
+    const extra = [...names].filter(n => !TEAM.includes(n)).sort((a, b) => a.localeCompare(b, "it"));
+    return [...TEAM, ...extra];
   }
 
   // ---- avvio ----
@@ -382,22 +476,41 @@
     const gen = data.generated_at ? new Date(data.generated_at) : null;
     const genTxt = gen && !isNaN(gen)
       ? gen.toLocaleString("it-IT", { dateStyle: "long", timeStyle: "short" }) : "—";
-    const origin = ORIGIN_NAME[data.origin] || data.origin || "—";
     document.getElementById("subheader").textContent =
-      `aggiornato il ${genTxt} · partenza da ${origin}` + (data.origin && ORIGIN_NAME[data.origin] ? ` (${data.origin})` : "");
+      `aggiornato il ${genTxt} · partenza da ${airportLabel(data.origin)}`;
 
     const events = [...(data.events || [])].sort((a, b) => (a.start < b.start ? -1 : 1));
 
+    // selettore membro, con scelta persistita in localStorage
+    const sel = document.getElementById("member");
+    for (const n of memberNames(events)) {
+      const opt = document.createElement("option");
+      opt.value = n; opt.textContent = n;
+      sel.appendChild(opt);
+    }
+    let currentMember = "";
+    try { currentMember = localStorage.getItem(LS_KEY) || ""; } catch (_) {}
+    if (currentMember && ![...sel.options].some(o => o.value === currentMember)) currentMember = "";
+    sel.value = currentMember;
+
     let current = "all";
+    const refresh = () => renderList(events, deltas, current, currentMember);
+
     document.getElementById("filters").addEventListener("click", e => {
       const btn = e.target.closest("button[data-f]");
       if (!btn) return;
       current = btn.dataset.f;
       document.querySelectorAll("#filters button").forEach(x => x.classList.toggle("active", x === btn));
-      renderList(events, deltas, current);
+      refresh();
     });
 
-    renderList(events, deltas, current);
+    sel.addEventListener("change", () => {
+      currentMember = sel.value;
+      try { localStorage.setItem(LS_KEY, currentMember); } catch (_) {}
+      refresh();
+    });
+
+    refresh();
   }
 
   init();

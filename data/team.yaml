@@ -8,7 +8,7 @@ members:
   - { name: Federico }
   - { name: Alessandro B }
   - { name: Alessandro S }
-  - { name: Jean }
+  - { name: Jean, airport: LYS }  # Jean parte da Lione
   - { name: Francesco M }
   - { name: Francesco N }
   - { name: "Nicolò" }
