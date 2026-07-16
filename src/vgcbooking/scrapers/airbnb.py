@@ -97,16 +97,6 @@ def _amount(r: dict) -> float | None:
 
 def _to_float(v) -> float | None:
     """Il campo amount cambia tipo tra versioni: numero oppure stringa '€ 1.234,56'."""
-    if isinstance(v, (int, float)):
-        return float(v)
-    if isinstance(v, str):
-        import re
+    from .numbers import parse_amount
 
-        s = re.sub(r"[^\d.,]", "", v)
-        if "," in s:
-            s = s.replace(".", "").replace(",", ".")
-        try:
-            return float(s)
-        except ValueError:
-            return None
-    return None
+    return parse_amount(v)

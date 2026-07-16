@@ -162,15 +162,7 @@ def _unit_desc(raw: str) -> str | None:
 
 
 def _it_number(s: str) -> float | None:
-    """'1.240,50' -> 1240.5 ; '€ 744' -> 744.0"""
-    s = re.sub(r"[^\d.,]", "", s or "")
-    if not s:
-        return None
-    if "," in s:
-        s = s.replace(".", "").replace(",", ".")
-    elif s.count(".") == 1 and len(s.split(".")[1]) == 3:
-        s = s.replace(".", "")  # '1.240' è un migliaio it-IT
-    try:
-        return float(s)
-    except ValueError:
-        return None
+    """'1.240,50' -> 1240.5 ; '10,000' -> 10000.0 ; '€ 744' -> 744.0"""
+    from .numbers import parse_amount
+
+    return parse_amount(s)
