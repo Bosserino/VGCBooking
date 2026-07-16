@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-16T10:03:42+00:00",
+ "generated_at": "2026-07-16T12:31:00+00:00",
  "origin": "ROM",
  "booking_session": true,
  "settings": {
@@ -149,20 +149,11 @@
       },
       {
        "airline": "Air France",
-       "departure": "6:00 AM, Friday, September 25 (LYS→FRA)",
-       "arrival": "2:20 PM",
-       "stops": 1,
-       "duration": "8 hr 20 min",
-       "price_pp": 217.0,
-       "source": "google-flights"
-      },
-      {
-       "airline": "Air France",
        "departure": "2:40 PM, Friday, September 25 (LYS→FRA)",
        "arrival": "10:05 PM",
        "stops": 1,
        "duration": "7 hr 25 min",
-       "price_pp": 217.0,
+       "price_pp": 232.0,
        "source": "google-flights"
       },
       {
@@ -182,33 +173,24 @@
        "duration": "1 hr 25 min",
        "price_pp": 241.0,
        "source": "google-flights"
+      },
+      {
+       "airline": "Lufthansa",
+       "departure": "2:35 PM, Friday, September 25 (LYS→FRA)",
+       "arrival": "4:00 PM",
+       "stops": 0,
+       "duration": "1 hr 25 min",
+       "price_pp": 241.0,
+       "source": "google-flights"
       }
      ],
      "return_flights": [
-      {
-       "airline": "Air France",
-       "departure": "9:45 AM, Monday, September 28 (FRA→LYS)",
-       "arrival": "10:00 PM",
-       "stops": 1,
-       "duration": "12 hr 15 min",
-       "price_pp": 212.0,
-       "source": "google-flights"
-      },
       {
        "airline": "Air France",
        "departure": "12:10 PM, Monday, September 28 (FRA→LYS)",
        "arrival": "10:00 PM",
        "stops": 1,
        "duration": "9 hr 50 min",
-       "price_pp": 212.0,
-       "source": "google-flights"
-      },
-      {
-       "airline": "Air France",
-       "departure": "3:10 PM, Monday, September 28 (FRA→LYS)",
-       "arrival": "10:00 PM",
-       "stops": 1,
-       "duration": "6 hr 50 min",
        "price_pp": 212.0,
        "source": "google-flights"
       },
@@ -227,6 +209,24 @@
        "arrival": "5:35 PM",
        "stops": 1,
        "duration": "7 hr 20 min",
+       "price_pp": 213.0,
+       "source": "google-flights"
+      },
+      {
+       "airline": "KLM",
+       "departure": "11:45 AM, Monday, September 28 (FRA→LYS)",
+       "arrival": "5:35 PM",
+       "stops": 1,
+       "duration": "5 hr 50 min",
+       "price_pp": 213.0,
+       "source": "google-flights"
+      },
+      {
+       "airline": "KLM",
+       "departure": "2:15 PM, Monday, September 28 (FRA→LYS)",
+       "arrival": "10:50 PM",
+       "stops": 1,
+       "duration": "8 hr 35 min",
        "price_pp": 213.0,
        "source": "google-flights"
       }
@@ -363,7 +363,7 @@
      "arrival": "12:20 AM (Saturday, October 17)",
      "stops": 0,
      "duration": "1 hr 10 min",
-     "price_pp": 56.0,
+     "price_pp": 81.0,
      "source": "google-flights"
     },
     {
@@ -372,7 +372,7 @@
      "arrival": "11:55 AM",
      "stops": 0,
      "duration": "1 hr 15 min",
-     "price_pp": 58.0,
+     "price_pp": 83.0,
      "source": "google-flights"
     },
     {
@@ -381,7 +381,7 @@
      "arrival": "2:30 PM",
      "stops": 0,
      "duration": "1 hr 15 min",
-     "price_pp": 111.0,
+     "price_pp": 170.0,
      "source": "google-flights"
     },
     {
@@ -390,7 +390,7 @@
      "arrival": "10:30 AM",
      "stops": 0,
      "duration": "1 hr 15 min",
-     "price_pp": 111.0,
+     "price_pp": 170.0,
      "source": "google-flights"
     }
    ],
@@ -401,7 +401,7 @@
      "arrival": "7:15 PM",
      "stops": 0,
      "duration": "1 hr 20 min",
-     "price_pp": 56.0,
+     "price_pp": 57.0,
      "source": "google-flights"
     },
     {
@@ -419,25 +419,25 @@
      "arrival": "8:35 PM",
      "stops": 0,
      "duration": "1 hr 15 min",
-     "price_pp": 121.0,
+     "price_pp": 176.0,
      "source": "google-flights"
     },
     {
-     "airline": "ITA",
-     "departure": "11:20 AM, Monday, October 19 (NCE→FCO)",
-     "arrival": "12:30 PM",
-     "stops": 0,
-     "duration": "1 hr 10 min",
-     "price_pp": 143.0,
+     "airline": "Vueling",
+     "departure": "5:25 PM, Monday, October 19 (NCE→FCO)",
+     "arrival": "10:55 PM",
+     "stops": 1,
+     "duration": "5 hr 30 min",
+     "price_pp": 189.0,
      "source": "google-flights"
     },
     {
-     "airline": "ITA",
-     "departure": "3:20 PM, Monday, October 19 (NCE→FCO)",
-     "arrival": "4:30 PM",
-     "stops": 0,
-     "duration": "1 hr 10 min",
-     "price_pp": 143.0,
+     "airline": "Vueling",
+     "departure": "5:25 PM, Monday, October 19 (NCE→FCO)",
+     "arrival": "8:20 AM (Tuesday, October 20)",
+     "stops": 1,
+     "duration": "14 hr 55 min",
+     "price_pp": 200.0,
      "source": "google-flights"
     }
    ],
@@ -574,18 +574,6 @@
      "url": "https://www.booking.com/hotel/fr/appartement-spacieux-vieux-nice.it.html"
     },
     {
-     "source": "airbnb",
-     "name": "Centro storico di Nizza, spiaggia e Saleya",
-     "total_price": 594.0,
-     "per_night": 198.0,
-     "per_person_night": 28.29,
-     "review_score": 8.0,
-     "review_count": "6",
-     "distance_km": 1.39,
-     "free_cancellation": true,
-     "url": "https://www.airbnb.it/rooms/1060627131923872639"
-    },
-    {
      "source": "booking.com",
      "name": "PLACE MASSENA Coulée Verte",
      "total_price": 711.0,
@@ -632,6 +620,22 @@
      "unit_desc": "Intero appartamento – 60 m²: 4 letti • 2 camere da letto • 1 zona giorno • 1 bagno • 1 cucina",
      "multi_unit": false,
      "url": "https://www.booking.com/hotel/fr/la-casa-reine-jeanne.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Villa Lina Zoï",
+     "total_price": 829.0,
+     "per_night": 276.33,
+     "per_person_night": 39.48,
+     "review_score": 8.5,
+     "review_count": 60,
+     "distance_km": 1.0,
+     "free_cancellation": true,
+     "mobile_deal": false,
+     "genius_deal": true,
+     "unit_desc": "Intero appartamento – 90 m²: 7 letti • 4 camere da letto • 1 zona giorno • 2 bagni",
+     "multi_unit": false,
+     "url": "https://www.booking.com/hotel/fr/villa-lina-zoi-une-ame-moderne-dans-une-villa-nicoise-typique.it.html"
     }
    ],
    "estimate_pp": {
@@ -677,7 +681,7 @@
      "arrival": "12:45 AM (Saturday, October 31)",
      "stops": 0,
      "duration": "2 hr 35 min",
-     "price_pp": 170.0,
+     "price_pp": 185.0,
      "source": "google-flights"
     }
    ],
@@ -828,9 +832,9 @@
     }
    ],
    "estimate_pp": {
-    "flight": 170.0,
+    "flight": 185.0,
     "stay": 59.43,
-    "total": 229.43
+    "total": 244.43
    },
    "errors": []
   },
@@ -911,7 +915,7 @@
      "arrival": "9:30 AM (Tuesday, November 24)",
      "stops": 1,
      "duration": "14 hr 25 min",
-     "price_pp": 739.0,
+     "price_pp": 738.0,
      "source": "google-flights"
     },
     {
@@ -920,7 +924,7 @@
      "arrival": "6:10 PM (Tuesday, November 24)",
      "stops": 1,
      "duration": "14 hr 35 min",
-     "price_pp": 936.0,
+     "price_pp": 934.0,
      "source": "google-flights"
     },
     {
@@ -929,7 +933,7 @@
      "arrival": "10:50 PM (Tuesday, November 24)",
      "stops": 1,
      "duration": "19 hr 40 min",
-     "price_pp": 962.0,
+     "price_pp": 961.0,
      "source": "google-flights"
     },
     {
@@ -938,7 +942,7 @@
      "arrival": "12:15 AM (Wednesday, November 25)",
      "stops": 1,
      "duration": "20 hr 40 min",
-     "price_pp": 964.0,
+     "price_pp": 963.0,
      "source": "google-flights"
     },
     {
@@ -947,7 +951,7 @@
      "arrival": "6:35 PM (Tuesday, November 24)",
      "stops": 1,
      "duration": "20 hr 30 min",
-     "price_pp": 973.0,
+     "price_pp": 971.0,
      "source": "google-flights"
     }
    ],
@@ -1332,18 +1336,9 @@
     {
      "airline": "Air France",
      "departure": "6:00 AM, Monday, February 1 (BHX→FCO)",
-     "arrival": "10:45 PM",
+     "arrival": "7:45 PM",
      "stops": 1,
-     "duration": "15 hr 45 min",
-     "price_pp": 207.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "Air France",
-     "departure": "6:00 AM, Monday, February 1 (BHX→FCO)",
-     "arrival": "3:00 PM",
-     "stops": 1,
-     "duration": "8 hr",
+     "duration": "12 hr 45 min",
      "price_pp": 209.0,
      "source": "google-flights"
     },
@@ -1354,6 +1349,15 @@
      "stops": 1,
      "duration": "9 hr 20 min",
      "price_pp": 209.0,
+     "source": "google-flights"
+    },
+    {
+     "airline": "Air France",
+     "departure": "6:00 AM, Monday, February 1 (BHX→FCO)",
+     "arrival": "10:45 PM",
+     "stops": 1,
+     "duration": "15 hr 45 min",
+     "price_pp": 210.0,
      "source": "google-flights"
     }
    ],
@@ -1716,9 +1720,9 @@
     {
      "source": "booking.com",
      "name": "Spacious Excel London Apartment with Balcony, River View and Parking Sleeps 8",
-     "total_price": 3539.0,
-     "per_night": 884.75,
-     "per_person_night": 88.47,
+     "total_price": 3447.0,
+     "per_night": 861.75,
+     "per_person_night": 86.17,
      "review_score": 8.4,
      "review_count": 66,
      "distance_km": 0.4,
@@ -1735,8 +1739,8 @@
      "total_price": 4202.0,
      "per_night": 1050.5,
      "per_person_night": 105.05,
-     "review_score": 8.6,
-     "review_count": 95,
+     "review_score": 8.7,
+     "review_count": 94,
      "distance_km": 0.7,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -1947,7 +1951,26 @@
        "source": "google-flights"
       }
      ],
-     "return_flights": []
+     "return_flights": [
+      {
+       "airline": "easyJet",
+       "departure": "8:20 PM, Monday, April 12 (LIS→LYS)",
+       "arrival": "11:40 PM",
+       "stops": 0,
+       "duration": "2 hr 20 min",
+       "price_pp": 174.0,
+       "source": "google-flights"
+      },
+      {
+       "airline": "easyJet",
+       "departure": "6:10 AM, Monday, April 12 (LIS→LYS)",
+       "arrival": "9:25 AM",
+       "stops": 0,
+       "duration": "2 hr 15 min",
+       "price_pp": 176.0,
+       "source": "google-flights"
+      }
+     ]
     }
    ],
    "stays": [
