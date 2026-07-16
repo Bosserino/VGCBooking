@@ -57,7 +57,7 @@
      "min_stay_pp_night": 11.52
     },
     "nice": {
-     "min_flight_pp": 55.0,
+     "min_flight_pp": 50.0,
      "min_stay_pp_night": 9.29
     },
     "gdansk": {
@@ -70,7 +70,7 @@
     },
     "stuttgart": {
      "min_flight_pp": 145.0,
-     "min_stay_pp_night": 23.0
+     "min_stay_pp_night": 36.0
     },
     "birmingham": {
      "min_flight_pp": 166.0,
@@ -82,15 +82,15 @@
     },
     "lisbon": {
      "min_flight_pp": 86.0,
-     "min_stay_pp_night": 0.48
+     "min_stay_pp_night": 38.48
     },
     "prague": {
      "min_flight_pp": 82.0,
-     "min_stay_pp_night": 115.05
+     "min_stay_pp_night": 100.67
     },
     "bologna": {
      "min_flight_pp": null,
-     "min_stay_pp_night": 13.71
+     "min_stay_pp_night": 17.85
     },
     "naic-chicago": {
      "min_flight_pp": null,
