@@ -51,8 +51,10 @@ def run_snapshot(mock: bool = False, only_event: str | None = None) -> dict:
 
         if mock:
             flights, stays = _mock_data(ev, people, nights)
+            return_flights = [dict(f, departure=f["departure"].replace("(", "(rientro ")) for f in flights[:3]]
         else:
-            flights = _collect_flights(ev, origin, check_in, check_out, people, errors)
+            leg_data = _collect_flights(ev, origin, check_in, check_out, people, errors)
+            flights, return_flights = leg_data["outbound"], leg_data["return"]
             stays = _collect_stays(ev, search_req, check_in, check_out, nights, people, errors)
 
         # membri prenotati che partono da un altro aeroporto (es. Jean da Lione):
@@ -65,12 +67,16 @@ def run_snapshot(mock: bool = False, only_event: str | None = None) -> dict:
                 alt.setdefault(ap, []).append(p)
         for ap, names in sorted(alt.items()):
             if mock:
-                alt_flights = [dict(f, departure=f["departure"] + f" (da {ap})") for f in flights[:3]]
+                alt_out = [dict(f, departure=f["departure"] + f" (da {ap})") for f in flights[:3]]
+                alt_ret = alt_out[:2]
             else:
                 alt_errors: list[str] = []
-                alt_flights = _collect_flights(ev, ap, check_in, check_out, len(names), alt_errors)
+                alt_data = _collect_flights(ev, ap, check_in, check_out, len(names), alt_errors)
+                alt_out, alt_ret = alt_data["outbound"], alt_data["return"]
                 errors.extend(f"{ap}: {e}" for e in alt_errors)
-            extra_origins.append({"origin": ap, "participants": names, "flights": alt_flights})
+            extra_origins.append(
+                {"origin": ap, "participants": names, "flights": alt_out, "return_flights": alt_ret}
+            )
 
         stays = _rank_stays(stays)[:MAX_STAYS]
         min_flight = min((f["price_pp"] for f in flights), default=None)
@@ -96,6 +102,7 @@ def run_snapshot(mock: bool = False, only_event: str | None = None) -> dict:
                 "people_for_search": people,
                 "links": _links(search_req, origin),
                 "flights": flights,
+                "return_flights": return_flights,
                 "extra_origins": extra_origins,
                 "stays": stays,
                 "estimate_pp": {
@@ -144,17 +151,14 @@ def _search_request(ev: Event, people: int, req: TripRequest | None) -> TripRequ
     return base
 
 
-def _collect_flights(ev, origin, check_in, check_out, people, errors) -> list[dict]:
+def _collect_flights(ev, origin, check_in, check_out, people, errors) -> dict:
     from .scrapers.flights import search_flights
 
     try:
-        flights = search_flights(origin, ev.airport, check_in, check_out, people)
+        return search_flights(origin, ev.airport, check_in, check_out, people)
     except Exception as exc:  # noqa: BLE001
         errors.append(f"google-flights: {str(exc)[:120]}")
-        return []
-    if not flights:
-        errors.append("google-flights: zero risultati")
-    return flights
+        return {"outbound": [], "return": []}
 
 
 def _collect_stays(ev, search_req, check_in, check_out, nights, people, errors) -> list[dict]:

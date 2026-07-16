@@ -28,10 +28,20 @@ def _patched_fetch(params: dict):
 CITY_AIRPORTS = {"ROM": ["FCO", "CIA"], "LON": ["LHR", "LGW", "STN"], "CHI": ["ORD"], "SAO": ["GRU"]}
 
 
-def search_flights(origin: str, destination: str, depart: str, ret: str, adults: int) -> list[dict]:
-    """Ritorna voli A/R ordinati per prezzo: [{airline, departure, arrival, stops, duration, price_pp, source}]
+def search_flights(origin: str, destination: str, depart: str, ret: str, adults: int) -> dict:
+    """Ritorna {"outbound": [...], "return": [...]} — voli con prezzo TOTALE A/R a persona.
+    Il ritorno è una ricerca speculare (tratte invertite): stessi prezzi totali,
+    serve a vedere orari e compagnie disponibili per rientrare.
     Cerca su tutte le combinazioni di aeroporti dei city-code (es. ROM -> FCO e CIA).
-    Alza RuntimeError col motivo se nessuna combinazione produce dati."""
+    Alza RuntimeError col motivo se nessuna combinazione produce dati per l'andata."""
+    outbound, err_out = _search_leg(origin, destination, depart, ret)
+    if not outbound:
+        raise RuntimeError(err_out or "nessun volo trovato")
+    ret_flights, _ = _search_leg(destination, origin, ret, depart)
+    return {"outbound": outbound, "return": ret_flights}
+
+
+def _search_leg(origin: str, destination: str, depart: str, ret: str):
     import time
 
     flights: list[dict] = []
@@ -58,15 +68,13 @@ def search_flights(origin: str, destination: str, depart: str, ret: str, adults:
                     log.warning("google-flights %s->%s (tent. %d): %s", orig, dest, attempt + 1, last_error)
                     time.sleep(4)
             time.sleep(2)  # respiro tra le combinazioni per non farsi limitare
-    if not flights:
-        raise RuntimeError(last_error or "nessun volo trovato")
     seen, unique = set(), []
     for f in sorted(flights, key=lambda x: x["price_pp"]):
         key = (f["airline"], f["departure"], f["price_pp"])
         if key not in seen:
             seen.add(key)
             unique.append(f)
-    return unique[:5]
+    return unique[:5], last_error
 
 
 def _search_one(origin: str, destination: str, depart: str, ret: str) -> list[dict]:
@@ -92,8 +100,8 @@ def _search_one(origin: str, destination: str, depart: str, ret: str) -> list[di
 
 ARIA_RE = re.compile(
     r'aria-label="From (\d[\d,]*) (?:euros?|US dollars?)[^"]*?flight with ([^."]+)\.'
-    r'[^"]*?Leaves [^"]*? at ([^"]+?) on ([^."]+?) and arrives[^"]*?'
-    r'Total duration ([^."]*)\.[^"]*"'
+    r'[^"]*?Leaves [^"]*? at ([^"]+?) on ([^."]+?) and arrives at [^"]*? at ([^"]+?) on ([^."]+?)\.'
+    r'[^"]*?Total duration ([^."]*)\.[^"]*"'
 )
 
 
@@ -104,18 +112,21 @@ def parse_aria_labels(html: str, origin: str, destination: str) -> list[dict]:
     flights = []
     seen = set()
     for m in ARIA_RE.finditer(text):
-        price_s, airline, dep_time, dep_date, duration = m.groups()
+        price_s, airline, dep_time, dep_date, arr_time, arr_date, duration = m.groups()
         full = m.group(0)
         stops = 0 if "Nonstop" in full else _stops_from(full)
         key = (airline, dep_time, dep_date, price_s)
         if key in seen:
             continue
         seen.add(key)
+        arrival = arr_time.strip()
+        if arr_date.strip() != dep_date.strip():  # arrivo il giorno dopo
+            arrival += f" ({arr_date.strip()})"
         flights.append(
             {
                 "airline": airline.strip(),
                 "departure": f"{dep_time.strip()}, {dep_date.strip()} ({origin}→{destination})",
-                "arrival": "",
+                "arrival": arrival,
                 "stops": stops,
                 "duration": duration.strip(),
                 "price_pp": float(price_s.replace(",", "")),

@@ -25,15 +25,21 @@
         "flights": "https://www.google.com/travel/flights?q=ROM+LON"
       },
       "flights": [
-        { "airline": "ITA Airways", "departure": "18/02 07:10", "arrival": "18/02 08:55", "stops": 0, "duration": "2h45", "price_pp": 89.0, "source": "google-flights" },
-        { "airline": "Ryanair", "departure": "18/02 06:20", "arrival": "18/02 08:05", "stops": 0, "duration": "2h45", "price_pp": 74.0, "source": "google-flights" }
+        { "airline": "ITA Airways", "departure": "7:10 AM, Thursday, February 18 (FCO→LON)", "arrival": "8:55 AM", "stops": 0, "duration": "2 hr 45 min", "price_pp": 89.0, "source": "google-flights" },
+        { "airline": "Ryanair", "departure": "6:20 AM, Thursday, February 18 (CIA→LON)", "arrival": "8:05 AM", "stops": 0, "duration": "2 hr 45 min", "price_pp": 74.0, "source": "google-flights" }
+      ],
+      "return_flights": [
+        { "airline": "Ryanair", "departure": "9:30 PM, Monday, February 22 (LON→CIA)", "arrival": "12:45 AM (Tuesday, February 23)", "stops": 0, "duration": "2 hr 40 min", "price_pp": 74.0, "source": "google-flights" }
       ],
       "extra_origins": [
         {
           "origin": "LYS",
           "participants": ["Jean"],
           "flights": [
-            { "airline": "easyJet", "departure": "18/02 09:40 (LYS→LON)", "arrival": "18/02 10:15", "stops": 0, "duration": "1h35", "price_pp": 62.0, "source": "google-flights" }
+            { "airline": "easyJet", "departure": "9:40 AM, Thursday, February 18 (LYS→LON)", "arrival": "10:15 AM", "stops": 0, "duration": "1 hr 35 min", "price_pp": 62.0, "source": "google-flights" }
+          ],
+          "return_flights": [
+            { "airline": "easyJet", "departure": "6:10 PM, Monday, February 22 (LON→LYS)", "arrival": "8:45 PM", "stops": 0, "duration": "1 hr 35 min", "price_pp": 62.0, "source": "google-flights" }
           ]
         }
       ],

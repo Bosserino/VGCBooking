@@ -175,6 +175,9 @@
   .extra-none { color: var(--muted); font-size: .8rem; margin-top: 8px; }
 
   h3.sec { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 16px 0 6px; }
+  .rtnote { color: var(--muted); font-size: .74rem; margin: -2px 0 6px; }
+  h4.leg { font-size: .76rem; font-weight: 650; color: var(--ink-2); margin: 10px 0 5px; }
+  .plus1 { color: var(--muted); font-size: .78em; white-space: nowrap; }
 
   /* tabelle: scroll orizzontale dentro la card, mai la pagina */
   .tblwrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--hairline); border-radius: 10px; }
@@ -275,8 +278,11 @@
       flightWord: "volo", stayWord: "alloggio", fromWord: "da",
       deltaFlight: "volo", deltaNight: "notte",
       deltaTip: "variazione dall'ultimo aggiornamento",
-      secFlights: "Voli (a persona)", secStays: "Alloggi",
-      thAirline: "Compagnia", thDep: "Partenza", thArr: "Arrivo", thStops: "Scali",
+      secFlights: "Voli", secStays: "Alloggi",
+      outbound: "Andata", inbound: "Ritorno",
+      roundTripNote: "prezzo totale A/R a persona",
+      returnHint: g => `opzioni di ritorno su ${g}`,
+      thAirline: "Compagnia", thTimes: "Partenza → Arrivo", thStops: "Scali",
       thDur: "Durata", thPricePP: "€ a persona",
       direct: "Diretto", stopsOf: n => n + (n === 1 ? " scalo" : " scali"),
       thSource: "Fonte", thStay: "Alloggio", thNight: "€/notte p.p.", thTotal: "Totale",
@@ -318,8 +324,11 @@
       flightWord: "flight", stayWord: "stay", fromWord: "from",
       deltaFlight: "flight", deltaNight: "night",
       deltaTip: "change since the last update",
-      secFlights: "Flights (per person)", secStays: "Stays",
-      thAirline: "Airline", thDep: "Departure", thArr: "Arrival", thStops: "Stops",
+      secFlights: "Flights", secStays: "Stays",
+      outbound: "Outbound", inbound: "Return",
+      roundTripNote: "round-trip total per person",
+      returnHint: g => `return options on ${g}`,
+      thAirline: "Airline", thTimes: "Departure → Arrival", thStops: "Stops",
       thDur: "Duration", thPricePP: "€ per person",
       direct: "Direct", stopsOf: n => n + (n === 1 ? " stop" : " stops"),
       thSource: "Source", thStay: "Stay", thNight: "€/night pp", thTotal: "Total",
@@ -436,22 +445,97 @@
     return { flight, stay, total: stay != null ? round2(flight + stay) : null, origin: eo.origin };
   }
 
+  // ---- parsing orari/date dei voli (formato Google Flights, es. "7:10 AM, Thursday, February 18 (FCO→LON)") ----
+  const EN_MONTHS = { january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
+    july: 6, august: 7, september: 8, october: 9, november: 10, december: 11 };
+  const yearOf = iso => { const y = parseInt(String(iso || "").slice(0, 4), 10); return isNaN(y) ? new Date().getFullYear() : y; };
+
+  // "7:10 AM" → "07:10" quando la lingua è IT; altrimenti (o se non parsabile) com'è
+  function fmtTime(s) {
+    const str = String(s || "").trim();
+    if (state.lang !== "it") return str;
+    const m = /^(\d{1,2}):(\d{2})\s*(AM|PM)$/i.exec(str);
+    if (!m) return str;
+    let h = +m[1] % 12;
+    if (/pm/i.test(m[3])) h += 12;
+    return String(h).padStart(2, "0") + ":" + m[2];
+  }
+
+  // "Thursday, February 18" → data lunga nel locale attivo (l'anno viene dal riferimento evento)
+  function fmtLongDate(s, refIso) {
+    const m = /(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})/i
+      .exec(String(s || ""));
+    if (!m) return String(s || "");
+    const d = new Date(yearOf(refIso), EN_MONTHS[m[1].toLowerCase()], +m[2], 12);
+    return d.toLocaleDateString(t.locale, { weekday: "long", day: "numeric", month: "long" });
+  }
+
+  // scompone departure/arrival in orario, data e tratta; tollera il vecchio formato ("18/02 07:10")
+  function parseLeg(f) {
+    const dep = String(f.departure || "");
+    const routeM = /\(([^)]*→[^)]*)\)\s*$/.exec(dep);
+    const route = routeM ? routeM[1] : "";
+    const depClean = (routeM ? dep.slice(0, routeM.index) : dep).trim().replace(/,\s*$/, "");
+    const ci = depClean.indexOf(",");
+    const depTime = (ci >= 0 ? depClean.slice(0, ci) : depClean).trim();
+    const depDate = ci >= 0 ? depClean.slice(ci + 1).trim() : "";
+    const arrM = /^([^(]*)(?:\(([^)]+)\))?\s*$/.exec(String(f.arrival || ""));
+    const arrTime = arrM ? arrM[1].trim() : "";
+    const arrDate = arrM && arrM[2] ? arrM[2].trim() : "";
+    return { depTime, depDate, arrTime, arrDate, route };
+  }
+
   // ---- render tabelle ----
-  function flightsTable(flights) {
+  // cella "partenza → arrivo" (+ eventuale data di arrivo il giorno dopo, + tratta)
+  function timesCell(f, refIso) {
+    const L = parseLeg(f);
+    if (!L.depTime) return esc(String(f.departure || "—"));
+    const arr = L.arrTime ? " → " + esc(fmtTime(L.arrTime)) : "";
+    const plus1 = L.arrDate ? ` <span class="plus1">(${esc(fmtLongDate(L.arrDate, refIso))})</span>` : "";
+    const route = L.route ? `<div class="unit">${esc(L.route)}</div>` : "";
+    return `${esc(fmtTime(L.depTime))}${arr}${plus1}${route}`;
+  }
+
+  function flightsTable(flights, refIso) {
     const rows = [...flights].sort((a, b) => a.price_pp - b.price_pp).slice(0, 5);
     const best = Math.min(...rows.map(f => f.price_pp));
     return `<div class="tblwrap"><table>
-      <thead><tr><th>${t.thAirline}</th><th>${t.thDep}</th><th>${t.thArr}</th><th>${t.thStops}</th><th>${t.thDur}</th><th>${t.thPricePP}</th></tr></thead>
+      <thead><tr><th>${t.thAirline}</th><th>${t.thTimes}</th><th>${t.thStops}</th><th>${t.thDur}</th><th>${t.thPricePP}</th></tr></thead>
       <tbody>${rows.map(f => `
         <tr${f.price_pp === best ? ' class="best"' : ""}>
           <td>${esc(f.airline)}</td>
-          <td>${esc(f.departure)}</td>
-          <td>${esc(f.arrival)}</td>
+          <td>${timesCell(f, refIso)}</td>
           <td>${f.stops === 0 ? t.direct : t.stopsOf(f.stops)}</td>
           <td>${esc(f.duration)}</td>
           <td class="num"><strong>${euro(f.price_pp)}</strong></td>
         </tr>`).join("")}
       </tbody></table></div>`;
+  }
+
+  // intestazione di tratta ("Andata · giovedì 18 febbraio"): data dal primo volo, fallback check-in/out
+  function legHeading(label, flights, refIso) {
+    const first = flights[0] ? parseLeg(flights[0]) : null;
+    const dateTxt = first && first.depDate ? fmtLongDate(first.depDate, refIso) : fmtDay(parseDay(refIso));
+    return `<h4 class="leg">${esc(label)} · ${esc(dateTxt)}</h4>`;
+  }
+
+  // andata + ritorno; se il ritorno manca, riga discreta con rimando a Google Flights
+  function legsHtml(flights, returns, ev, links) {
+    let h = legHeading(t.outbound, flights, ev.check_in) + flightsTable(flights, ev.check_in);
+    if (returns && returns.length) {
+      h += legHeading(t.inbound, returns, ev.check_out) + flightsTable(returns, ev.check_out);
+    } else {
+      const gfl = links && links.flights
+        ? `<a href="${esc(links.flights)}" target="_blank" rel="noopener">Google Flights</a>` : "Google Flights";
+      h += `<div class="extra-none">${t.returnHint(gfl)}</div>`;
+    }
+    return h;
+  }
+
+  function flightsBlock(ev) {
+    return `<h3 class="sec">${t.secFlights}</h3>
+      <div class="rtnote">${esc(t.roundTripNote)}</div>
+      ${legsHtml(ev.flights, ev.return_flights, ev, ev.links)}`;
   }
 
   function cancelLabel(v) {
@@ -503,7 +587,10 @@
       const who = (o.participants || []).join(", ");
       return `<details class="extra-origin${mine ? " me" : ""}"${mine ? " open" : ""}>
         <summary><span class="chev">▾</span>✈ ${esc(t.flightsFrom)} ${esc(airportLabel(o.origin))}${who ? ` ${esc(t.forWord)} ${esc(who)}` : ""}</summary>
-        <div class="extra-body">${flightsTable(o.flights)}</div>
+        <div class="extra-body">
+          <div class="rtnote">${esc(t.roundTripNote)}</div>
+          ${legsHtml(o.flights, o.return_flights, ev, null)}
+        </div>
       </details>`;
     }).join("");
   }
@@ -554,7 +641,7 @@
       </div>
 
       ${hasPrices ? `
-        ${ev.flights && ev.flights.length ? `<h3 class="sec">${t.secFlights}</h3>${flightsTable(ev.flights)}` : ""}
+        ${ev.flights && ev.flights.length ? flightsBlock(ev) : ""}
         ${extraOriginsBlock(ev)}
         ${staysSection(ev)}
       ` : searchLinks(ev.links) + extraOriginsBlock(ev)}
