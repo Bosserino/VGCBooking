@@ -27,6 +27,7 @@ def load_events() -> list[Event]:
                 lat=float(e["lat"]),
                 lon=float(e["lon"]),
                 airport=e["airport"],
+                max_km=float(e["max_km"]) if e.get("max_km") else None,
             )
         )
     return sorted(events, key=lambda ev: ev.start)

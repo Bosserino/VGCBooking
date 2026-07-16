@@ -19,6 +19,7 @@ class Event:
     lat: float
     lon: float
     airport: str
+    max_km: float | None = None  # raggio dedicato (default: MAX_DISTANCE_KM globale)
 
     @property
     def default_check_in(self) -> date:

@@ -70,6 +70,67 @@ def search_flights(origin: str, destination: str, depart: str, ret: str, adults:
 
 
 def _search_one(origin: str, destination: str, depart: str, ret: str) -> list[dict]:
+    """Prima scelta: parsing degli aria-label (testo stabile, ha anche la compagnia);
+    ripiego: il parser CSS di fast-flights (a volte perde nome e orari)."""
+    from fast_flights import FlightData, Passengers
+    from fast_flights.filter import create_filter
+
+    tfs = create_filter(
+        flight_data=[
+            FlightData(date=depart, from_airport=origin, to_airport=destination),
+            FlightData(date=ret, from_airport=destination, to_airport=origin),
+        ],
+        trip="round-trip", seat="economy", passengers=Passengers(adults=1),
+    )
+    res = _patched_fetch({"tfs": tfs.as_b64().decode(), "hl": "en", "curr": "EUR", "tfu": "EgQIABABIgA"})
+    flights = parse_aria_labels(res.text, origin, destination)
+    if flights:
+        return flights
+    log.info("google-flights %s->%s: aria-label vuoti, ripiego sul parser fast-flights", origin, destination)
+    return _search_one_fastflights(origin, destination, depart, ret)
+
+
+ARIA_RE = re.compile(
+    r'aria-label="From (\d[\d,]*) (?:euros?|US dollars?)[^"]*?flight with ([^."]+)\.'
+    r'[^"]*?Leaves [^"]*? at ([^"]+?) on ([^."]+?) and arrives[^"]*?'
+    r'Total duration ([^."]*)\.[^"]*"'
+)
+
+
+def parse_aria_labels(html: str, origin: str, destination: str) -> list[dict]:
+    import html as html_mod
+
+    text = html_mod.unescape(html)
+    flights = []
+    seen = set()
+    for m in ARIA_RE.finditer(text):
+        price_s, airline, dep_time, dep_date, duration = m.groups()
+        full = m.group(0)
+        stops = 0 if "Nonstop" in full else _stops_from(full)
+        key = (airline, dep_time, dep_date, price_s)
+        if key in seen:
+            continue
+        seen.add(key)
+        flights.append(
+            {
+                "airline": airline.strip(),
+                "departure": f"{dep_time.strip()}, {dep_date.strip()} ({origin}→{destination})",
+                "arrival": "",
+                "stops": stops,
+                "duration": duration.strip(),
+                "price_pp": float(price_s.replace(",", "")),
+                "source": "google-flights",
+            }
+        )
+    return flights
+
+
+def _stops_from(label: str) -> int:
+    m = re.search(r"(\d+) stops?", label)
+    return int(m.group(1)) if m else 1
+
+
+def _search_one_fastflights(origin: str, destination: str, depart: str, ret: str) -> list[dict]:
     from fast_flights import FlightData, Passengers, get_flights
 
     try:  # il patch del cookie serve solo dall'UE: se il layout cambia, si prosegue

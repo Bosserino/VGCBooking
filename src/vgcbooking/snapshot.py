@@ -161,16 +161,17 @@ def _collect_stays(ev, search_req, check_in, check_out, nights, people, errors) 
     from .scrapers.airbnb import search_airbnb
     from .scrapers.booking import search_booking
 
+    max_km = ev.max_km or settings.max_distance_km
     stays: list[dict] = []
     booking_url = _links(search_req, "")["booking"]
     try:
-        stays.extend(search_booking(booking_url, nights, people, settings.max_distance_km))
+        stays.extend(search_booking(booking_url, nights, people, max_km))
     except Exception as exc:  # noqa: BLE001
         errors.append(f"booking.com: {str(exc)[:120]}")
     try:
         stays.extend(
             search_airbnb(ev.lat, ev.lon, check_in, check_out, nights, people,
-                          settings.max_distance_km, settings.currency)
+                          max_km, settings.currency)
         )
     except Exception as exc:  # noqa: BLE001
         errors.append(f"airbnb: {str(exc)[:120]}")

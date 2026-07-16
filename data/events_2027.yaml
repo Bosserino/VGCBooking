@@ -89,6 +89,7 @@ events:
     airport: GDN
 
   - slug: stuttgart
+    max_km: 3.0
     name: Regionale Stoccarda
     type: regional
     city: Stoccarda
@@ -102,6 +103,7 @@ events:
     airport: STR
 
   - slug: birmingham
+    max_km: 3.0
     name: Regionale Birmingham
     type: regional
     city: Birmingham
@@ -128,6 +130,7 @@ events:
     airport: LIS
 
   - slug: prague
+    max_km: 3.0
     name: Regionale Praga
     type: regional
     city: Praga
