@@ -72,6 +72,10 @@ def search_booking(url: str, nights: int, people: int, max_distance_km: float) -
 
                 for el in page.query_selector_all('[data-testid="property-card"]')[:25]:
                     cards.append(_parse_card(el))
+                # il prezzo in card è la tariffa più economica (spesso non
+                # rimborsabile): per le migliori case leggiamo dalla scheda
+                # il prezzo della tariffa con cancellazione gratuita
+                _enrich_refundable_prices(page, cards, max_distance_km)
                 browser.close()
                 break
         except Exception as exc:  # noqa: BLE001
@@ -162,7 +166,55 @@ def _parse_card(el) -> dict | None:
         "unit_desc": _unit_desc(raw),
         "multi_unit": bool(re.search(r"\d+\s*[x×]\s*(appartament|monolocal|suite|camer)", body)),
         "url": (link.get_attribute("href") or "").split("?")[0] if link else "",
+        # href completo (con date/ospiti/filtri): serve per aprire la scheda
+        "url_full": (link.get_attribute("href") or "") if link else "",
     }
+
+
+REFUNDABLE_RE = re.compile(
+    r"Cancellazione gratuita prima del[^|]{0,80}?", re.IGNORECASE
+)
+PRICE_BLOCK_RE = re.compile(r"Prezzo per \d+ nott[ei]:\s*((?:€\s?[\d.,]+\s*){1,3})")
+
+
+def _enrich_refundable_prices(page, cards: list, max_distance_km: float, top_n: int = 8) -> None:
+    eligible = sorted(
+        (c for c in cards
+         if c and c["total_price"] is not None and not c["multi_unit"] and c["url_full"]
+         and (c["distance_km"] is None or c["distance_km"] <= max_distance_km)),
+        key=lambda c: c["total_price"],
+    )[:top_n]
+    for c in eligible:
+        try:
+            url = c["url_full"]
+            if not url.startswith("http"):
+                url = "https://www.booking.com" + url
+            page.goto(url, wait_until="domcontentloaded", timeout=20_000)
+            page.wait_for_timeout(4_000)
+            body = page.inner_text("body")
+        except Exception as exc:  # noqa: BLE001
+            log.warning("scheda %s: %s", c["name"][:30], str(exc)[:80])
+            continue
+        price = _cheapest_refundable(body)
+        # guardia: un prezzo troppo più basso della card indica un'unità diversa
+        if price is not None and price >= c["total_price"] * 0.7:
+            c["total_price"] = price
+            c["free_cancellation"] = True
+
+
+def _cheapest_refundable(body: str) -> float | None:
+    """Prezzo minimo tra i blocchi tariffa con 'Cancellazione gratuita prima del...'.
+    In un blocco scontato l'ultimo importo è il prezzo attuale."""
+    candidates = []
+    for m in REFUNDABLE_RE.finditer(body):
+        window = body[m.end():m.end() + 500]
+        pm = PRICE_BLOCK_RE.search(window)
+        if pm:
+            prices = [_it_number(p) for p in re.findall(r"€\s?[\d.,]+", pm.group(1))]
+            prices = [p for p in prices if p]
+            if prices:
+                candidates.append(prices[-1])
+    return min(candidates) if candidates else None
 
 
 def _unit_desc(raw: str) -> str | None:
