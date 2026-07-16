@@ -27,7 +27,12 @@ class Event:
 
     @property
     def default_check_out(self) -> date:
-        return self.end + timedelta(days=1)
+        # regionali/speciali: rientro la sera dell'ultima giornata (2 notti);
+        # internazionali: notte extra e rientro il giorno dopo.
+        # Le date sul Google Sheet, se presenti, hanno la precedenza.
+        if self.type == "international":
+            return self.end + timedelta(days=1)
+        return self.end
 
 
 @dataclass
