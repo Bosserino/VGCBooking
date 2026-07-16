@@ -47,7 +47,11 @@ def _search_leg(origin: str, destination: str, depart: str, ret: str):
     flights: list[dict] = []
     last_error = None
     for orig in CITY_AIRPORTS.get(origin, [origin]):
+        if len(flights) >= 5:
+            break  # abbastanza opzioni: non stressare Google con altri aeroporti
         for dest in CITY_AIRPORTS.get(destination, [destination]):
+            if len(flights) >= 5:
+                break
             for attempt in range(2):  # Google a volte risponde vuoto sotto rate-limit
                 try:
                     found = _search_one(orig, dest, depart, ret)
@@ -56,7 +60,7 @@ def _search_leg(origin: str, destination: str, depart: str, ret: str):
                         break
                     # lista magra (es. solo la sezione "migliori"): un secondo giro
                     log.info("google-flights %s->%s: solo %d voli, ritento", orig, dest, len(found))
-                    time.sleep(2)
+                    time.sleep(8)
                     continue
                 except Exception as exc:  # noqa: BLE001
                     msg = str(exc)
@@ -66,8 +70,8 @@ def _search_leg(origin: str, destination: str, depart: str, ret: str):
                     else:
                         last_error = msg[:120]
                     log.warning("google-flights %s->%s (tent. %d): %s", orig, dest, attempt + 1, last_error)
-                    time.sleep(2)
-            time.sleep(1)  # respiro tra le combinazioni per non farsi limitare
+                    time.sleep(8)  # su throttle serve una pausa vera
+            time.sleep(3)  # respiro tra le combinazioni per non farsi limitare
     seen, unique = set(), []
     for f in sorted(flights, key=lambda x: x["price_pp"]):
         key = (f["airline"], f["departure"], f["price_pp"])

@@ -177,7 +177,7 @@ REFUNDABLE_RE = re.compile(
 PRICE_BLOCK_RE = re.compile(r"Prezzo per \d+ nott[ei]:\s*((?:€\s?[\d.,]+\s*){1,3})")
 
 
-def _enrich_refundable_prices(page, cards: list, max_distance_km: float, top_n: int = 8) -> None:
+def _enrich_refundable_prices(page, cards: list, max_distance_km: float, top_n: int = 6) -> None:
     eligible = sorted(
         (c for c in cards
          if c and c["total_price"] is not None and not c["multi_unit"] and c["url_full"]
@@ -190,7 +190,7 @@ def _enrich_refundable_prices(page, cards: list, max_distance_km: float, top_n: 
             if not url.startswith("http"):
                 url = "https://www.booking.com" + url
             page.goto(url, wait_until="domcontentloaded", timeout=20_000)
-            page.wait_for_timeout(4_000)
+            page.wait_for_timeout(2_500)
             body = page.inner_text("body")
         except Exception as exc:  # noqa: BLE001
             log.warning("scheda %s: %s", c["name"][:30], str(exc)[:80])
