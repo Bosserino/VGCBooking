@@ -44,7 +44,7 @@ def search_booking(url: str, nights: int, people: int, max_distance_km: float) -
 
     cards: list[dict] = []
     last_error = "WAF o zero risultati"
-    for attempt in range(3):  # il WAF di Booking è intermittente: riprova
+    for attempt in range(2):  # il WAF di Booking è intermittente: riprova
         try:
             with sync_playwright() as pw:
                 browser = pw.chromium.launch(
@@ -57,9 +57,9 @@ def search_booking(url: str, nights: int, people: int, max_distance_km: float) -
                     storage_state=storage_state,
                 )
                 page = context.new_page()
-                page.goto(url, wait_until="domcontentloaded", timeout=60_000)
+                page.goto(url, wait_until="domcontentloaded", timeout=25_000)
                 try:
-                    page.wait_for_selector('[data-testid="property-card"]', timeout=25_000)
+                    page.wait_for_selector('[data-testid="property-card"]', timeout=12_000)
                 except Exception:  # noqa: BLE001
                     browser.close()
                     log.warning("booking.com: nessuna card (tentativo %d)", attempt + 1)

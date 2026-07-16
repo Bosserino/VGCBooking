@@ -56,7 +56,7 @@ def _search_leg(origin: str, destination: str, depart: str, ret: str):
                         break
                     # lista magra (es. solo la sezione "migliori"): un secondo giro
                     log.info("google-flights %s->%s: solo %d voli, ritento", orig, dest, len(found))
-                    time.sleep(4)
+                    time.sleep(2)
                     continue
                 except Exception as exc:  # noqa: BLE001
                     msg = str(exc)
@@ -66,8 +66,8 @@ def _search_leg(origin: str, destination: str, depart: str, ret: str):
                     else:
                         last_error = msg[:120]
                     log.warning("google-flights %s->%s (tent. %d): %s", orig, dest, attempt + 1, last_error)
-                    time.sleep(4)
-            time.sleep(2)  # respiro tra le combinazioni per non farsi limitare
+                    time.sleep(2)
+            time.sleep(1)  # respiro tra le combinazioni per non farsi limitare
     seen, unique = set(), []
     for f in sorted(flights, key=lambda x: x["price_pp"]):
         key = (f["airline"], f["departure"], f["price_pp"])
