@@ -145,8 +145,10 @@ def _parse_card(el) -> dict | None:
         # il filtro fc=2 è già nell'URL: se il badge non c'è resta "da verificare"
         "free_cancellation": True if "cancellazione gratuita" in body else None,
         "mobile_deal": ("dispositivi mobili" in body) or ("mobile" in body and "offerta" in body),
-        # compare solo navigando con la sessione loggata di un account Genius
-        "genius_deal": "genius" in body,
+        # il marcatore Genius sta negli attributi (es. tooltip "bonus Genius VIP"),
+        # non nel testo visibile: va cercato nell'HTML della card.
+        # Compare solo navigando con la sessione loggata di un account Genius.
+        "genius_deal": "genius" in el.inner_html().lower(),
         "unit_desc": _unit_desc(raw),
         "multi_unit": bool(re.search(r"\d+\s*[x×]\s*(appartament|monolocal|suite|camer)", body)),
         "url": (link.get_attribute("href") or "").split("?")[0] if link else "",

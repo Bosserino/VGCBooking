@@ -121,9 +121,12 @@ def run_snapshot(mock: bool = False, only_event: str | None = None) -> dict:
             f" [{'; '.join(errors)}]" if errors else "",
         )
 
+    state_path = os.getenv("BOOKING_STORAGE_STATE", "")
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "origin": origin,
+        # trasparenza: dice se il run ha usato la sessione Booking (prezzi Genius)
+        "booking_session": bool(state_path and os.path.exists(state_path)),
         "settings": {
             "max_distance_km": settings.max_distance_km,
             "min_review_score": settings.min_review_score,
