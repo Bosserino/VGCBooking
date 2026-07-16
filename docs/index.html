@@ -176,8 +176,12 @@
 
   h3.sec { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 16px 0 6px; }
   .rtnote { color: var(--muted); font-size: .74rem; margin: -2px 0 6px; }
-  h4.leg { font-size: .76rem; font-weight: 650; color: var(--ink-2); margin: 10px 0 5px; }
+  h4.leg { font-size: .76rem; font-weight: 650; color: var(--ink-2); margin: 6px 0 5px; }
   .plus1 { color: var(--muted); font-size: .78em; white-space: nowrap; }
+  /* biglietto: andata + ritorno come unica unità */
+  .ticket { border: 1px solid var(--hairline); border-radius: 12px; padding: 8px 12px 12px; }
+  .ticket .legsep { border-top: 1px dashed var(--hairline); margin: 12px 0 4px; } /* "strappo" del biglietto */
+  details.extra-origin .ticket { border: 0; padding: 0; } /* dentro lo spoiler il bordo c'è già */
 
   /* tabelle: scroll orizzontale dentro la card, mai la pagina */
   .tblwrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--hairline); border-radius: 10px; }
@@ -280,10 +284,10 @@
       deltaTip: "variazione dall'ultimo aggiornamento",
       secFlights: "Voli", secStays: "Alloggi",
       outbound: "Andata", inbound: "Ritorno",
-      roundTripNote: "prezzo totale A/R a persona",
+      returnNote: "orari disponibili per il rientro — il prezzo è incluso nel totale A/R",
       returnHint: g => `opzioni di ritorno su ${g}`,
       thAirline: "Compagnia", thTimes: "Partenza → Arrivo", thStops: "Scali",
-      thDur: "Durata", thPricePP: "€ a persona",
+      thDur: "Durata", thPricePP: "Totale A/R p.p.",
       direct: "Diretto", stopsOf: n => n + (n === 1 ? " scalo" : " scali"),
       thSource: "Fonte", thStay: "Alloggio", thNight: "€/notte p.p.", thTotal: "Totale",
       thReviews: "Recensioni", thDist: "Distanza", thCancel: "Cancellazione",
@@ -326,10 +330,10 @@
       deltaTip: "change since the last update",
       secFlights: "Flights", secStays: "Stays",
       outbound: "Outbound", inbound: "Return",
-      roundTripNote: "round-trip total per person",
+      returnNote: "available return times — price included in the round-trip total",
       returnHint: g => `return options on ${g}`,
       thAirline: "Airline", thTimes: "Departure → Arrival", thStops: "Stops",
-      thDur: "Duration", thPricePP: "€ per person",
+      thDur: "Duration", thPricePP: "Round-trip p.p.",
       direct: "Direct", stopsOf: n => n + (n === 1 ? " stop" : " stops"),
       thSource: "Source", thStay: "Stay", thNight: "€/night pp", thTotal: "Total",
       thReviews: "Reviews", thDist: "Distance", thCancel: "Cancellation",
@@ -461,13 +465,14 @@
     return String(h).padStart(2, "0") + ":" + m[2];
   }
 
-  // "Thursday, February 18" → data lunga nel locale attivo (l'anno viene dal riferimento evento)
-  function fmtLongDate(s, refIso) {
+  // "Thursday, February 18" → data compatta nel locale attivo, es. "gio 18 feb"
+  // (l'anno viene dal riferimento evento); se non parsabile, com'è
+  function fmtEnDate(s, refIso) {
     const m = /(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})/i
       .exec(String(s || ""));
     if (!m) return String(s || "");
     const d = new Date(yearOf(refIso), EN_MONTHS[m[1].toLowerCase()], +m[2], 12);
-    return d.toLocaleDateString(t.locale, { weekday: "long", day: "numeric", month: "long" });
+    return d.toLocaleDateString(t.locale, { weekday: "short", day: "numeric", month: "short" });
   }
 
   // scompone departure/arrival in orario, data e tratta; tollera il vecchio formato ("18/02 07:10")
@@ -491,50 +496,53 @@
     const L = parseLeg(f);
     if (!L.depTime) return esc(String(f.departure || "—"));
     const arr = L.arrTime ? " → " + esc(fmtTime(L.arrTime)) : "";
-    const plus1 = L.arrDate ? ` <span class="plus1">(${esc(fmtLongDate(L.arrDate, refIso))})</span>` : "";
+    const plus1 = L.arrDate ? ` <span class="plus1">(${esc(fmtEnDate(L.arrDate, refIso))})</span>` : "";
     const route = L.route ? `<div class="unit">${esc(L.route)}</div>` : "";
     return `${esc(fmtTime(L.depTime))}${arr}${plus1}${route}`;
   }
 
-  function flightsTable(flights, refIso) {
+  // withPrice: il prezzo (già totale A/R) compare solo sull'andata
+  function flightsTable(flights, refIso, withPrice) {
     const rows = [...flights].sort((a, b) => a.price_pp - b.price_pp).slice(0, 5);
     const best = Math.min(...rows.map(f => f.price_pp));
     return `<div class="tblwrap"><table>
-      <thead><tr><th>${t.thAirline}</th><th>${t.thTimes}</th><th>${t.thStops}</th><th>${t.thDur}</th><th>${t.thPricePP}</th></tr></thead>
+      <thead><tr><th>${t.thAirline}</th><th>${t.thTimes}</th><th>${t.thStops}</th><th>${t.thDur}</th>${withPrice ? `<th>${t.thPricePP}</th>` : ""}</tr></thead>
       <tbody>${rows.map(f => `
-        <tr${f.price_pp === best ? ' class="best"' : ""}>
+        <tr${withPrice && f.price_pp === best ? ' class="best"' : ""}>
           <td>${esc(f.airline)}</td>
           <td>${timesCell(f, refIso)}</td>
           <td>${f.stops === 0 ? t.direct : t.stopsOf(f.stops)}</td>
           <td>${esc(f.duration)}</td>
-          <td class="num"><strong>${euro(f.price_pp)}</strong></td>
+          ${withPrice ? `<td class="num"><strong>${euro(f.price_pp)}</strong></td>` : ""}
         </tr>`).join("")}
       </tbody></table></div>`;
   }
 
-  // intestazione di tratta ("Andata · giovedì 18 febbraio"): data dal primo volo, fallback check-in/out
-  function legHeading(label, flights, refIso) {
+  // intestazione di tratta ("→ Andata · gio 18 feb"): data dal primo volo, fallback check-in/out
+  function legHeading(arrow, label, flights, refIso) {
     const first = flights[0] ? parseLeg(flights[0]) : null;
-    const dateTxt = first && first.depDate ? fmtLongDate(first.depDate, refIso) : fmtDay(parseDay(refIso));
-    return `<h4 class="leg">${esc(label)} · ${esc(dateTxt)}</h4>`;
+    const dateTxt = first && first.depDate ? fmtEnDate(first.depDate, refIso) : fmtDay(parseDay(refIso));
+    return `<h4 class="leg">${arrow} ${esc(label)} · ${esc(dateTxt)}</h4>`;
   }
 
-  // andata + ritorno; se il ritorno manca, riga discreta con rimando a Google Flights
+  // andata + ritorno come unico "biglietto"; il ritorno non ripete il prezzo
   function legsHtml(flights, returns, ev, links) {
-    let h = legHeading(t.outbound, flights, ev.check_in) + flightsTable(flights, ev.check_in);
+    let h = legHeading("→", t.outbound, flights, ev.check_in) + flightsTable(flights, ev.check_in, true);
+    h += '<div class="legsep"></div>';
     if (returns && returns.length) {
-      h += legHeading(t.inbound, returns, ev.check_out) + flightsTable(returns, ev.check_out);
+      h += legHeading("←", t.inbound, returns, ev.check_out)
+        + `<div class="rtnote">${esc(t.returnNote)}</div>`
+        + flightsTable(returns, ev.check_out, false);
     } else {
       const gfl = links && links.flights
         ? `<a href="${esc(links.flights)}" target="_blank" rel="noopener">Google Flights</a>` : "Google Flights";
       h += `<div class="extra-none">${t.returnHint(gfl)}</div>`;
     }
-    return h;
+    return `<div class="ticket">${h}</div>`;
   }
 
   function flightsBlock(ev) {
     return `<h3 class="sec">${t.secFlights}</h3>
-      <div class="rtnote">${esc(t.roundTripNote)}</div>
       ${legsHtml(ev.flights, ev.return_flights, ev, ev.links)}`;
   }
 
@@ -587,10 +595,7 @@
       const who = (o.participants || []).join(", ");
       return `<details class="extra-origin${mine ? " me" : ""}"${mine ? " open" : ""}>
         <summary><span class="chev">▾</span>✈ ${esc(t.flightsFrom)} ${esc(airportLabel(o.origin))}${who ? ` ${esc(t.forWord)} ${esc(who)}` : ""}</summary>
-        <div class="extra-body">
-          <div class="rtnote">${esc(t.roundTripNote)}</div>
-          ${legsHtml(o.flights, o.return_flights, ev, null)}
-        </div>
+        <div class="extra-body">${legsHtml(o.flights, o.return_flights, ev, null)}</div>
       </details>`;
     }).join("");
   }

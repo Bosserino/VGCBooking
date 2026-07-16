@@ -115,9 +115,19 @@ def _parse_card(el) -> dict | None:
     name = text('[data-testid="title"]').strip()
     if not name:
         return None
-    price = _it_number(text('[data-testid="price-and-discounted-price"]'))
-    # layout mobile: "Include tasse e costi"; layout desktop: "+ € X tasse e costi"
     raw = el.inner_text()
+    # le card scontate concatenano prezzo pieno e scontato ("€ 2.596€ 2.063"):
+    # la riga descrittiva "Prezzo attuale/Prezzo:" è la fonte non ambigua
+    price = None
+    for pat in (r"Prezzo attuale:\s*€\s*([\d.,]+)", r"Current price:?\s*[€$]\s*([\d.,]+)",
+                r"Prezzo:\s*€\s*([\d.,]+)", r"Price:\s*[€$]\s*([\d.,]+)"):
+        m = re.search(pat, raw)
+        if m:
+            price = _it_number(m.group(1))
+            break
+    if price is None:
+        price = _it_number(text('[data-testid="price-and-discounted-price"]'))
+    # layout mobile: "Include tasse e costi"; layout desktop: "+ € X tasse e costi"
     taxes_m = re.search(r"\+\s*€?\s*([\d.,]+)\s*(?:di\s+)?tasse", raw, re.IGNORECASE)
     if price is not None and taxes_m:
         extra = _it_number(taxes_m.group(1))
