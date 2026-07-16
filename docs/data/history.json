@@ -61,11 +61,11 @@
      "min_stay_pp_night": 24.76
     },
     "gdansk": {
-     "min_flight_pp": 185.0,
+     "min_flight_pp": 213.0,
      "min_stay_pp_night": 19.81
     },
     "laic-sao-paulo": {
-     "min_flight_pp": 661.0,
+     "min_flight_pp": 758.0,
      "min_stay_pp_night": 34.0
     },
     "stuttgart": {
@@ -73,11 +73,11 @@
      "min_stay_pp_night": 66.33
     },
     "birmingham": {
-     "min_flight_pp": 166.0,
+     "min_flight_pp": null,
      "min_stay_pp_night": 42.0
     },
     "euic-london": {
-     "min_flight_pp": 138.0,
+     "min_flight_pp": 158.0,
      "min_stay_pp_night": 39.95
     },
     "lisbon": {

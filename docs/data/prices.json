@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-16T12:31:00+00:00",
+ "generated_at": "2026-07-16T12:56:39+00:00",
  "origin": "ROM",
  "booking_session": true,
  "settings": {
@@ -397,47 +397,47 @@
    "return_flights": [
     {
      "airline": "Wizz Air",
-     "departure": "5:55 PM, Monday, October 19 (NCE→FCO)",
-     "arrival": "7:15 PM",
+     "departure": "5:55 PM on Mon, Oct 19 (NCE→FCO)",
+     "arrival": "7:15 PM on Mon, Oct 19",
      "stops": 0,
      "duration": "1 hr 20 min",
-     "price_pp": 57.0,
+     "price_pp": 66.0,
      "source": "google-flights"
     },
     {
      "airline": "easyJet",
-     "departure": "12:25 PM, Monday, October 19 (NCE→FCO)",
-     "arrival": "1:35 PM",
+     "departure": "12:25 PM on Mon, Oct 19 (NCE→FCO)",
+     "arrival": "1:35 PM on Mon, Oct 19",
      "stops": 0,
      "duration": "1 hr 10 min",
-     "price_pp": 81.0,
+     "price_pp": 93.0,
      "source": "google-flights"
     },
     {
      "airline": "ITA",
-     "departure": "7:20 PM, Monday, October 19 (NCE→FCO)",
-     "arrival": "8:35 PM",
+     "departure": "7:20 PM on Mon, Oct 19 (NCE→FCO)",
+     "arrival": "8:35 PM on Mon, Oct 19",
      "stops": 0,
      "duration": "1 hr 15 min",
-     "price_pp": 176.0,
+     "price_pp": 201.0,
      "source": "google-flights"
     },
     {
      "airline": "Vueling",
-     "departure": "5:25 PM, Monday, October 19 (NCE→FCO)",
-     "arrival": "10:55 PM",
+     "departure": "5:25 PM on Mon, Oct 19 (NCE→FCO)",
+     "arrival": "10:55 PM on Mon, Oct 19",
      "stops": 1,
      "duration": "5 hr 30 min",
-     "price_pp": 189.0,
+     "price_pp": 216.0,
      "source": "google-flights"
     },
     {
      "airline": "Vueling",
-     "departure": "5:25 PM, Monday, October 19 (NCE→FCO)",
-     "arrival": "8:20 AM (Tuesday, October 20)",
+     "departure": "5:25 PM on Mon, Oct 19 (NCE→FCO)",
+     "arrival": "8:20 AM on Tue, Oct 20",
      "stops": 1,
      "duration": "14 hr 55 min",
-     "price_pp": 200.0,
+     "price_pp": 229.0,
      "source": "google-flights"
     }
    ],
@@ -676,12 +676,12 @@
    },
    "flights": [
     {
-     "airline": "Wizz Air",
-     "departure": "10:10 PM, Friday, October 30 (FCO→GDN)",
-     "arrival": "12:45 AM (Saturday, October 31)",
+     "airline": "",
+     "departure": " (FCO→GDN)",
+     "arrival": "",
      "stops": 0,
-     "duration": "2 hr 35 min",
-     "price_pp": 185.0,
+     "duration": "",
+     "price_pp": 213.0,
      "source": "google-flights"
     }
    ],
@@ -815,26 +815,22 @@
      "url": "https://www.booking.com/hotel/pl/budynek-dyrekcji-by-browar-hevelius-apartments.it.html"
     },
     {
-     "source": "booking.com",
-     "name": "RentPlanet - Apartamenty Żurawie",
-     "total_price": 570.0,
-     "per_night": 190.0,
-     "per_person_night": 27.14,
-     "review_score": 9.2,
-     "review_count": 66,
-     "distance_km": 2.0,
+     "source": "airbnb",
+     "name": "Gru A11 | Shipyard | Foodhall Montownia",
+     "total_price": 590.0,
+     "per_night": 196.67,
+     "per_person_night": 28.1,
+     "review_score": 9.7,
+     "review_count": "38",
+     "distance_km": 1.99,
      "free_cancellation": true,
-     "mobile_deal": false,
-     "genius_deal": true,
-     "unit_desc": null,
-     "multi_unit": false,
-     "url": "https://www.booking.com/hotel/pl/rentplanet-apartamenty-zurawie.it.html"
+     "url": "https://www.airbnb.it/rooms/1351390744230472824"
     }
    ],
    "estimate_pp": {
-    "flight": 185.0,
+    "flight": 213.0,
     "stay": 59.43,
-    "total": 244.43
+    "total": 272.43
    },
    "errors": []
   },
@@ -863,48 +859,48 @@
    },
    "flights": [
     {
-     "airline": "Turkish Airlines",
-     "departure": "2:50 PM, Thursday, November 19 (FCO→GRU)",
-     "arrival": "4:20 AM (Friday, November 20)",
-     "stops": 1,
-     "duration": "17 hr 30 min",
-     "price_pp": 661.0,
+     "airline": "",
+     "departure": " (FCO→GRU)",
+     "arrival": "",
+     "stops": 0,
+     "duration": "",
+     "price_pp": 758.0,
      "source": "google-flights"
     },
     {
-     "airline": "Turkish Airlines",
-     "departure": "6:40 AM, Thursday, November 19 (FCO→GRU)",
-     "arrival": "4:20 AM (Friday, November 20)",
-     "stops": 1,
-     "duration": "25 hr 40 min",
-     "price_pp": 661.0,
+     "airline": "",
+     "departure": " (FCO→GRU)",
+     "arrival": "",
+     "stops": 0,
+     "duration": "",
+     "price_pp": 824.0,
      "source": "google-flights"
     },
     {
-     "airline": "Turkish Airlines",
-     "departure": "11:15 AM, Thursday, November 19 (FCO→GRU)",
-     "arrival": "4:20 AM (Friday, November 20)",
-     "stops": 1,
-     "duration": "21 hr 5 min",
-     "price_pp": 661.0,
+     "airline": "",
+     "departure": " (FCO→GRU)",
+     "arrival": "",
+     "stops": 0,
+     "duration": "",
+     "price_pp": 849.0,
      "source": "google-flights"
     },
     {
-     "airline": "Air Europa",
-     "departure": "6:25 PM, Thursday, November 19 (FCO→GRU)",
-     "arrival": "6:30 AM (Friday, November 20)",
-     "stops": 1,
-     "duration": "16 hr 5 min",
-     "price_pp": 719.0,
+     "airline": "",
+     "departure": " (FCO→GRU)",
+     "arrival": "",
+     "stops": 0,
+     "duration": "",
+     "price_pp": 863.0,
      "source": "google-flights"
     },
     {
-     "airline": "Air Europa",
-     "departure": "10:30 AM, Thursday, November 19 (FCO→GRU)",
-     "arrival": "6:30 AM (Friday, November 20)",
-     "stops": 1,
-     "duration": "24 hr",
-     "price_pp": 719.0,
+     "airline": "",
+     "departure": " (FCO→GRU)",
+     "arrival": "",
+     "stops": 0,
+     "duration": "",
+     "price_pp": 873.0,
      "source": "google-flights"
     }
    ],
@@ -1039,9 +1035,9 @@
     }
    ],
    "estimate_pp": {
-    "flight": 661.0,
+    "flight": 758.0,
     "stay": 136.0,
-    "total": 797.0
+    "total": 894.0
    },
    "errors": []
   },
@@ -1142,7 +1138,7 @@
      "arrival": "7:30 PM",
      "stops": 1,
      "duration": "4 hr 55 min",
-     "price_pp": 216.0,
+     "price_pp": 203.0,
      "source": "google-flights"
     },
     {
@@ -1294,73 +1290,8 @@
     "airbnb": "https://www.airbnb.it/s/Birmingham/homes?checkin=2027-01-29&checkout=2027-02-01&adults=3&room_types%5B%5D=Entire+home%2Fapt&search_by_map=true&ne_lat=52.47097&ne_lng=-1.68872&sw_lat=52.43503&sw_lng=-1.74768",
     "flights": "https://www.google.com/travel/flights?q=Flights+from+ROM+to+BHX+on+2027-01-29+through+2027-02-01+for+3+passengers&curr=EUR&hl=it"
    },
-   "flights": [
-    {
-     "airline": "Ryanair",
-     "departure": "9:15 PM, Friday, January 29 (FCO→BHX)",
-     "arrival": "11:25 PM",
-     "stops": 0,
-     "duration": "3 hr 10 min",
-     "price_pp": 166.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "easyJet",
-     "departure": "10:10 AM, Friday, January 29 (FCO→BHX)",
-     "arrival": "12:10 PM",
-     "stops": 0,
-     "duration": "3 hr",
-     "price_pp": 239.0,
-     "source": "google-flights"
-    }
-   ],
-   "return_flights": [
-    {
-     "airline": "Ryanair",
-     "departure": "7:30 PM, Monday, February 1 (BHX→FCO)",
-     "arrival": "11:25 PM",
-     "stops": 0,
-     "duration": "2 hr 55 min",
-     "price_pp": 168.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "Jet2",
-     "departure": "7:15 AM, Monday, February 1 (BHX→FCO)",
-     "arrival": "11:00 AM",
-     "stops": 0,
-     "duration": "2 hr 45 min",
-     "price_pp": 184.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "Air France",
-     "departure": "6:00 AM, Monday, February 1 (BHX→FCO)",
-     "arrival": "7:45 PM",
-     "stops": 1,
-     "duration": "12 hr 45 min",
-     "price_pp": 209.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "KLM",
-     "departure": "6:00 AM, Monday, February 1 (BHX→FCO)",
-     "arrival": "4:20 PM",
-     "stops": 1,
-     "duration": "9 hr 20 min",
-     "price_pp": 209.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "Air France",
-     "departure": "6:00 AM, Monday, February 1 (BHX→FCO)",
-     "arrival": "10:45 PM",
-     "stops": 1,
-     "duration": "15 hr 45 min",
-     "price_pp": 210.0,
-     "source": "google-flights"
-    }
-   ],
+   "flights": [],
+   "return_flights": [],
    "extra_origins": [],
    "stays": [
     {
@@ -1441,11 +1372,13 @@
     }
    ],
    "estimate_pp": {
-    "flight": 166.0,
+    "flight": null,
     "stay": 126.0,
-    "total": 292.0
+    "total": null
    },
-   "errors": []
+   "errors": [
+    "google-flights: nessun volo in vendita per queste date/tratta"
+   ]
   },
   {
    "slug": "euic-london",
@@ -1482,76 +1415,58 @@
    "flights": [
     {
      "airline": "easyJet",
-     "departure": "10:55 AM, Thursday, February 18 (FCO→LGW)",
-     "arrival": "12:40 PM",
+     "departure": "10:55 AM on Thu, Feb 18 (FCO→LGW)",
+     "arrival": "12:40 PM on Thu, Feb 18",
      "stops": 0,
      "duration": "2 hr 45 min",
-     "price_pp": 138.0,
+     "price_pp": 158.0,
      "source": "google-flights"
     },
     {
      "airline": "easyJet",
-     "departure": "8:55 PM, Thursday, February 18 (FCO→LGW)",
-     "arrival": "10:35 PM",
+     "departure": "8:55 PM on Thu, Feb 18 (FCO→LGW)",
+     "arrival": "10:35 PM on Thu, Feb 18",
      "stops": 0,
      "duration": "2 hr 40 min",
-     "price_pp": 159.0,
+     "price_pp": 182.0,
      "source": "google-flights"
     },
     {
      "airline": "easyJet",
-     "departure": "4:30 PM, Thursday, February 18 (FCO→LGW)",
-     "arrival": "6:10 PM",
+     "departure": "4:30 PM on Thu, Feb 18 (FCO→LGW)",
+     "arrival": "6:10 PM on Thu, Feb 18",
      "stops": 0,
      "duration": "2 hr 40 min",
-     "price_pp": 175.0,
+     "price_pp": 200.0,
      "source": "google-flights"
     },
     {
-     "airline": "Air Serbia",
-     "departure": "9:30 AM, Thursday, February 18 (FCO→LHR)",
-     "arrival": "12:25 PM (Friday, February 19)",
-     "stops": 1,
-     "duration": "27 hr 55 min",
-     "price_pp": 176.0,
+     "airline": "",
+     "departure": " (FCO→LHR)",
+     "arrival": "",
+     "stops": 0,
+     "duration": "",
+     "price_pp": 202.0,
      "source": "google-flights"
     },
     {
      "airline": "Vueling",
-     "departure": "11:45 AM, Thursday, February 18 (FCO→LGW)",
-     "arrival": "4:20 PM",
+     "departure": "11:45 AM on Thu, Feb 18 (FCO→LGW)",
+     "arrival": "4:20 PM on Thu, Feb 18",
      "stops": 1,
      "duration": "5 hr 35 min",
-     "price_pp": 185.0,
+     "price_pp": 211.0,
      "source": "google-flights"
     }
    ],
    "return_flights": [
     {
-     "airline": "easyJet",
-     "departure": "6:45 AM, Monday, February 22 (LGW→FCO)",
-     "arrival": "10:20 AM",
+     "airline": "",
+     "departure": " (LGW→FCO)",
+     "arrival": "",
      "stops": 0,
-     "duration": "2 hr 35 min",
-     "price_pp": 129.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "easyJet",
-     "departure": "12:25 PM, Monday, February 22 (LGW→FCO)",
-     "arrival": "3:55 PM",
-     "stops": 0,
-     "duration": "2 hr 30 min",
-     "price_pp": 129.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "easyJet",
-     "departure": "4:35 PM, Monday, February 22 (LGW→FCO)",
-     "arrival": "8:05 PM",
-     "stops": 0,
-     "duration": "2 hr 30 min",
-     "price_pp": 129.0,
+     "duration": "",
+     "price_pp": 147.0,
      "source": "google-flights"
     },
     {
@@ -1569,6 +1484,24 @@
      "arrival": "5:50 PM",
      "stops": 0,
      "duration": "2 hr 40 min",
+     "price_pp": 180.0,
+     "source": "google-flights"
+    },
+    {
+     "airline": "British Airways",
+     "departure": "4:15 PM, Monday, February 22 (LHR→FCO)",
+     "arrival": "7:55 PM",
+     "stops": 0,
+     "duration": "2 hr 40 min",
+     "price_pp": 180.0,
+     "source": "google-flights"
+    },
+    {
+     "airline": "British Airways",
+     "departure": "6:20 PM, Monday, February 22 (LHR→FCO)",
+     "arrival": "9:55 PM",
+     "stops": 0,
+     "duration": "2 hr 35 min",
      "price_pp": 180.0,
      "source": "google-flights"
     }
@@ -1630,47 +1563,47 @@
      "return_flights": [
       {
        "airline": "easyJet",
-       "departure": "7:00 AM, Monday, February 22 (LGW→LYS)",
-       "arrival": "9:40 AM",
+       "departure": "7:00 AM on Mon, Feb 22 (LGW→LYS)",
+       "arrival": "9:40 AM on Mon, Feb 22",
        "stops": 0,
        "duration": "1 hr 40 min",
-       "price_pp": 104.0,
+       "price_pp": 119.0,
        "source": "google-flights"
       },
       {
        "airline": "easyJet",
-       "departure": "8:20 AM, Monday, February 22 (LGW→LYS)",
-       "arrival": "11:00 AM",
+       "departure": "8:20 AM on Mon, Feb 22 (LGW→LYS)",
+       "arrival": "11:00 AM on Mon, Feb 22",
        "stops": 0,
        "duration": "1 hr 40 min",
-       "price_pp": 104.0,
+       "price_pp": 119.0,
        "source": "google-flights"
       },
       {
        "airline": "easyJet",
-       "departure": "12:05 PM, Monday, February 22 (LGW→LYS)",
-       "arrival": "2:45 PM",
+       "departure": "12:05 PM on Mon, Feb 22 (LGW→LYS)",
+       "arrival": "2:45 PM on Mon, Feb 22",
        "stops": 0,
        "duration": "1 hr 40 min",
-       "price_pp": 104.0,
+       "price_pp": 119.0,
        "source": "google-flights"
       },
       {
        "airline": "easyJet",
-       "departure": "4:20 PM, Monday, February 22 (LGW→LYS)",
-       "arrival": "6:55 PM",
+       "departure": "4:20 PM on Mon, Feb 22 (LGW→LYS)",
+       "arrival": "6:55 PM on Mon, Feb 22",
        "stops": 0,
        "duration": "1 hr 35 min",
-       "price_pp": 104.0,
+       "price_pp": 119.0,
        "source": "google-flights"
       },
       {
        "airline": "British Airways",
-       "departure": "3:25 PM, Monday, February 22 (LHR→LYS)",
-       "arrival": "6:10 PM",
+       "departure": "3:25 PM on Mon, Feb 22 (LHR→LYS)",
+       "arrival": "6:10 PM on Mon, Feb 22",
        "stops": 0,
        "duration": "1 hr 45 min",
-       "price_pp": 161.0,
+       "price_pp": 184.0,
        "source": "google-flights"
       }
      ]
@@ -1696,9 +1629,9 @@
     {
      "source": "airbnb",
      "name": "50% di sconto / 3 camere da letto / Loft / 10 posti letto / Parco",
-     "total_price": 1624.0,
-     "per_night": 406.0,
-     "per_person_night": 40.6,
+     "total_price": 1613.0,
+     "per_night": 403.25,
+     "per_person_night": 40.33,
      "review_score": 9.9,
      "review_count": "31",
      "distance_km": 1.85,
@@ -1767,9 +1700,9 @@
     }
    ],
    "estimate_pp": {
-    "flight": 138.0,
+    "flight": 158.0,
     "stay": 159.8,
-    "total": 297.8
+    "total": 317.8
    },
    "errors": []
   },
@@ -1854,47 +1787,47 @@
    "return_flights": [
     {
      "airline": "Wizz Air",
-     "departure": "9:20 PM, Monday, April 12 (LIS→FCO)",
-     "arrival": "1:15 AM (Tuesday, April 13)",
+     "departure": "9:20 PM on Mon, Apr 12 (LIS→FCO)",
+     "arrival": "1:15 AM on Tue, Apr 13",
      "stops": 0,
      "duration": "2 hr 55 min",
-     "price_pp": 100.0,
+     "price_pp": 115.0,
      "source": "google-flights"
     },
     {
      "airline": "Ryanair",
-     "departure": "9:50 AM, Monday, April 12 (LIS→FCO)",
-     "arrival": "1:50 PM",
+     "departure": "9:50 AM on Mon, Apr 12 (LIS→FCO)",
+     "arrival": "1:50 PM on Mon, Apr 12",
      "stops": 0,
      "duration": "3 hr",
-     "price_pp": 163.0,
+     "price_pp": 187.0,
      "source": "google-flights"
     },
     {
      "airline": "Ryanair",
-     "departure": "6:20 PM, Monday, April 12 (LIS→FCO)",
-     "arrival": "10:20 PM",
+     "departure": "6:20 PM on Mon, Apr 12 (LIS→FCO)",
+     "arrival": "10:20 PM on Mon, Apr 12",
      "stops": 0,
      "duration": "3 hr",
-     "price_pp": 163.0,
+     "price_pp": 187.0,
      "source": "google-flights"
     },
     {
      "airline": "Iberia",
-     "departure": "6:35 AM, Monday, April 12 (LIS→FCO)",
-     "arrival": "3:30 PM",
+     "departure": "6:35 AM on Mon, Apr 12 (LIS→FCO)",
+     "arrival": "3:30 PM on Mon, Apr 12",
      "stops": 1,
      "duration": "7 hr 55 min",
-     "price_pp": 211.0,
+     "price_pp": 242.0,
      "source": "google-flights"
     },
     {
      "airline": "Iberia",
-     "departure": "12:30 PM, Monday, April 12 (LIS→FCO)",
-     "arrival": "7:40 PM",
+     "departure": "12:30 PM on Mon, Apr 12 (LIS→FCO)",
+     "arrival": "7:40 PM on Mon, Apr 12",
      "stops": 1,
      "duration": "6 hr 10 min",
-     "price_pp": 211.0,
+     "price_pp": 242.0,
      "source": "google-flights"
     }
    ],
@@ -2186,37 +2119,8 @@
      "participants": [
       "Jean"
      ],
-     "flights": [
-      {
-       "airline": "easyJet",
-       "departure": "6:05 PM, Friday, May 7 (LYS→PRG)",
-       "arrival": "7:45 PM",
-       "stops": 0,
-       "duration": "1 hr 40 min",
-       "price_pp": 132.0,
-       "source": "google-flights"
-      },
-      {
-       "airline": "Volotea",
-       "departure": "6:00 AM, Friday, May 7 (LYS→PRG)",
-       "arrival": "7:40 AM",
-       "stops": 0,
-       "duration": "1 hr 40 min",
-       "price_pp": 307.0,
-       "source": "google-flights"
-      }
-     ],
-     "return_flights": [
-      {
-       "airline": "Volotea",
-       "departure": "8:05 PM, Monday, May 10 (PRG→LYS)",
-       "arrival": "9:50 PM",
-       "stops": 0,
-       "duration": "1 hr 45 min",
-       "price_pp": 353.0,
-       "source": "google-flights"
-      }
-     ]
+     "flights": [],
+     "return_flights": []
     }
    ],
    "stays": [
@@ -2239,7 +2143,8 @@
     "total": 384.01
    },
    "errors": [
-    "booking.com: WAF o zero risultati"
+    "booking.com: WAF o zero risultati",
+    "LYS: google-flights: nessun volo in vendita per queste date/tratta"
    ]
   },
   {
