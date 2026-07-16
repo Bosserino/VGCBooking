@@ -28,6 +28,8 @@ def main() -> int:
 
     sub.add_parser("dashboard", help="Apre la dashboard in locale (http://localhost:8734)")
 
+    sub.add_parser("booking-login", help="Login Booking una tantum: salva la sessione per i prezzi Genius")
+
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(message)s")
 
@@ -75,6 +77,24 @@ def main() -> int:
         webbrowser.open("http://localhost:8734")
         print("Dashboard su http://localhost:8734 (Ctrl+C per chiudere)")
         http.server.HTTPServer(("127.0.0.1", 8734), handler).serve_forever()
+
+    if args.command == "booking-login":
+        from playwright.sync_api import sync_playwright
+
+        out = settings.workbook_path.parent / "booking_storage_state.json"
+        print("Si apre un browser: fai login su Booking.com (anche con 2FA),")
+        print("poi TORNA QUI e premi Invio per salvare la sessione.\n")
+        with sync_playwright() as pw:
+            browser = pw.chromium.launch(headless=False)
+            context = browser.new_context(locale="it-IT")
+            page = context.new_page()
+            page.goto("https://account.booking.com/sign-in")
+            input("Premi Invio quando hai completato il login... ")
+            context.storage_state(path=str(out))
+            browser.close()
+        print(f"\nSessione salvata in {out}")
+        print("Copia TUTTO il contenuto del file nel secret BOOKING_STORAGE_STATE del repo (vedi README).")
+        return 0
 
     if args.command == "events":
         from .registry import load_events

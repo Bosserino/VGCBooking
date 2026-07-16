@@ -46,6 +46,9 @@
       --row-hl:      #1e2a38;
     }
   }
+  @supports (interpolate-size: allow-keywords) {
+    :root { interpolate-size: allow-keywords; }
+  }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -55,8 +58,15 @@
   }
   .wrap { max-width: 900px; margin: 0 auto; padding: 16px 12px 48px; }
 
+  .head-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
   header h1 { font-size: 1.6rem; letter-spacing: -.01em; }
   header .sub { color: var(--ink-2); font-size: .9rem; margin-top: 4px; }
+  .lang { display: flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; flex: none; }
+  .lang button {
+    font: inherit; font-size: .78rem; font-weight: 650; padding: 5px 12px;
+    border: 0; background: var(--surface); color: var(--ink-2); cursor: pointer;
+  }
+  .lang button.active { background: var(--accent); color: #fff; }
 
   .banner {
     margin: 12px 0 0; padding: 10px 14px; border-radius: 10px;
@@ -73,29 +83,29 @@
     border-bottom: 1px solid var(--hairline);
   }
   .filters { display: flex; flex-wrap: wrap; gap: 8px; }
-  .filters button {
+  .filters button, .chip-toggle {
     border: 1px solid var(--border); background: var(--surface); color: var(--ink-2);
     border-radius: 999px; padding: 6px 14px; font: inherit; font-size: .85rem; cursor: pointer;
   }
-  .filters button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .member-row { display: flex; align-items: center; gap: 8px; margin-top: 8px; font-size: .85rem; color: var(--ink-2); }
+  .filters button.active, .chip-toggle.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .member-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 8px; font-size: .85rem; color: var(--ink-2); }
   .member-row select {
     font: inherit; font-size: .85rem; color: var(--ink);
     background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
     padding: 6px 10px; max-width: 230px; flex: 0 1 auto;
   }
 
-  /* riepilogo */
-  .summary {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 8px; margin-bottom: 20px;
-  }
-  .summary .tile {
+  /* riga riepilogo + stat tiles */
+  #summary { margin-bottom: 20px; }
+  .sumline { color: var(--ink-2); font-size: .85rem; margin-bottom: 8px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+  .tile {
     background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-    padding: 10px 14px;
+    padding: 12px 14px;
   }
-  .summary .tile .k { color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; }
-  .summary .tile .v { font-size: 1.05rem; font-weight: 650; margin-top: 2px; }
+  .tile .k { color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; }
+  .tile .v { font-size: 1.45rem; font-weight: 720; margin-top: 2px; letter-spacing: -.01em; }
+  .tile .n { color: var(--muted); font-size: .74rem; margin-top: 2px; }
 
   /* card evento */
   .card {
@@ -141,14 +151,27 @@
   .who .none { color: var(--muted); font-style: italic; }
   .who .chip.me { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 650; }
 
-  /* voli da aeroporti alternativi */
-  .extra-origin {
-    margin-top: 10px; padding: 10px 12px; border-radius: 10px;
+  /* spoiler voli da aeroporti alternativi */
+  details.extra-origin {
+    margin-top: 10px; border-radius: 10px;
     border: 1px solid var(--hairline); border-left: 3px solid var(--badge-spe-ink);
   }
-  .extra-origin h4 { font-size: .8rem; font-weight: 650; color: var(--ink-2); margin-bottom: 6px; }
-  .extra-origin.me { border-left-color: var(--accent); background: var(--row-hl); }
-  .extra-origin table { font-size: .8rem; min-width: 480px; }
+  details.extra-origin summary {
+    list-style: none; cursor: pointer; padding: 9px 12px;
+    font-size: .8rem; font-weight: 650; color: var(--ink-2);
+    display: flex; align-items: center; gap: 8px;
+  }
+  details.extra-origin summary::-webkit-details-marker { display: none; }
+  details.extra-origin .chev { display: inline-block; transition: transform .2s ease; transform: rotate(-90deg); }
+  details.extra-origin[open] .chev { transform: rotate(0deg); }
+  details.extra-origin .extra-body { padding: 0 12px 10px; }
+  details.extra-origin::details-content {
+    height: 0; overflow: clip;
+    transition: height .25s ease, content-visibility .25s allow-discrete;
+  }
+  details.extra-origin[open]::details-content { height: auto; }
+  details.extra-origin.me { border-left-color: var(--accent); background: var(--row-hl); }
+  details.extra-origin table { font-size: .8rem; min-width: 480px; }
   .extra-none { color: var(--muted); font-size: .8rem; margin-top: 8px; }
 
   h3.sec { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 16px 0 6px; }
@@ -165,6 +188,15 @@
   tr.best td:first-child::before { content: "★ "; color: var(--accent); }
   td a { color: var(--accent); text-decoration: none; }
   td a:hover { text-decoration: underline; }
+  .mdeal, .gdeal {
+    font-size: .68rem; font-weight: 650; white-space: nowrap;
+    border-radius: 999px; padding: 1px 8px; margin-left: 6px;
+  }
+  .mdeal, .gdeal, .mubadge { display: inline-block; }
+  .mdeal { background: var(--badge-reg-bg); color: var(--badge-reg-ink); }
+  .gdeal { background: #003580; color: #fff; } /* blu Booking */
+  .mubadge { background: var(--badge-spe-bg); color: var(--badge-spe-ink); }
+  .unit { color: var(--muted); font-size: .74rem; margin-top: 1px; white-space: normal; }
 
   .noprices { color: var(--ink-2); font-size: .9rem; margin: 10px 0; }
   .linkrow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
@@ -184,41 +216,161 @@
 <body>
 <div class="wrap">
   <header>
-    <h1>Trasferte VGC 2027</h1>
-    <div class="sub" id="subheader">caricamento…</div>
+    <div class="head-row">
+      <h1 id="title">Trasferte VGC 2027</h1>
+      <div class="lang" id="lang">
+        <button data-l="it" class="active">IT</button><button data-l="en">EN</button>
+      </div>
+    </div>
+    <div class="sub" id="subheader"></div>
   </header>
 
   <div class="banner" id="banner" hidden></div>
 
   <div class="toolbar">
     <nav class="filters" id="filters">
-      <button data-f="all" class="active">Tutti</button>
-      <button data-f="intl">Internazionali</button>
-      <button data-f="eu">Europei</button>
-      <button data-f="booked">Solo con prenotati</button>
+      <button data-f="all" class="active"></button>
+      <button data-f="intl"></button>
+      <button data-f="eu"></button>
+      <button data-f="booked"></button>
     </nav>
     <div class="member-row">
-      <label for="member">Vedi come…</label>
-      <select id="member"><option value="">Tutti</option></select>
+      <label for="member" id="member-label"></label>
+      <select id="member"><option value=""></option></select>
+      <button class="chip-toggle" id="mobile-toggle"></button>
+      <button class="chip-toggle" id="genius-toggle"></button>
     </div>
   </div>
 
-  <section class="summary" id="summary"></section>
+  <section id="summary"></section>
   <main id="cards"></main>
-  <footer class="foot">Aggiornato automaticamente ogni notte · dati Booking/Airbnb/Google Flights</footer>
+  <footer class="foot" id="footer"></footer>
 </div>
 
 <script>
 "use strict";
 (() => {
-  // ---- formattazione it-IT ----
-  const nf0 = new Intl.NumberFormat("it-IT", { maximumFractionDigits: 0 });
-  const nf2 = new Intl.NumberFormat("it-IT", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  // ---- i18n ----
+  const I18N = {
+    it: {
+      locale: "it-IT",
+      title: "Trasferte VGC 2027",
+      updated: (d, o) => `aggiornato il ${d} · partenza da ${o}`,
+      sampleBanner: "⚠ Stai vedendo dati di esempio: prices.json non è ancora disponibile.",
+      fAll: "Tutti", fIntl: "Internazionali", fEu: "Europei", fBooked: "Solo con prenotati",
+      viewAs: "Vedi come…", everyone: "Tutti",
+      mobileChip: "📱 Solo offerte mobile",
+      geniusChip: "Genius", geniusDeal: "Genius",
+      noGeniusDeals: "nessuna offerta Genius trovata",
+      tileFlights: "Solo voli", tileStays: "Solo alloggi", tileTotal: "Voli + alloggi",
+      ofEvents: n => `su ${n} ${n === 1 ? "evento" : "eventi"} con dati`,
+      eventsWord: n => n === 1 ? "evento" : "eventi", nextWord: "prossimo",
+      types: { international: "Internazionale", regional: "Regionale", special: "Speciale" },
+      nextBadge: "Prossimo evento",
+      venueTBC: "sede da confermare",
+      nightsWord: n => n === 1 ? "notte" : "notti",
+      booked: n => `Prenotati (${n}):`,
+      noneBooked: n => `Nessuno prenotato — ricerca base per ${n} persone`,
+      estimateLbl: "Stima a testa", forName: n => ` per ${n}`,
+      flightWord: "volo", stayWord: "alloggio", fromWord: "da",
+      deltaFlight: "volo", deltaNight: "notte",
+      deltaTip: "variazione dall'ultimo aggiornamento",
+      secFlights: "Voli (a persona)", secStays: "Alloggi",
+      thAirline: "Compagnia", thDep: "Partenza", thArr: "Arrivo", thStops: "Scali",
+      thDur: "Durata", thPricePP: "€ a persona",
+      direct: "Diretto", stopsOf: n => n + (n === 1 ? " scalo" : " scali"),
+      thSource: "Fonte", thStay: "Alloggio", thNight: "€/notte p.p.", thTotal: "Totale",
+      thReviews: "Recensioni", thDist: "Distanza", thCancel: "Cancellazione",
+      yes: "Sì", no: "No", toVerify: "Da verificare", openLink: "apri",
+      mobileDeal: "Offerta mobile",
+      multiUnit: "Più unità",
+      noMobileDeals: "nessuna offerta mobile trovata",
+      noPrices: "Prezzi non ancora disponibili.",
+      searchBooking: "Cerca su Booking", searchAirbnb: "Cerca su Airbnb", searchFlights: "Cerca su Google Flights",
+      flightsFrom: "Voli da", forWord: "per",
+      extraNone: a => `voli da ${a} non disponibili`,
+      errorsLbl: "Avvisi raccolta dati:",
+      emptyFilter: "Nessun evento per questo filtro.",
+      footer: "Aggiornato automaticamente ogni notte · dati Booking/Airbnb/Google Flights",
+      fatal: m => `Impossibile caricare i dati (${m}).`,
+      airports: { ROM: "Roma", FCO: "Roma", CIA: "Roma", LYS: "Lione", MIL: "Milano", LON: "Londra", FRA: "Francoforte" },
+    },
+    en: {
+      locale: "en-GB",
+      title: "VGC 2027 Trips",
+      updated: (d, o) => `updated on ${d} · departing from ${o}`,
+      sampleBanner: "⚠ You are viewing sample data: prices.json is not available yet.",
+      fAll: "All", fIntl: "Internationals", fEu: "Europeans", fBooked: "Only with bookings",
+      viewAs: "View as…", everyone: "Everyone",
+      mobileChip: "📱 Mobile deals only",
+      geniusChip: "Genius", geniusDeal: "Genius",
+      noGeniusDeals: "no Genius deals found",
+      tileFlights: "Flights only", tileStays: "Stays only", tileTotal: "Flights + stays",
+      ofEvents: n => `across ${n} ${n === 1 ? "event" : "events"} with data`,
+      eventsWord: n => n === 1 ? "event" : "events", nextWord: "next",
+      types: { international: "International", regional: "Regional", special: "Special" },
+      nextBadge: "Next event",
+      venueTBC: "venue to be confirmed",
+      nightsWord: n => n === 1 ? "night" : "nights",
+      booked: n => `Booked (${n}):`,
+      noneBooked: n => `No one booked — base search for ${n} people`,
+      estimateLbl: "Estimate per person", forName: n => ` for ${n}`,
+      flightWord: "flight", stayWord: "stay", fromWord: "from",
+      deltaFlight: "flight", deltaNight: "night",
+      deltaTip: "change since the last update",
+      secFlights: "Flights (per person)", secStays: "Stays",
+      thAirline: "Airline", thDep: "Departure", thArr: "Arrival", thStops: "Stops",
+      thDur: "Duration", thPricePP: "€ per person",
+      direct: "Direct", stopsOf: n => n + (n === 1 ? " stop" : " stops"),
+      thSource: "Source", thStay: "Stay", thNight: "€/night pp", thTotal: "Total",
+      thReviews: "Reviews", thDist: "Distance", thCancel: "Cancellation",
+      yes: "Yes", no: "No", toVerify: "To verify", openLink: "open",
+      mobileDeal: "Mobile deal",
+      multiUnit: "Multiple units",
+      noMobileDeals: "no mobile deals found",
+      noPrices: "Prices not yet available.",
+      searchBooking: "Search on Booking", searchAirbnb: "Search on Airbnb", searchFlights: "Search on Google Flights",
+      flightsFrom: "Flights from", forWord: "for",
+      extraNone: a => `flights from ${a} not available`,
+      errorsLbl: "Data collection warnings:",
+      emptyFilter: "No events for this filter.",
+      footer: "Updated automatically every night · data from Booking/Airbnb/Google Flights",
+      fatal: m => `Could not load data (${m}).`,
+      airports: { ROM: "Rome", FCO: "Rome", CIA: "Rome", LYS: "Lyon", MIL: "Milan", LON: "London", FRA: "Frankfurt" },
+    },
+  };
+
+  // team completo (i nomi nei participants si aggiungono dinamicamente)
+  const TEAM = ["Alessio", "Federico", "Alessandro B", "Alessandro S", "Jean",
+    "Francesco M", "Francesco N", "Nicolò", "Stefano", "Roberto",
+    "Andrea", "Maurizio", "Giovanni", "Antonio"];
+  const LS_MEMBER = "vgc2027.member";
+  const LS_LANG = "vgc2027.lang";
+
+  // ---- stato ----
+  const state = {
+    lang: "it", typeFilter: "all", member: "",
+    mobileOnly: false, geniusOnly: false,
+    events: [], deltas: {}, isSample: false,
+    generatedAt: null, origin: "",
+  };
+
+  let t = I18N.it, nf0, nf2;
+  function setLang(l) {
+    state.lang = I18N[l] ? l : "it";
+    t = I18N[state.lang];
+    nf0 = new Intl.NumberFormat(t.locale, { maximumFractionDigits: 0 });
+    nf2 = new Intl.NumberFormat(t.locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+  setLang("it");
+
+  // ---- formattazione ----
   const euro = v => (v == null || isNaN(v)) ? "—" :
     "€ " + (Number.isInteger(+v) ? nf0.format(v) : nf2.format(v));
+  const round2 = v => Math.round(v * 100) / 100;
 
   const parseDay = s => new Date(s + "T12:00:00"); // evita slittamenti di fuso
-  const fmtDay = (d, opts) => d.toLocaleDateString("it-IT", opts || { day: "numeric", month: "short", year: "numeric" });
+  const fmtDay = (d, opts) => d.toLocaleDateString(t.locale, opts || { day: "numeric", month: "short", year: "numeric" });
   function fmtRange(a, b) {
     const d1 = parseDay(a), d2 = parseDay(b);
     if (a === b) return fmtDay(d1);
@@ -230,15 +382,7 @@
   const esc = s => String(s ?? "").replace(/[&<>"']/g,
     c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
-  const TYPE_LABEL = { international: "Internazionale", regional: "Regionale", special: "Speciale" };
-  const AIRPORT_NAME = { ROM: "Roma", FCO: "Roma", CIA: "Roma", LYS: "Lione", MIL: "Milano", LON: "Londra", FRA: "Francoforte" };
-  const airportLabel = code => AIRPORT_NAME[code] ? `${AIRPORT_NAME[code]} (${code})` : String(code || "—");
-
-  // team completo (i nomi nei participants si aggiungono dinamicamente)
-  const TEAM = ["Alessio", "Federico", "Alessandro B", "Alessandro S", "Jean",
-    "Francesco M", "Francesco N", "Nicolò", "Stefano", "Roberto",
-    "Andrea", "Maurizio", "Giovanni", "Antonio"];
-  const LS_KEY = "vgc2027.member";
+  const airportLabel = code => t.airports[code] ? `${t.airports[code]} (${code})` : String(code || "—");
 
   // ---- caricamento dati ----
   async function loadJSON(url) {
@@ -271,22 +415,39 @@
   function deltaChip(diff, label) {
     if (diff == null || Math.abs(diff) < 0.005) return "";
     const up = diff > 0;
-    return `<span class="delta ${up ? "up" : "down"}" title="variazione dall'ultimo aggiornamento">
+    return `<span class="delta ${up ? "up" : "down"}" title="${esc(t.deltaTip)}">
       ${up ? "▲" : "▼"} ${esc(label)} ${euro(Math.abs(diff))}</span>`;
   }
 
-  // ---- render card ----
+  // ---- stime ----
+  function extraOriginFor(ev, member) {
+    if (!member) return null;
+    return (ev.extra_origins || []).find(o =>
+      (o.participants || []).includes(member) && (o.flights || []).length) || null;
+  }
+
+  // Stima a testa: volo minimo (da aeroporto alternativo se il membro ne ha uno) + alloggio
+  function estimateFor(ev, member) {
+    const est = ev.estimate_pp || {};
+    const eo = extraOriginFor(ev, member);
+    if (!eo) return { flight: est.flight ?? null, stay: est.stay ?? null, total: est.total ?? null, origin: null };
+    const flight = Math.min(...eo.flights.map(f => f.price_pp));
+    const stay = est.stay ?? null;
+    return { flight, stay, total: stay != null ? round2(flight + stay) : null, origin: eo.origin };
+  }
+
+  // ---- render tabelle ----
   function flightsTable(flights) {
     const rows = [...flights].sort((a, b) => a.price_pp - b.price_pp).slice(0, 5);
     const best = Math.min(...rows.map(f => f.price_pp));
     return `<div class="tblwrap"><table>
-      <thead><tr><th>Compagnia</th><th>Partenza</th><th>Arrivo</th><th>Scali</th><th>Durata</th><th>€ a persona</th></tr></thead>
+      <thead><tr><th>${t.thAirline}</th><th>${t.thDep}</th><th>${t.thArr}</th><th>${t.thStops}</th><th>${t.thDur}</th><th>${t.thPricePP}</th></tr></thead>
       <tbody>${rows.map(f => `
         <tr${f.price_pp === best ? ' class="best"' : ""}>
           <td>${esc(f.airline)}</td>
           <td>${esc(f.departure)}</td>
           <td>${esc(f.arrival)}</td>
-          <td>${f.stops === 0 ? "Diretto" : f.stops + (f.stops === 1 ? " scalo" : " scali")}</td>
+          <td>${f.stops === 0 ? t.direct : t.stopsOf(f.stops)}</td>
           <td>${esc(f.duration)}</td>
           <td class="num"><strong>${euro(f.price_pp)}</strong></td>
         </tr>`).join("")}
@@ -294,117 +455,116 @@
   }
 
   function cancelLabel(v) {
-    if (v === true)  return '<span style="color:var(--good)">Sì</span>';
-    if (v === false) return "No";
-    return '<span style="color:var(--muted)">Da verificare</span>';
+    if (v === true)  return `<span style="color:var(--good)">${t.yes}</span>`;
+    if (v === false) return t.no;
+    return `<span style="color:var(--muted)">${t.toVerify}</span>`;
   }
 
   function staysTable(stays) {
     const rows = [...stays].sort((a, b) => a.per_person_night - b.per_person_night).slice(0, 6);
     const best = Math.min(...rows.map(s => s.per_person_night));
     return `<div class="tblwrap"><table>
-      <thead><tr><th>Fonte</th><th>Alloggio</th><th>€/notte p.p.</th><th>Totale</th><th>Recensioni</th><th>Distanza</th><th>Cancellazione</th><th></th></tr></thead>
+      <thead><tr><th>${t.thSource}</th><th>${t.thStay}</th><th>${t.thNight}</th><th>${t.thTotal}</th><th>${t.thReviews}</th><th>${t.thDist}</th><th>${t.thCancel}</th><th></th></tr></thead>
       <tbody>${rows.map(s => `
         <tr${s.per_person_night === best ? ' class="best"' : ""}>
           <td>${esc(s.source)}</td>
-          <td style="white-space:normal;min-width:140px">${esc(s.name)}</td>
+          <td style="white-space:normal;min-width:140px">${esc(s.name)}${s.mobile_deal === true ? `<span class="mdeal">📱 ${esc(t.mobileDeal)}</span>` : ""}${s.genius_deal === true ? `<span class="gdeal">${esc(t.geniusDeal)}</span>` : ""}${s.multi_unit === true ? `<span class="mubadge">${esc(t.multiUnit)}</span>` : ""}${s.unit_desc ? `<div class="unit">${esc(s.unit_desc)}</div>` : ""}</td>
           <td class="num"><strong>${euro(s.per_person_night)}</strong></td>
           <td class="num">${euro(s.total_price)}</td>
           <td>${s.review_score != null ? esc(s.review_score) + " (" + nf0.format(s.review_count || 0) + ")" : "—"}</td>
           <td class="num">${s.distance_km != null ? nf2.format(s.distance_km) + " km" : "—"}</td>
           <td>${cancelLabel(s.free_cancellation)}</td>
-          <td>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">apri</a>` : ""}</td>
+          <td>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${t.openLink}</a>` : ""}</td>
         </tr>`).join("")}
       </tbody></table></div>`;
   }
 
-  // Voli da aeroporti alternativi (extra_origins)
-  function extraOriginFor(ev, member) {
-    if (!member) return null;
-    return (ev.extra_origins || []).find(o =>
-      (o.participants || []).includes(member) && (o.flights || []).length) || null;
+  // Sezione alloggi con filtri "solo offerte mobile" / "Genius"
+  function staysSection(ev) {
+    const all = ev.stays || [];
+    if (!all.length) return "";
+    const vis = all.filter(s =>
+      (!state.mobileOnly || s.mobile_deal === true) &&
+      (!state.geniusOnly || s.genius_deal === true));
+    const emptyMsg = state.mobileOnly ? t.noMobileDeals : t.noGeniusDeals;
+    const body = vis.length ? staysTable(vis) : `<div class="noprices">${esc(emptyMsg)}</div>`;
+    return `<h3 class="sec">${t.secStays}</h3>${body}`;
   }
 
-  // Stima a testa: se il membro parte da un aeroporto alternativo usa il suo volo minimo
-  function estimateFor(ev, member) {
-    const est = ev.estimate_pp || {};
-    const eo = extraOriginFor(ev, member);
-    if (!eo) return { flight: est.flight, stay: est.stay, total: est.total, origin: null };
-    const flight = Math.min(...eo.flights.map(f => f.price_pp));
-    return { flight, stay: est.stay, total: est.stay != null ? flight + est.stay : null, origin: eo.origin };
-  }
-
-  function extraOriginsBlock(ev, member) {
+  // Spoiler <details> per i voli da aeroporti alternativi;
+  // si auto-apre quando il membro selezionato parte da lì (open impostato a ogni render)
+  function extraOriginsBlock(ev) {
     const list = ev.extra_origins || [];
     if (!list.length) return "";
     return list.map(o => {
       if (!(o.flights || []).length)
-        return `<div class="extra-none">voli da ${esc(airportLabel(o.origin))} non disponibili</div>`;
-      const mine = member && (o.participants || []).includes(member);
+        return `<div class="extra-none">${esc(t.extraNone(airportLabel(o.origin)))}</div>`;
+      const mine = !!state.member && (o.participants || []).includes(state.member);
       const who = (o.participants || []).join(", ");
-      return `<div class="extra-origin${mine ? " me" : ""}">
-        <h4>✈ Voli da ${esc(airportLabel(o.origin))}${who ? " per " + esc(who) : ""}</h4>
-        ${flightsTable(o.flights)}</div>`;
+      return `<details class="extra-origin${mine ? " me" : ""}"${mine ? " open" : ""}>
+        <summary><span class="chev">▾</span>✈ ${esc(t.flightsFrom)} ${esc(airportLabel(o.origin))}${who ? ` ${esc(t.forWord)} ${esc(who)}` : ""}</summary>
+        <div class="extra-body">${flightsTable(o.flights)}</div>
+      </details>`;
     }).join("");
   }
 
   function searchLinks(links) {
     const l = links || {};
-    const btn = (url, label) => url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${label}</a>` : "";
-    return `<div class="noprices">Prezzi non ancora disponibili.</div>
+    const btn = (url, label) => url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a>` : "";
+    return `<div class="noprices">${esc(t.noPrices)}</div>
       <div class="linkrow">
-        ${btn(l.booking, "Cerca su Booking")}
-        ${btn(l.airbnb, "Cerca su Airbnb")}
-        ${btn(l.flights, "Cerca su Google Flights")}
+        ${btn(l.booking, t.searchBooking)}
+        ${btn(l.airbnb, t.searchAirbnb)}
+        ${btn(l.flights, t.searchFlights)}
       </div>`;
   }
 
-  function eventCard(ev, deltas, member, isNext) {
-    const est = estimateFor(ev, member);
-    const d = deltas[ev.slug] || {};
+  function eventCard(ev, isNext) {
+    const est = estimateFor(ev, state.member);
+    const d = state.deltas[ev.slug] || {};
     const hasPrices = (ev.flights && ev.flights.length) || (ev.stays && ev.stays.length);
     const parts = ev.participants || [];
 
     return `<article class="card">
       <div class="card-head">
         <h2>${esc(ev.name)}</h2>
-        ${isNext ? '<span class="badge next">Prossimo evento</span>' : ""}
-        <span class="badge ${esc(ev.type)}">${TYPE_LABEL[ev.type] || esc(ev.type)}</span>
+        ${isNext ? `<span class="badge next">${esc(t.nextBadge)}</span>` : ""}
+        <span class="badge ${esc(ev.type)}">${t.types[ev.type] || esc(ev.type)}</span>
       </div>
       <div class="meta">
         <div>📍 ${esc(ev.city)}, ${esc(ev.country)} · ${fmtRange(ev.start, ev.end)}</div>
-        <div>🏟 ${esc(ev.venue)}${ev.venue_confirmed === false ? ' <span class="venue-warn">⚠ sede da confermare</span>' : ""}</div>
-        <div>🛏 ${ev.nights} ${ev.nights === 1 ? "notte" : "notti"} · check-in ${fmtDay(parseDay(ev.check_in))} → check-out ${fmtDay(parseDay(ev.check_out))}</div>
+        <div>🏟 ${esc(ev.venue)}${ev.venue_confirmed === false ? ` <span class="venue-warn">⚠ ${esc(t.venueTBC)}</span>` : ""}</div>
+        <div>🛏 ${ev.nights} ${t.nightsWord(ev.nights)} · check-in ${fmtDay(parseDay(ev.check_in))} → check-out ${fmtDay(parseDay(ev.check_out))}</div>
       </div>
 
       <div class="who">
         ${parts.length
-          ? `Prenotati (${parts.length}): ${parts.map(p =>
-              `<span class="chip${p === member ? " me" : ""}">${esc(p)}</span>`).join("")}`
-          : `<span class="none">Nessuno prenotato — ricerca base per ${ev.people_for_search || 4} persone</span>`}
+          ? `${esc(t.booked(parts.length))} ${parts.map(p =>
+              `<span class="chip${p === state.member ? " me" : ""}">${esc(p)}</span>`).join("")}`
+          : `<span class="none">${esc(t.noneBooked(ev.people_for_search || 4))}</span>`}
       </div>
 
       <div class="estimate">
-        <span class="lbl">Stima a testa${member ? " per " + esc(member) : ""}</span>
+        <span class="lbl">${esc(t.estimateLbl)}${state.member ? esc(t.forName(state.member)) : ""}</span>
         <span class="big">${euro(est.total)}</span>
         ${est.total != null
-          ? `<span class="split">volo${est.origin ? " da " + esc(airportLabel(est.origin)) : ""} ${euro(est.flight)} + alloggio ${euro(est.stay)}</span>` : ""}
-        ${deltaChip(d.flight, "volo")}
-        ${deltaChip(d.stay, "notte")}
+          ? `<span class="split">${esc(t.flightWord)}${est.origin ? " " + esc(t.fromWord) + " " + esc(airportLabel(est.origin)) : ""} ${euro(est.flight)} + ${esc(t.stayWord)} ${euro(est.stay)}</span>` : ""}
+        ${deltaChip(d.flight, t.deltaFlight)}
+        ${deltaChip(d.stay, t.deltaNight)}
       </div>
 
       ${hasPrices ? `
-        ${ev.flights && ev.flights.length ? `<h3 class="sec">Voli (a persona)</h3>${flightsTable(ev.flights)}` : ""}
-        ${extraOriginsBlock(ev, member)}
-        ${ev.stays && ev.stays.length ? `<h3 class="sec">Alloggi</h3>${staysTable(ev.stays)}` : ""}
-      ` : searchLinks(ev.links) + extraOriginsBlock(ev, member)}
+        ${ev.flights && ev.flights.length ? `<h3 class="sec">${t.secFlights}</h3>${flightsTable(ev.flights)}` : ""}
+        ${extraOriginsBlock(ev)}
+        ${staysSection(ev)}
+      ` : searchLinks(ev.links) + extraOriginsBlock(ev)}
 
       ${ev.errors && ev.errors.length
-        ? `<div class="errors">Avvisi raccolta dati: ${ev.errors.map(esc).join(" · ")}</div>` : ""}
+        ? `<div class="errors">${esc(t.errorsLbl)} ${ev.errors.map(esc).join(" · ")}</div>` : ""}
     </article>`;
   }
 
-  // ---- filtri + riepilogo ----
+  // ---- filtri, stat tiles e lista ----
   const FILTERS = {
     all:    () => true,
     intl:   e => e.type === "international",
@@ -412,27 +572,67 @@
     booked: e => (e.participants || []).length > 0,
   };
 
-  function renderList(events, deltas, filter, member) {
-    const shown = events
-      .filter(FILTERS[filter] || FILTERS.all)
-      .filter(e => !member || (e.participants || []).includes(member));
+  function refresh() {
+    const shown = state.events
+      .filter(FILTERS[state.typeFilter] || FILTERS.all)
+      .filter(e => !state.member || (e.participants || []).includes(state.member));
 
     const today = new Date(); today.setHours(0, 0, 0, 0);
     const next = shown.find(e => parseDay(e.start) >= today);
-    const ests = shown.map(e => estimateFor(e, member));
-    const totale = ests.reduce((s, e) => s + (e.total != null ? e.total : 0), 0);
-    const anyEst = ests.some(e => e.total != null);
+
+    // stat tiles sugli eventi visibili (prezzi personalizzati per membro)
+    let fSum = 0, fN = 0, sSum = 0, sN = 0, tSum = 0, tN = 0;
+    for (const ev of shown) {
+      const e = estimateFor(ev, state.member);
+      if (e.flight != null) { fSum += e.flight; fN++; }
+      if (e.stay != null)   { sSum += e.stay;   sN++; }
+      if (e.total != null)  { tSum += e.total;  tN++; }
+    }
+    const tile = (label, sum, n) => `<div class="tile">
+      <div class="k">${esc(label)}</div>
+      <div class="v">${n ? euro(round2(sum)) : "—"}</div>
+      <div class="n">${esc(t.ofEvents(n))}</div></div>`;
 
     document.getElementById("summary").innerHTML = `
-      <div class="tile"><div class="k">Eventi</div><div class="v">${shown.length}</div></div>
-      <div class="tile"><div class="k">Prossimo evento</div>
-        <div class="v" style="font-size:.9rem">${next ? esc(next.city) + " · " + fmtDay(parseDay(next.start)) : "—"}</div></div>
-      <div class="tile"><div class="k">${member ? "Stima totale per " + esc(member) : "Stima totale a testa"}</div>
-        <div class="v">${anyEst ? euro(totale) : "—"}</div></div>`;
+      <div class="sumline">${shown.length} ${esc(t.eventsWord(shown.length))}${next
+        ? ` · ${esc(t.nextWord)}: ${esc(next.city)} · ${fmtDay(parseDay(next.start))}` : ""}</div>
+      <div class="tiles">
+        ${tile(t.tileFlights, fSum, fN)}
+        ${tile(t.tileStays, sSum, sN)}
+        ${tile(t.tileTotal, tSum, tN)}
+      </div>`;
 
     document.getElementById("cards").innerHTML = shown.length
-      ? shown.map(e => eventCard(e, deltas, member, e === next)).join("")
-      : '<div class="empty">Nessun evento per questo filtro.</div>';
+      ? shown.map(e => eventCard(e, e === next)).join("")
+      : `<div class="empty">${esc(t.emptyFilter)}</div>`;
+  }
+
+  // Testi statici (header, filtri, chip, footer) nel locale attivo
+  function applyStatic() {
+    document.title = t.title;
+    if (document.documentElement) document.documentElement.lang = state.lang;
+    document.getElementById("title").textContent = t.title;
+
+    const gen = state.generatedAt ? new Date(state.generatedAt) : null;
+    const genTxt = gen && !isNaN(gen)
+      ? gen.toLocaleString(t.locale, { dateStyle: "long", timeStyle: "short" }) : "—";
+    document.getElementById("subheader").textContent = t.updated(genTxt, airportLabel(state.origin));
+
+    const banner = document.getElementById("banner");
+    banner.hidden = !state.isSample;
+    if (state.isSample) banner.textContent = t.sampleBanner;
+
+    const labels = { all: t.fAll, intl: t.fIntl, eu: t.fEu, booked: t.fBooked };
+    document.querySelectorAll("#filters button").forEach(b => {
+      b.textContent = labels[b.dataset.f] || "";
+    });
+
+    document.getElementById("member-label").textContent = t.viewAs;
+    const sel = document.getElementById("member");
+    if (sel.options.length) sel.options[0].textContent = t.everyone;
+    document.getElementById("mobile-toggle").textContent = t.mobileChip;
+    document.getElementById("genius-toggle").textContent = t.geniusChip;
+    document.getElementById("footer").textContent = t.footer;
   }
 
   // Nomi per il selettore "Vedi come…": team fisso + eventuali nomi extra nei dati
@@ -448,68 +648,85 @@
 
   // ---- avvio ----
   async function init() {
-    let data, isSample = false;
+    try { setLang(localStorage.getItem(LS_LANG) || "it"); } catch (_) { setLang("it"); }
+
+    let data;
     try {
       data = await loadJSON("./data/prices.json");
     } catch (_) {
       try {
         data = await loadJSON("./data/prices.sample.json");
-        isSample = true;
+        state.isSample = true;
       } catch (e2) {
-        document.getElementById("subheader").textContent = "";
+        applyStatic();
         document.getElementById("cards").innerHTML =
-          '<div class="fatal">Impossibile caricare i dati (' + esc(e2.message) + ').</div>';
+          `<div class="fatal">${esc(t.fatal(e2.message))}</div>`;
         return;
       }
     }
 
     let history = null;
     try { history = await loadJSON("./data/history.json"); } catch (_) { /* opzionale */ }
-    const deltas = computeDeltas(history);
-
-    if (isSample) {
-      const b = document.getElementById("banner");
-      b.hidden = false;
-      b.textContent = "⚠ Stai vedendo dati di esempio: prices.json non è ancora disponibile.";
-    }
-
-    const gen = data.generated_at ? new Date(data.generated_at) : null;
-    const genTxt = gen && !isNaN(gen)
-      ? gen.toLocaleString("it-IT", { dateStyle: "long", timeStyle: "short" }) : "—";
-    document.getElementById("subheader").textContent =
-      `aggiornato il ${genTxt} · partenza da ${airportLabel(data.origin)}`;
-
-    const events = [...(data.events || [])].sort((a, b) => (a.start < b.start ? -1 : 1));
+    state.deltas = computeDeltas(history);
+    state.generatedAt = data.generated_at || null;
+    state.origin = data.origin || "";
+    state.events = [...(data.events || [])].sort((a, b) => (a.start < b.start ? -1 : 1));
 
     // selettore membro, con scelta persistita in localStorage
     const sel = document.getElementById("member");
-    for (const n of memberNames(events)) {
+    for (const n of memberNames(state.events)) {
       const opt = document.createElement("option");
       opt.value = n; opt.textContent = n;
       sel.appendChild(opt);
     }
-    let currentMember = "";
-    try { currentMember = localStorage.getItem(LS_KEY) || ""; } catch (_) {}
-    if (currentMember && ![...sel.options].some(o => o.value === currentMember)) currentMember = "";
-    sel.value = currentMember;
+    try { state.member = localStorage.getItem(LS_MEMBER) || ""; } catch (_) {}
+    if (state.member && ![...sel.options].some(o => o.value === state.member)) state.member = "";
+    sel.value = state.member;
 
-    let current = "all";
-    const refresh = () => renderList(events, deltas, current, currentMember);
-
+    // listeners
     document.getElementById("filters").addEventListener("click", e => {
       const btn = e.target.closest("button[data-f]");
       if (!btn) return;
-      current = btn.dataset.f;
+      state.typeFilter = btn.dataset.f;
       document.querySelectorAll("#filters button").forEach(x => x.classList.toggle("active", x === btn));
       refresh();
     });
 
     sel.addEventListener("change", () => {
-      currentMember = sel.value;
-      try { localStorage.setItem(LS_KEY, currentMember); } catch (_) {}
+      state.member = sel.value;
+      try { localStorage.setItem(LS_MEMBER, state.member); } catch (_) {}
       refresh();
     });
 
+    document.getElementById("lang").addEventListener("click", e => {
+      const btn = e.target.closest("button[data-l]");
+      if (!btn || btn.dataset.l === state.lang) return;
+      setLang(btn.dataset.l);
+      try { localStorage.setItem(LS_LANG, state.lang); } catch (_) {}
+      document.querySelectorAll("#lang button").forEach(x => x.classList.toggle("active", x.dataset.l === state.lang));
+      applyStatic();
+      refresh();
+    });
+
+    const mob = document.getElementById("mobile-toggle");
+    mob.addEventListener("click", () => {
+      state.mobileOnly = !state.mobileOnly;
+      mob.classList.toggle("active", state.mobileOnly);
+      refresh();
+    });
+
+    // chip Genius: visibile solo se almeno un alloggio nel dataset ha genius_deal
+    const gnb = document.getElementById("genius-toggle");
+    const anyGenius = state.events.some(ev => (ev.stays || []).some(s => s.genius_deal === true));
+    gnb.hidden = !anyGenius;
+    gnb.addEventListener("click", () => {
+      state.geniusOnly = !state.geniusOnly;
+      gnb.classList.toggle("active", state.geniusOnly);
+      refresh();
+    });
+
+    document.querySelectorAll("#lang button").forEach(x => x.classList.toggle("active", x.dataset.l === state.lang));
+    applyStatic();
     refresh();
   }
 

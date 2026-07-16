@@ -254,6 +254,10 @@ def _mock_data(ev, people, nights):
             "review_count": rng.randint(15, 800),
             "distance_km": round(rng.uniform(0.2, 1.9), 2),
             "free_cancellation": rng.choice([True, True, None]),
+            "mobile_deal": rng.choice([True, False, False]),
+            "genius_deal": rng.choice([True, False, False]),
+            "unit_desc": f"Intero appartamento – {rng.randint(30, 90)} m²: {rng.randint(2, 5)} letti",
+            "multi_unit": rng.random() > 0.8,
             "url": "https://example.com",
         }
         for i in range(6)

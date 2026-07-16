@@ -70,8 +70,9 @@ events:
     end: 2026-10-18
     venue: Palais des Expositions (presunta)
     venue_confirmed: false
-    lat: 43.7034
-    lon: 7.2782
+    # coordinate verificate su OSM: Place de l'Armée du Rhin, Riquier
+    lat: 43.7074
+    lon: 7.2839
     airport: NCE
 
   - slug: gdansk

@@ -38,8 +38,9 @@
         }
       ],
       "stays": [
-        { "source": "booking.com", "name": "Apartment Royal Docks", "total_price": 744.0, "per_night": 186.0, "per_person_night": 62.0, "review_score": 8.7, "review_count": 412, "distance_km": 1.1, "free_cancellation": true, "url": "https://example.com" },
-        { "source": "airbnb", "name": "Loft Custom House", "total_price": 690.0, "per_night": 172.5, "per_person_night": 57.5, "review_score": 9.1, "review_count": 88, "distance_km": 0.8, "free_cancellation": null, "url": "https://example.com" }
+        { "source": "booking.com", "name": "Apartment Royal Docks", "total_price": 744.0, "per_night": 186.0, "per_person_night": 62.0, "review_score": 8.7, "review_count": 412, "distance_km": 1.1, "free_cancellation": true, "mobile_deal": true, "genius_deal": true, "unit_desc": "Intero appartamento – 62 m²: 4 letti • 2 camere da letto", "multi_unit": false, "url": "https://example.com" },
+        { "source": "booking.com", "name": "City Stay Aparthotel", "total_price": 1180.0, "per_night": 295.0, "per_person_night": 98.3, "review_score": 8.2, "review_count": 96, "distance_km": 1.6, "free_cancellation": true, "mobile_deal": false, "genius_deal": false, "unit_desc": "2 x Appartamento – 35 m²: 3 letti", "multi_unit": true, "url": "https://example.com" },
+        { "source": "airbnb", "name": "Loft Custom House", "total_price": 690.0, "per_night": 172.5, "per_person_night": 57.5, "review_score": 9.1, "review_count": 88, "distance_km": 0.8, "free_cancellation": null, "mobile_deal": false, "url": "https://example.com" }
       ],
       "estimate_pp": { "flight": 74.0, "stay": 230.0, "total": 304.0 },
       "errors": []

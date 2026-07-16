@@ -40,8 +40,14 @@ def search_flights(origin: str, destination: str, depart: str, ret: str, adults:
         for dest in CITY_AIRPORTS.get(destination, [destination]):
             for attempt in range(2):  # Google a volte risponde vuoto sotto rate-limit
                 try:
-                    flights.extend(_search_one(orig, dest, depart, ret))
-                    break
+                    found = _search_one(orig, dest, depart, ret)
+                    flights.extend(found)
+                    if len(found) >= 3 or attempt == 1:
+                        break
+                    # lista magra (es. solo la sezione "migliori"): un secondo giro
+                    log.info("google-flights %s->%s: solo %d voli, ritento", orig, dest, len(found))
+                    time.sleep(4)
+                    continue
                 except Exception as exc:  # noqa: BLE001
                     msg = str(exc)
                     if "No flights found" in msg:
@@ -54,8 +60,13 @@ def search_flights(origin: str, destination: str, depart: str, ret: str, adults:
             time.sleep(2)  # respiro tra le combinazioni per non farsi limitare
     if not flights:
         raise RuntimeError(last_error or "nessun volo trovato")
-    flights.sort(key=lambda x: x["price_pp"])
-    return flights[:5]
+    seen, unique = set(), []
+    for f in sorted(flights, key=lambda x: x["price_pp"]):
+        key = (f["airline"], f["departure"], f["price_pp"])
+        if key not in seen:
+            seen.add(key)
+            unique.append(f)
+    return unique[:5]
 
 
 def _search_one(origin: str, destination: str, depart: str, ret: str) -> list[dict]:

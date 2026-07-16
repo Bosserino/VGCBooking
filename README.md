@@ -70,6 +70,23 @@ Se un domani vorrete i prezzi direttamente in Excel, copiate `.env.example` in
 > Il file può stare su OneDrive/Drive condiviso: la pipeline lo legge/scrive in
 > locale, basta che sia sincronizzato e chiuso quando lanci `sync`.
 
+## Prezzi Genius reali (opzionale)
+
+Di default i prezzi Booking sono quelli pubblici da telefono (offerte mobile incluse,
+tasse incluse). Per vedere i **prezzi Genius del tuo account** (badge "Genius" sulle
+case aderenti, sconto già applicato):
+
+1. Sul Mac: `.venv/bin/python -m vgcbooking booking-login` → si apre un browser,
+   fai login su Booking.com, torna nel terminale e premi Invio.
+2. Apri il file `booking_storage_state.json` creato nella cartella del progetto
+   e copia tutto il contenuto.
+3. Su GitHub: **Settings → Secrets and variables → Actions → scheda Secrets →
+   New repository secret** — Nome: `BOOKING_STORAGE_STATE`, Valore: incolla tutto.
+4. Dal run successivo i prezzi sono quelli del tuo account. ⚠️ Note: il file è la
+   tua sessione Booking (non condividerlo altrove; il secret di GitHub è cifrato);
+   scade dopo qualche settimana/mese → rifai i passi 1-3 quando i badge Genius
+   spariscono. Cancella il file locale dopo averlo incollato.
+
 ## Limiti onesti delle API
 
 - **Booking.com e Airbnb** non hanno API pubbliche self-service: si usano wrapper

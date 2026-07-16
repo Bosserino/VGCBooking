@@ -38,6 +38,15 @@ jobs:
           pip install playwright
           playwright install --with-deps chromium
 
+      - name: Prepara sessione Booking (opzionale, per prezzi Genius)
+        env:
+          BOOKING_STATE_JSON: ${{ secrets.BOOKING_STORAGE_STATE }}
+        run: |
+          if [ -n "$BOOKING_STATE_JSON" ]; then
+            echo "$BOOKING_STATE_JSON" > /tmp/booking_state.json
+            echo "BOOKING_STORAGE_STATE=/tmp/booking_state.json" >> "$GITHUB_ENV"
+          fi
+
       - name: Snapshot prezzi
         env:
           SIGNUP_CSV_URL: ${{ vars.SIGNUP_CSV_URL }}

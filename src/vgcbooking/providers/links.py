@@ -35,6 +35,10 @@ def stay_links(request: TripRequest) -> list[SearchLink]:
 
     booking_params = {
         "ss": f"{ev.venue.replace(' (presunta)', '')}, {ev.city}",
+        # coordinate esplicite: il geocoding del solo testo a volte sbaglia città
+        "dest_type": "landmark",
+        "place_id_lat": ev.lat,
+        "place_id_lon": ev.lon,
         "checkin": request.check_in.isoformat(),
         "checkout": request.check_out.isoformat(),
         "group_adults": request.people,
