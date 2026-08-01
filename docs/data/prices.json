@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-31T06:54:01+00:00",
+ "generated_at": "2026-08-01T06:39:20+00:00",
  "origin": "ROM",
  "booking_session": true,
  "settings": {
@@ -53,7 +53,7 @@
      "arrival": "3:00 PM",
      "stops": 0,
      "duration": "2 hr",
-     "price_pp": 112.0,
+     "price_pp": 113.0,
      "source": "google-flights"
     },
     {
@@ -76,8 +76,8 @@
     },
     {
      "airline": "ITA",
-     "departure": "8:45 AM, Friday, September 25 (FCO→FRA)",
-     "arrival": "10:50 AM",
+     "departure": "3:35 PM, Friday, September 25 (FCO→FRA)",
+     "arrival": "5:40 PM",
      "stops": 0,
      "duration": "2 hr 5 min",
      "price_pp": 160.0,
@@ -140,6 +140,15 @@
      "flights": [
       {
        "airline": "Air France",
+       "departure": "6:00 AM, Friday, September 25 (LYS→FRA)",
+       "arrival": "11:25 AM",
+       "stops": 1,
+       "duration": "5 hr 25 min",
+       "price_pp": 217.0,
+       "source": "google-flights"
+      },
+      {
+       "airline": "Air France",
        "departure": "2:40 PM, Friday, September 25 (LYS→FRA)",
        "arrival": "10:05 PM",
        "stops": 1,
@@ -159,9 +168,9 @@
       {
        "airline": "Air France",
        "departure": "6:00 AM, Friday, September 25 (LYS→FRA)",
-       "arrival": "11:25 AM",
+       "arrival": "5:45 PM",
        "stops": 1,
-       "duration": "5 hr 25 min",
+       "duration": "11 hr 45 min",
        "price_pp": 231.0,
        "source": "google-flights"
       },
@@ -172,15 +181,6 @@
        "stops": 1,
        "duration": "4 hr 35 min",
        "price_pp": 260.0,
-       "source": "google-flights"
-      },
-      {
-       "airline": "KLM",
-       "departure": "6:30 AM, Friday, September 25 (LYS→FRA)",
-       "arrival": "1:35 PM",
-       "stops": 1,
-       "duration": "7 hr 5 min",
-       "price_pp": 277.0,
        "source": "google-flights"
       }
      ],
@@ -241,7 +241,7 @@
      "per_night": 302.0,
      "per_person_night": 43.14,
      "review_score": 8.5,
-     "review_count": 1048,
+     "review_count": 1049,
      "distance_km": 1.3,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -257,7 +257,7 @@
      "per_night": 339.5,
      "per_person_night": 48.5,
      "review_score": 8.6,
-     "review_count": 1957,
+     "review_count": 1958,
      "distance_km": 0.6,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -269,9 +269,9 @@
     {
      "source": "booking.com",
      "name": "Brera Serviced Apartments Frankfurt Oper",
-     "total_price": 733.0,
-     "per_night": 366.5,
-     "per_person_night": 52.36,
+     "total_price": 701.0,
+     "per_night": 350.5,
+     "per_person_night": 50.07,
      "review_score": 8.0,
      "review_count": 747,
      "distance_km": 2.0,
@@ -281,6 +281,22 @@
      "unit_desc": null,
      "multi_unit": false,
      "url": "https://www.booking.com/hotel/de/brera-serviced-apartments-frankfurt-oper.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Citadines City Centre Frankfurt",
+     "total_price": 828.0,
+     "per_night": 414.0,
+     "per_person_night": 59.14,
+     "review_score": 8.8,
+     "review_count": 2532,
+     "distance_km": 0.7,
+     "free_cancellation": true,
+     "mobile_deal": false,
+     "genius_deal": true,
+     "unit_desc": null,
+     "multi_unit": false,
+     "url": "https://www.booking.com/hotel/de/citadines-city-centre-frankfurt.it.html"
     },
     {
      "source": "booking.com",
@@ -300,28 +316,12 @@
     },
     {
      "source": "booking.com",
-     "name": "Citadines City Centre Frankfurt",
-     "total_price": 847.0,
-     "per_night": 423.5,
-     "per_person_night": 60.5,
-     "review_score": 8.8,
-     "review_count": 2537,
-     "distance_km": 0.7,
-     "free_cancellation": true,
-     "mobile_deal": false,
-     "genius_deal": true,
-     "unit_desc": null,
-     "multi_unit": false,
-     "url": "https://www.booking.com/hotel/de/citadines-city-centre-frankfurt.it.html"
-    },
-    {
-     "source": "booking.com",
      "name": "Adina Apartment Hotel Frankfurt Westend",
-     "total_price": 984.0,
-     "per_night": 492.0,
-     "per_person_night": 70.29,
+     "total_price": 1178.0,
+     "per_night": 589.0,
+     "per_person_night": 84.14,
      "review_score": 8.5,
-     "review_count": 1806,
+     "review_count": 1794,
      "distance_km": 0.8,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -369,15 +369,6 @@
    },
    "flights": [
     {
-     "airline": "Wizz Air",
-     "departure": "4:00 PM, Friday, October 16 (FCO→NCE)",
-     "arrival": "5:20 PM",
-     "stops": 0,
-     "duration": "1 hr 20 min",
-     "price_pp": 57.0,
-     "source": "google-flights"
-    },
-    {
      "airline": "easyJet",
      "departure": "11:10 PM, Friday, October 16 (FCO→NCE)",
      "arrival": "12:20 AM (Saturday, October 17)",
@@ -392,16 +383,16 @@
      "arrival": "11:55 AM",
      "stops": 0,
      "duration": "1 hr 15 min",
-     "price_pp": 68.0,
+     "price_pp": 63.0,
      "source": "google-flights"
     },
     {
-     "airline": "ITA",
-     "departure": "9:15 AM, Friday, October 16 (FCO→NCE)",
-     "arrival": "10:30 AM",
-     "stops": 0,
-     "duration": "1 hr 15 min",
-     "price_pp": 118.0,
+     "airline": "Vueling",
+     "departure": "11:00 PM, Friday, October 16 (FCO→NCE)",
+     "arrival": "8:20 AM (Saturday, October 17)",
+     "stops": 1,
+     "duration": "9 hr 20 min",
+     "price_pp": 175.0,
      "source": "google-flights"
     },
     {
@@ -410,7 +401,16 @@
      "arrival": "2:30 PM",
      "stops": 0,
      "duration": "1 hr 15 min",
-     "price_pp": 118.0,
+     "price_pp": 198.0,
+     "source": "google-flights"
+    },
+    {
+     "airline": "ITA",
+     "departure": "9:15 AM, Friday, October 16 (FCO→NCE)",
+     "arrival": "10:30 AM",
+     "stops": 0,
+     "duration": "1 hr 15 min",
+     "price_pp": 198.0,
      "source": "google-flights"
     }
    ],
@@ -434,30 +434,30 @@
      "source": "google-flights"
     },
     {
+     "airline": "Vueling",
+     "departure": "10:50 PM, Sunday, October 18 (NCE→FCO)",
+     "arrival": "8:20 AM (Monday, October 19)",
+     "stops": 1,
+     "duration": "9 hr 30 min",
+     "price_pp": 171.0,
+     "source": "google-flights"
+    },
+    {
+     "airline": "Vueling",
+     "departure": "8:55 AM, Sunday, October 18 (NCE→FCO)",
+     "arrival": "5:10 PM",
+     "stops": 1,
+     "duration": "8 hr 15 min",
+     "price_pp": 191.0,
+     "source": "google-flights"
+    },
+    {
      "airline": "ITA",
      "departure": "3:20 PM, Sunday, October 18 (NCE→FCO)",
      "arrival": "4:30 PM",
      "stops": 0,
      "duration": "1 hr 10 min",
-     "price_pp": 164.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "ITA",
-     "departure": "7:20 PM, Sunday, October 18 (NCE→FCO)",
-     "arrival": "8:35 PM",
-     "stops": 0,
-     "duration": "1 hr 15 min",
-     "price_pp": 164.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "ITA",
-     "departure": "11:20 AM, Sunday, October 18 (NCE→FCO)",
-     "arrival": "12:30 PM",
-     "stops": 0,
-     "duration": "1 hr 10 min",
-     "price_pp": 181.0,
+     "price_pp": 195.0,
      "source": "google-flights"
     }
    ],
@@ -476,15 +476,6 @@
        "stops": 1,
        "duration": "5 hr 40 min",
        "price_pp": 226.0,
-       "source": "google-flights"
-      },
-      {
-       "airline": "Air France",
-       "departure": "9:35 PM, Friday, October 16 (LYS→NCE)",
-       "arrival": "10:35 PM",
-       "stops": 0,
-       "duration": "1 hr",
-       "price_pp": 228.0,
        "source": "google-flights"
       },
       {
@@ -513,6 +504,15 @@
        "duration": "7 hr 45 min",
        "price_pp": 242.0,
        "source": "google-flights"
+      },
+      {
+       "airline": "Air France",
+       "departure": "9:35 PM, Friday, October 16 (LYS→NCE)",
+       "arrival": "10:35 PM",
+       "stops": 0,
+       "duration": "1 hr",
+       "price_pp": 249.0,
+       "source": "google-flights"
       }
      ],
      "return_flights": [
@@ -522,7 +522,7 @@
        "arrival": "5:50 PM",
        "stops": 1,
        "duration": "10 hr 40 min",
-       "price_pp": 167.0,
+       "price_pp": 190.0,
        "source": "google-flights"
       },
       {
@@ -558,7 +558,7 @@
        "arrival": "5:05 PM",
        "stops": 1,
        "duration": "7 hr 20 min",
-       "price_pp": 226.0,
+       "price_pp": 240.0,
        "source": "google-flights"
       }
      ]
@@ -580,22 +580,6 @@
      "unit_desc": "Intero appartamento – 140 m²: 4 letti • 3 camere da letto • 2 zone giorno • 1 bagno • 1 cucina",
      "multi_unit": false,
      "url": "https://www.booking.com/hotel/fr/appartement-spacieux-vieux-nice.it.html"
-    },
-    {
-     "source": "booking.com",
-     "name": "Villa Lina Zoï",
-     "total_price": 486.0,
-     "per_night": 243.0,
-     "per_person_night": 34.71,
-     "review_score": 8.5,
-     "review_count": 60,
-     "distance_km": 1.0,
-     "free_cancellation": true,
-     "mobile_deal": false,
-     "genius_deal": true,
-     "unit_desc": "Intero appartamento – 90 m²: 7 letti • 4 camere da letto • 1 zona giorno • 2 bagni",
-     "multi_unit": false,
-     "url": "https://www.booking.com/hotel/fr/villa-lina-zoi-une-ame-moderne-dans-une-villa-nicoise-typique.it.html"
     },
     {
      "source": "booking.com",
@@ -636,7 +620,7 @@
      "per_night": 287.5,
      "per_person_night": 41.07,
      "review_score": 8.3,
-     "review_count": 740,
+     "review_count": 741,
      "distance_km": 1.7,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -660,12 +644,28 @@
      "unit_desc": null,
      "multi_unit": false,
      "url": "https://www.booking.com/hotel/fr/centre-nice-10-min-plage-5-min-des-transports-en-commun.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Villa Lina Zoï",
+     "total_price": 645.0,
+     "per_night": 322.5,
+     "per_person_night": 46.07,
+     "review_score": 8.5,
+     "review_count": 60,
+     "distance_km": 1.0,
+     "free_cancellation": true,
+     "mobile_deal": false,
+     "genius_deal": true,
+     "unit_desc": "Intero appartamento – 90 m²: 7 letti • 4 camere da letto • 1 zona giorno • 2 bagni",
+     "multi_unit": false,
+     "url": "https://www.booking.com/hotel/fr/villa-lina-zoi-une-ame-moderne-dans-une-villa-nicoise-typique.it.html"
     }
    ],
    "estimate_pp": {
-    "flight": 57.0,
+    "flight": 59.0,
     "stay": 60.0,
-    "total": 117.0
+    "total": 119.0
    },
    "errors": []
   },
@@ -706,7 +706,7 @@
      "arrival": "12:45 AM (Saturday, October 31)",
      "stops": 0,
      "duration": "2 hr 35 min",
-     "price_pp": 93.0,
+     "price_pp": 85.0,
      "source": "google-flights"
     },
     {
@@ -715,7 +715,7 @@
      "arrival": "8:50 PM",
      "stops": 1,
      "duration": "9 hr",
-     "price_pp": 197.0,
+     "price_pp": 198.0,
      "source": "google-flights"
     },
     {
@@ -753,7 +753,7 @@
      "arrival": "9:30 PM",
      "stops": 0,
      "duration": "2 hr 35 min",
-     "price_pp": 71.0,
+     "price_pp": 73.0,
      "source": "google-flights"
     },
     {
@@ -762,7 +762,7 @@
      "arrival": "9:25 PM",
      "stops": 0,
      "duration": "2 hr 40 min",
-     "price_pp": 97.0,
+     "price_pp": 96.0,
      "source": "google-flights"
     },
     {
@@ -771,7 +771,7 @@
      "arrival": "6:35 PM",
      "stops": 1,
      "duration": "6 hr 40 min",
-     "price_pp": 166.0,
+     "price_pp": 165.0,
      "source": "google-flights"
     },
     {
@@ -780,7 +780,7 @@
      "arrival": "6:35 PM",
      "stops": 1,
      "duration": "9 hr 45 min",
-     "price_pp": 166.0,
+     "price_pp": 165.0,
      "source": "google-flights"
     },
     {
@@ -789,7 +789,7 @@
      "arrival": "10:50 AM (Monday, November 2)",
      "stops": 1,
      "duration": "13 hr 20 min",
-     "price_pp": 166.0,
+     "price_pp": 165.0,
      "source": "google-flights"
     }
    ],
@@ -843,7 +843,7 @@
      "per_night": 207.0,
      "per_person_night": 25.88,
      "review_score": 8.8,
-     "review_count": 38,
+     "review_count": 39,
      "distance_km": 1.5,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -855,11 +855,11 @@
     {
      "source": "booking.com",
      "name": "DOKI Montownia Foodhall Apartments Parking by Grandviewestate",
-     "total_price": 414.0,
-     "per_night": 207.0,
-     "per_person_night": 25.88,
-     "review_score": 9.7,
-     "review_count": 47,
+     "total_price": 421.0,
+     "per_night": 210.5,
+     "per_person_night": 26.31,
+     "review_score": 9.6,
+     "review_count": 48,
      "distance_km": 1.9,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -871,9 +871,9 @@
     {
      "source": "airbnb",
      "name": "Primavera di Grand Apartments",
-     "total_price": 2408.0,
-     "per_night": 1204.0,
-     "per_person_night": 150.5,
+     "total_price": 2406.0,
+     "per_night": 1203.0,
+     "per_person_night": 150.38,
      "review_score": 10.0,
      "review_count": "4",
      "distance_km": 1.3,
@@ -883,9 +883,9 @@
     {
      "source": "airbnb",
      "name": "Appartamento Opera Bałtycka III",
-     "total_price": 929.0,
-     "per_night": 464.5,
-     "per_person_night": 58.06,
+     "total_price": 928.0,
+     "per_night": 464.0,
+     "per_person_night": 58.0,
      "review_score": null,
      "review_count": 0,
      "distance_km": 0.49,
@@ -894,9 +894,9 @@
     }
    ],
    "estimate_pp": {
-    "flight": 93.0,
+    "flight": 85.0,
     "stay": 46.0,
-    "total": 139.0
+    "total": 131.0
    },
    "errors": [
     "LYS: google-flights: nessun volo in vendita per queste date/tratta"
@@ -937,19 +937,19 @@
     },
     {
      "airline": "Air Europa",
-     "departure": "3:55 PM, Thursday, November 19 (FCO→GRU)",
+     "departure": "10:30 AM, Thursday, November 19 (FCO→GRU)",
      "arrival": "6:30 AM (Friday, November 20)",
      "stops": 1,
-     "duration": "18 hr 35 min",
+     "duration": "24 hr",
      "price_pp": 653.0,
      "source": "google-flights"
     },
     {
      "airline": "Air Europa",
-     "departure": "10:30 AM, Thursday, November 19 (FCO→GRU)",
+     "departure": "3:55 PM, Thursday, November 19 (FCO→GRU)",
      "arrival": "6:30 AM (Friday, November 20)",
      "stops": 1,
-     "duration": "24 hr",
+     "duration": "18 hr 35 min",
      "price_pp": 653.0,
      "source": "google-flights"
     },
@@ -979,7 +979,7 @@
      "arrival": "9:30 AM (Tuesday, November 24)",
      "stops": 1,
      "duration": "14 hr 25 min",
-     "price_pp": 708.0,
+     "price_pp": 705.0,
      "source": "google-flights"
     },
     {
@@ -988,7 +988,7 @@
      "arrival": "11:25 AM (Tuesday, November 24)",
      "stops": 1,
      "duration": "15 hr 5 min",
-     "price_pp": 712.0,
+     "price_pp": 709.0,
      "source": "google-flights"
     },
     {
@@ -997,7 +997,7 @@
      "arrival": "6:45 PM (Tuesday, November 24)",
      "stops": 1,
      "duration": "15 hr 30 min",
-     "price_pp": 712.0,
+     "price_pp": 709.0,
      "source": "google-flights"
     },
     {
@@ -1006,7 +1006,7 @@
      "arrival": "12:05 AM (Tuesday, November 24)",
      "stops": 1,
      "duration": "18 hr 35 min",
-     "price_pp": 712.0,
+     "price_pp": 709.0,
      "source": "google-flights"
     },
     {
@@ -1015,7 +1015,7 @@
      "arrival": "3:50 PM (Tuesday, November 24)",
      "stops": 1,
      "duration": "34 hr 20 min",
-     "price_pp": 716.0,
+     "price_pp": 712.0,
      "source": "google-flights"
     }
    ],
@@ -1024,9 +1024,9 @@
     {
      "source": "booking.com",
      "name": "Pousada Confort",
-     "total_price": 136.0,
-     "per_night": 34.0,
-     "per_person_night": 34.0,
+     "total_price": 135.0,
+     "per_night": 33.75,
+     "per_person_night": 33.75,
      "review_score": 9.1,
      "review_count": 25,
      "distance_km": 1.1,
@@ -1075,15 +1075,15 @@
     },
     {
      "source": "airbnb",
-     "name": "Prossima metropolitana, Expo Center Norte e Anhembi",
-     "total_price": 143.0,
-     "per_night": 35.75,
-     "per_person_night": 35.75,
-     "review_score": 10.0,
-     "review_count": "5",
-     "distance_km": 1.53,
+     "name": "A 150 metri dalla metropolitana, stazione Jd São Paulo",
+     "total_price": 144.0,
+     "per_night": 36.0,
+     "per_person_night": 36.0,
+     "review_score": 9.9,
+     "review_count": "20",
+     "distance_km": 1.77,
      "free_cancellation": true,
-     "url": "https://www.airbnb.it/rooms/1601013269279781268"
+     "url": "https://www.airbnb.it/rooms/1409676142107841498"
     },
     {
      "source": "airbnb",
@@ -1100,8 +1100,8 @@
    ],
    "estimate_pp": {
     "flight": 653.0,
-    "stay": 136.0,
-    "total": 789.0
+    "stay": 135.0,
+    "total": 788.0
    },
    "errors": []
   },
@@ -1137,7 +1137,7 @@
      "arrival": "8:30 AM (Saturday, November 28)",
      "stops": 1,
      "duration": "9 hr 35 min",
-     "price_pp": 150.0,
+     "price_pp": 143.0,
      "source": "google-flights"
     },
     {
@@ -1146,7 +1146,25 @@
      "arrival": "8:30 AM (Saturday, November 28)",
      "stops": 1,
      "duration": "11 hr 35 min",
-     "price_pp": 177.0,
+     "price_pp": 176.0,
+     "source": "google-flights"
+    },
+    {
+     "airline": "Vueling",
+     "departure": "11:45 AM, Friday, November 27 (FCO→STR)",
+     "arrival": "9:05 PM",
+     "stops": 1,
+     "duration": "9 hr 20 min",
+     "price_pp": 196.0,
+     "source": "google-flights"
+    },
+    {
+     "airline": "Vueling",
+     "departure": "3:20 PM, Friday, November 27 (FCO→STR)",
+     "arrival": "9:05 PM",
+     "stops": 1,
+     "duration": "5 hr 45 min",
+     "price_pp": 196.0,
      "source": "google-flights"
     },
     {
@@ -1157,34 +1175,43 @@
      "duration": "1 hr 35 min",
      "price_pp": 205.0,
      "source": "google-flights"
-    },
-    {
-     "airline": "Vueling",
-     "departure": "11:45 AM, Friday, November 27 (FCO→STR)",
-     "arrival": "9:05 PM",
-     "stops": 1,
-     "duration": "9 hr 20 min",
-     "price_pp": 218.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "Vueling",
-     "departure": "9:40 AM, Friday, November 27 (FCO→STR)",
-     "arrival": "9:05 PM",
-     "stops": 1,
-     "duration": "11 hr 25 min",
-     "price_pp": 222.0,
-     "source": "google-flights"
     }
    ],
    "return_flights": [
     {
      "airline": "Vueling",
      "departure": "9:15 AM, Sunday, November 29 (STR→FCO)",
+     "arrival": "5:20 PM",
+     "stops": 1,
+     "duration": "8 hr 5 min",
+     "price_pp": 181.0,
+     "source": "google-flights"
+    },
+    {
+     "airline": "Vueling",
+     "departure": "9:15 AM, Sunday, November 29 (STR→FCO)",
      "arrival": "10:50 PM",
      "stops": 1,
      "duration": "13 hr 35 min",
-     "price_pp": 182.0,
+     "price_pp": 198.0,
+     "source": "google-flights"
+    },
+    {
+     "airline": "Vueling",
+     "departure": "10:05 PM, Sunday, November 29 (STR→FCO)",
+     "arrival": "9:00 AM (Monday, November 30)",
+     "stops": 1,
+     "duration": "10 hr 55 min",
+     "price_pp": 203.0,
+     "source": "google-flights"
+    },
+    {
+     "airline": "Eurowings",
+     "departure": "6:10 AM, Sunday, November 29 (STR→FCO)",
+     "arrival": "7:50 AM",
+     "stops": 0,
+     "duration": "1 hr 40 min",
+     "price_pp": 205.0,
      "source": "google-flights"
     },
     {
@@ -1193,34 +1220,7 @@
      "arrival": "11:50 AM (Monday, November 30)",
      "stops": 1,
      "duration": "13 hr 45 min",
-     "price_pp": 189.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "Vueling",
-     "departure": "9:15 AM, Sunday, November 29 (STR→FCO)",
-     "arrival": "8:50 PM",
-     "stops": 1,
-     "duration": "11 hr 35 min",
-     "price_pp": 190.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "Vueling",
-     "departure": "10:05 PM, Sunday, November 29 (STR→FCO)",
-     "arrival": "11:05 AM (Monday, November 30)",
-     "stops": 1,
-     "duration": "13 hr",
-     "price_pp": 193.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "Vueling",
-     "departure": "9:15 AM, Sunday, November 29 (STR→FCO)",
-     "arrival": "5:20 PM",
-     "stops": 1,
-     "duration": "8 hr 5 min",
-     "price_pp": 194.0,
+     "price_pp": 212.0,
      "source": "google-flights"
     }
    ],
@@ -1282,7 +1282,7 @@
      "per_night": 488.0,
      "per_person_night": 162.67,
      "review_score": 8.4,
-     "review_count": 2400,
+     "review_count": 2402,
      "distance_km": 2.1,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -1317,9 +1317,9 @@
     }
    ],
    "estimate_pp": {
-    "flight": 150.0,
+    "flight": 143.0,
     "stay": 80.0,
-    "total": 230.0
+    "total": 223.0
    },
    "errors": [
     "LYS: google-flights: nessun volo in vendita per queste date/tratta"
@@ -1392,10 +1392,22 @@
     },
     {
      "source": "airbnb",
+     "name": "Il posto accogliente | Aeroporto BHX, NEC, parcheggio gratuito",
+     "total_price": 516.0,
+     "per_night": 258.0,
+     "per_person_night": 86.0,
+     "review_score": 9.2,
+     "review_count": "22",
+     "distance_km": 2.66,
+     "free_cancellation": true,
+     "url": "https://www.airbnb.it/rooms/1487240023136115740"
+    },
+    {
+     "source": "airbnb",
      "name": "Agriturismo a Hampton Hill",
-     "total_price": 1578.0,
-     "per_night": 789.0,
-     "per_person_night": 263.0,
+     "total_price": 1579.0,
+     "per_night": 789.5,
+     "per_person_night": 263.17,
      "review_score": 9.8,
      "review_count": "382",
      "distance_km": 2.23,
@@ -1405,9 +1417,9 @@
     {
      "source": "booking.com",
      "name": "2 bedroom house Nec Bhx Hs2 Ideal for contractors",
-     "total_price": 399.0,
-     "per_night": 199.5,
-     "per_person_night": 66.5,
+     "total_price": 400.0,
+     "per_night": 200.0,
+     "per_person_night": 66.67,
      "review_score": null,
      "review_count": null,
      "distance_km": 2.2,
@@ -1417,18 +1429,6 @@
      "unit_desc": "Intero appartamento – 73 m²: 2 letti • 1 camera da letto • 1 bagno • 1 cucina",
      "multi_unit": false,
      "url": "https://www.booking.com/hotel/gb/house-by-nec-airport-10-mins-by-train-to-city.it.html"
-    },
-    {
-     "source": "airbnb",
-     "name": "Casa con 2 camere da letto, Nec, BHX, HS2, ideale per appaltatori.",
-     "total_price": 424.0,
-     "per_night": 212.0,
-     "per_person_night": 70.67,
-     "review_score": null,
-     "review_count": 0,
-     "distance_km": 2.26,
-     "free_cancellation": true,
-     "url": "https://www.airbnb.it/rooms/1703168103852999144"
     }
    ],
    "estimate_pp": {
@@ -1673,9 +1673,9 @@
     {
      "source": "airbnb",
      "name": "50% di sconto a luglio/agosto: 3 camere da letto, 1 bagno / Loft / 10 posti letto / Parcheggio",
-     "total_price": 1603.0,
-     "per_night": 400.75,
-     "per_person_night": 40.08,
+     "total_price": 1596.0,
+     "per_night": 399.0,
+     "per_person_night": 39.9,
      "review_score": 9.9,
      "review_count": "31",
      "distance_km": 1.85,
@@ -1685,9 +1685,9 @@
     {
      "source": "booking.com",
      "name": "Fully Serviced Two-Bed Apartment near London Excel",
-     "total_price": 5194.0,
-     "per_night": 1298.5,
-     "per_person_night": 129.85,
+     "total_price": 5005.0,
+     "per_night": 1251.25,
+     "per_person_night": 125.12,
      "review_score": 8.7,
      "review_count": 38,
      "distance_km": 0.7,
@@ -1701,9 +1701,9 @@
     {
      "source": "booking.com",
      "name": "Deluxe Two Bed Apartment with River & City View",
-     "total_price": 6254.0,
-     "per_night": 1563.5,
-     "per_person_night": 156.35,
+     "total_price": 6446.0,
+     "per_night": 1611.5,
+     "per_person_night": 161.15,
      "review_score": 8.6,
      "review_count": 94,
      "distance_km": 0.7,
@@ -1717,9 +1717,9 @@
     {
      "source": "booking.com",
      "name": "Luxury Three bed Apartment by London ExCeL",
-     "total_price": 7008.0,
-     "per_night": 1752.0,
-     "per_person_night": 175.2,
+     "total_price": 6979.0,
+     "per_night": 1744.75,
+     "per_person_night": 174.47,
      "review_score": 9.0,
      "review_count": 31,
      "distance_km": 0.7,
@@ -1733,9 +1733,9 @@
     {
      "source": "booking.com",
      "name": "London ExCeL Stays - Three Bed Serviced Apartment",
-     "total_price": 7284.0,
-     "per_night": 1821.0,
-     "per_person_night": 182.1,
+     "total_price": 7224.0,
+     "per_night": 1806.0,
+     "per_person_night": 180.6,
      "review_score": 9.1,
      "review_count": 10,
      "distance_km": 0.7,
@@ -1749,8 +1749,8 @@
    ],
    "estimate_pp": {
     "flight": 178.0,
-    "stay": 160.32,
-    "total": 338.32
+    "stay": 159.6,
+    "total": 337.6
    },
    "errors": []
   },
@@ -1863,9 +1863,9 @@
     {
      "airline": "Vueling",
      "departure": "9:25 PM, Sunday, April 11 (LIS→FCO)",
-     "arrival": "12:05 PM (Monday, April 12)",
+     "arrival": "9:25 AM (Monday, April 12)",
      "stops": 1,
-     "duration": "13 hr 40 min",
+     "duration": "11 hr",
      "price_pp": 172.0,
      "source": "google-flights"
     },
@@ -1948,7 +1948,7 @@
        "arrival": "8:55 PM",
        "stops": 0,
        "duration": "2 hr 20 min",
-       "price_pp": 157.0,
+       "price_pp": 168.0,
        "source": "google-flights"
       },
       {
@@ -2021,9 +2021,9 @@
     {
      "source": "airbnb",
      "name": "Due appartamenti nel centro storico di Lisbona",
-     "total_price": 908.0,
-     "per_night": 454.0,
-     "per_person_night": 50.44,
+     "total_price": 927.0,
+     "per_night": 463.5,
+     "per_person_night": 51.5,
      "review_score": 10.0,
      "review_count": "5",
      "distance_km": 0.62,
@@ -2184,7 +2184,7 @@
      "arrival": "9:35 PM",
      "stops": 1,
      "duration": "4 hr 40 min",
-     "price_pp": 256.0,
+     "price_pp": 255.0,
      "source": "google-flights"
     }
    ],
@@ -2249,9 +2249,9 @@
     {
      "source": "airbnb",
      "name": "Posto fantastico",
-     "total_price": 1640.0,
-     "per_night": 820.0,
-     "per_person_night": 102.5,
+     "total_price": 1638.0,
+     "per_night": 819.0,
+     "per_person_night": 102.38,
      "review_score": 9.7,
      "review_count": "12",
      "distance_km": 2.64,
@@ -2261,8 +2261,8 @@
    ],
    "estimate_pp": {
     "flight": 64.0,
-    "stay": 205.0,
-    "total": 269.0
+    "stay": 204.76,
+    "total": 268.76
    },
    "errors": [
     "booking.com: WAF o zero risultati"
@@ -2356,9 +2356,9 @@
     {
      "source": "booking.com",
      "name": "IN FIERA 5 appartamento FRONTE FIERA",
-     "total_price": 746.0,
-     "per_night": 373.0,
-     "per_person_night": 41.44,
+     "total_price": 1015.0,
+     "per_night": 507.5,
+     "per_person_night": 56.39,
      "review_score": 8.1,
      "review_count": 23,
      "distance_km": 0.5,
@@ -2370,36 +2370,32 @@
      "url": "https://www.booking.com/hotel/it/in-fiera-5.it.html"
     },
     {
-     "source": "booking.com",
-     "name": "In Fiera 14 superior apartment",
-     "total_price": 813.0,
-     "per_night": 406.5,
-     "per_person_night": 45.17,
-     "review_score": 9.0,
-     "review_count": 16,
-     "distance_km": 0.5,
+     "source": "airbnb",
+     "name": "IN FIERA 5 di fronte alla fiera ampio e silenzioso",
+     "total_price": 1048.0,
+     "per_night": 524.0,
+     "per_person_night": 58.22,
+     "review_score": 9.4,
+     "review_count": "55",
+     "distance_km": 0.51,
      "free_cancellation": true,
-     "mobile_deal": false,
-     "genius_deal": true,
-     "unit_desc": "Intero appartamento – 95 m²: 9 letti • 3 camere da letto • 2 bagni • 1 cucina",
-     "multi_unit": false,
-     "url": "https://www.booking.com/hotel/it/apartment-in-fiera-14.it.html"
+     "url": "https://www.airbnb.it/rooms/742415"
     },
     {
      "source": "booking.com",
-     "name": "ROYAL HOUSE - Parcheggio gratuito e Wi-Fi",
-     "total_price": 927.0,
-     "per_night": 463.5,
-     "per_person_night": 51.5,
-     "review_score": 8.5,
-     "review_count": 7,
-     "distance_km": 1.4,
+     "name": "Ferrarese House 209 - Fiera District - Tecnopolo - ECMWF",
+     "total_price": 1053.0,
+     "per_night": 526.5,
+     "per_person_night": 58.5,
+     "review_score": 9.0,
+     "review_count": 36,
+     "distance_km": 1.6,
      "free_cancellation": true,
      "mobile_deal": false,
      "genius_deal": false,
-     "unit_desc": "Intero appartamento – 120 m²: 5 letti • 2 camere da letto • 1 zona giorno • 2 bagni • 1 cucina",
+     "unit_desc": null,
      "multi_unit": false,
-     "url": "https://www.booking.com/hotel/it/royal-house-parcheggio-gratuito-e-wi-fi.it.html"
+     "url": "https://www.booking.com/hotel/it/ferratese-house-209.it.html"
     }
    ],
    "estimate_pp": {
@@ -2473,30 +2469,30 @@
      "source": "google-flights"
     },
     {
-     "airline": "American and British Airways",
-     "departure": "8:40 PM, Monday, June 21 (ORD→FCO)",
-     "arrival": "4:00 PM (Tuesday, June 22)",
-     "stops": 1,
-     "duration": "12 hr 20 min",
-     "price_pp": 1073.0,
-     "source": "google-flights"
-    },
-    {
-     "airline": "American and British Airways",
-     "departure": "11:00 PM, Monday, June 21 (ORD→FCO)",
-     "arrival": "7:20 PM (Tuesday, June 22)",
-     "stops": 1,
-     "duration": "13 hr 20 min",
-     "price_pp": 1073.0,
-     "source": "google-flights"
-    },
-    {
      "airline": "United",
      "departure": "3:45 PM, Monday, June 21 (ORD→FCO)",
      "arrival": "7:55 AM (Tuesday, June 22)",
      "stops": 0,
      "duration": "9 hr 10 min",
-     "price_pp": 1076.0,
+     "price_pp": 1074.0,
+     "source": "google-flights"
+    },
+    {
+     "airline": "Air Canada",
+     "departure": "11:50 AM, Monday, June 21 (ORD→FCO)",
+     "arrival": "9:15 AM (Tuesday, June 22)",
+     "stops": 1,
+     "duration": "14 hr 25 min",
+     "price_pp": 1077.0,
+     "source": "google-flights"
+    },
+    {
+     "airline": "Air Canada",
+     "departure": "3:15 PM, Monday, June 21 (ORD→FCO)",
+     "arrival": "9:15 AM (Tuesday, June 22)",
+     "stops": 1,
+     "duration": "11 hr",
+     "price_pp": 1077.0,
      "source": "google-flights"
     }
    ],
@@ -2505,9 +2501,9 @@
     {
      "source": "airbnb",
      "name": "La Casetta Nord",
-     "total_price": 1126.0,
-     "per_night": 281.5,
-     "per_person_night": 70.38,
+     "total_price": 1125.0,
+     "per_night": 281.25,
+     "per_person_night": 70.31,
      "review_score": 9.9,
      "review_count": "32",
      "distance_km": 1.98,
@@ -2517,9 +2513,9 @@
     {
      "source": "airbnb",
      "name": "Bronzeville Haven a Chicago",
-     "total_price": 1291.0,
-     "per_night": 322.75,
-     "per_person_night": 80.69,
+     "total_price": 1290.0,
+     "per_night": 322.5,
+     "per_person_night": 80.62,
      "review_score": 9.8,
      "review_count": "25",
      "distance_km": 1.86,
@@ -2529,9 +2525,9 @@
     {
      "source": "airbnb",
      "name": "Appartamento con 1 camera da letto, palestra e ascensore",
-     "total_price": 1301.0,
-     "per_night": 325.25,
-     "per_person_night": 81.31,
+     "total_price": 1294.0,
+     "per_night": 323.5,
+     "per_person_night": 80.88,
      "review_score": 9.6,
      "review_count": "10",
      "distance_km": 1.1,
@@ -2541,9 +2537,9 @@
     {
      "source": "airbnb",
      "name": "Rifugio con 1 camera da letto, ascensore e palestra",
-     "total_price": 1489.0,
-     "per_night": 372.25,
-     "per_person_night": 93.06,
+     "total_price": 1481.0,
+     "per_night": 370.25,
+     "per_person_night": 92.56,
      "review_score": 8.8,
      "review_count": "12",
      "distance_km": 1.31,
@@ -2553,9 +2549,9 @@
     {
      "source": "airbnb",
      "name": "Monolocale vicino al centro con cucina e palestra",
-     "total_price": 1686.0,
-     "per_night": 421.5,
-     "per_person_night": 105.38,
+     "total_price": 1683.0,
+     "per_night": 420.75,
+     "per_person_night": 105.19,
      "review_score": 8.7,
      "review_count": "6",
      "distance_km": 1.24,
@@ -2565,9 +2561,9 @@
     {
      "source": "airbnb",
      "name": "Appartamento moderno con cucina e palestra",
-     "total_price": 1713.0,
-     "per_night": 428.25,
-     "per_person_night": 107.06,
+     "total_price": 1697.0,
+     "per_night": 424.25,
+     "per_person_night": 106.06,
      "review_score": 9.5,
      "review_count": "16",
      "distance_km": 1.25,
@@ -2577,8 +2573,8 @@
    ],
    "estimate_pp": {
     "flight": 794.0,
-    "stay": 281.52,
-    "total": 1075.52
+    "stay": 281.24,
+    "total": 1075.24
    },
    "errors": []
   }
