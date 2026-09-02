@@ -2400,6 +2400,55 @@
      "min_stay_pp_night": 71.12
     }
    }
+  },
+  {
+   "date": "2026-09-02",
+   "events": {
+    "frankfurt": {
+     "min_flight_pp": 154.0,
+     "min_stay_pp_night": 45.79
+    },
+    "nice": {
+     "min_flight_pp": 121.0,
+     "min_stay_pp_night": 44.29
+    },
+    "gdansk": {
+     "min_flight_pp": 68.0,
+     "min_stay_pp_night": 22.12
+    },
+    "laic-sao-paulo": {
+     "min_flight_pp": 629.0,
+     "min_stay_pp_night": 32.25
+    },
+    "stuttgart": {
+     "min_flight_pp": 170.0,
+     "min_stay_pp_night": 66.0
+    },
+    "birmingham": {
+     "min_flight_pp": null,
+     "min_stay_pp_night": 43.17
+    },
+    "euic-london": {
+     "min_flight_pp": 178.0,
+     "min_stay_pp_night": 51.83
+    },
+    "lisbon": {
+     "min_flight_pp": 117.0,
+     "min_stay_pp_night": 29.17
+    },
+    "prague": {
+     "min_flight_pp": 64.0,
+     "min_stay_pp_night": 102.5
+    },
+    "bologna": {
+     "min_flight_pp": null,
+     "min_stay_pp_night": 33.72
+    },
+    "naic-chicago": {
+     "min_flight_pp": 762.0,
+     "min_stay_pp_night": 69.56
+    }
+   }
   }
  ]
 }
