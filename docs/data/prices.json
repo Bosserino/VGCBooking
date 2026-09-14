@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-13T09:17:55+00:00",
+ "generated_at": "2026-09-14T09:53:15+00:00",
  "origin": "ROM",
  "booking_session": true,
  "settings": {
@@ -53,11 +53,11 @@
     {
      "source": "booking.com",
      "name": "VISIONAPARTMENTS Frankfurt - Air Conditioning & Self Check-in",
-     "total_price": 956.0,
-     "per_night": 478.0,
-     "per_person_night": 68.29,
+     "total_price": 932.0,
+     "per_night": 466.0,
+     "per_person_night": 66.57,
      "review_score": 8.1,
-     "review_count": 62,
+     "review_count": 69,
      "distance_km": 1.9,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -69,9 +69,9 @@
     {
      "source": "booking.com",
      "name": "Brera Serviced Apartments Frankfurt West",
-     "total_price": 1073.0,
-     "per_night": 536.5,
-     "per_person_night": 76.64,
+     "total_price": 1184.0,
+     "per_night": 592.0,
+     "per_person_night": 84.57,
      "review_score": 8.4,
      "review_count": 1077,
      "distance_km": 1.3,
@@ -84,28 +84,12 @@
     },
     {
      "source": "booking.com",
-     "name": "Aparthotel Adagio Frankfurt City Messe",
-     "total_price": 1114.0,
-     "per_night": 557.0,
-     "per_person_night": 79.57,
-     "review_score": 8.6,
-     "review_count": 1947,
-     "distance_km": 0.6,
-     "free_cancellation": true,
-     "mobile_deal": false,
-     "genius_deal": false,
-     "unit_desc": "Aparthotel Adagio Frankfurt City Messe",
-     "multi_unit": false,
-     "url": "https://www.booking.com/hotel/de/aparthotel-adagio-frankfurt-city-messe.it.html"
-    },
-    {
-     "source": "booking.com",
      "name": "Adina Apartment Hotel Frankfurt Westend",
      "total_price": 1640.0,
      "per_night": 820.0,
      "per_person_night": 117.14,
      "review_score": 8.5,
-     "review_count": 1741,
+     "review_count": 1745,
      "distance_km": 0.8,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -121,7 +105,7 @@
      "per_night": 877.5,
      "per_person_night": 125.36,
      "review_score": 8.0,
-     "review_count": 1131,
+     "review_count": 1130,
      "distance_km": 0.6,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -129,11 +113,27 @@
      "unit_desc": null,
      "multi_unit": false,
      "url": "https://www.booking.com/hotel/de/bold-apartments.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Aparthotel Adagio Frankfurt City Messe",
+     "total_price": 1806.0,
+     "per_night": 903.0,
+     "per_person_night": 129.0,
+     "review_score": 8.6,
+     "review_count": 1947,
+     "distance_km": 0.6,
+     "free_cancellation": true,
+     "mobile_deal": false,
+     "genius_deal": false,
+     "unit_desc": "Aparthotel Adagio Frankfurt City Messe",
+     "multi_unit": false,
+     "url": "https://www.booking.com/hotel/de/aparthotel-adagio-frankfurt-city-messe.it.html"
     }
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 136.58,
+    "stay": 133.14,
     "total": null
    },
    "errors": [
@@ -187,22 +187,6 @@
    "stays": [
     {
      "source": "booking.com",
-     "name": "Maison Astéria",
-     "total_price": 669.0,
-     "per_night": 334.5,
-     "per_person_night": 47.79,
-     "review_score": 8.3,
-     "review_count": 47,
-     "distance_km": 1.7,
-     "free_cancellation": true,
-     "mobile_deal": false,
-     "genius_deal": false,
-     "unit_desc": null,
-     "multi_unit": false,
-     "url": "https://www.booking.com/hotel/fr/maison-asteria.it.html"
-    },
-    {
-     "source": "booking.com",
      "name": "Harmonie Nature au cœur de Nice",
      "total_price": 761.0,
      "per_night": 380.5,
@@ -236,7 +220,7 @@
      "per_night": 502.0,
      "per_person_night": 71.71,
      "review_score": 8.3,
-     "review_count": 632,
+     "review_count": 631,
      "distance_km": 1.9,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -247,28 +231,12 @@
     },
     {
      "source": "booking.com",
-     "name": "Palais Saleya Boutique Hôtel",
-     "total_price": 1222.0,
-     "per_night": 611.0,
-     "per_person_night": 87.29,
-     "review_score": 8.9,
-     "review_count": 852,
-     "distance_km": 1.4,
-     "free_cancellation": true,
-     "mobile_deal": false,
-     "genius_deal": false,
-     "unit_desc": "Intero appartamento – 110 m²: 5 letti • 3 camere da letto • 1 zona giorno • 1 bagno • 1 cucina",
-     "multi_unit": false,
-     "url": "https://www.booking.com/hotel/fr/palais-saleya.it.html"
-    },
-    {
-     "source": "booking.com",
      "name": "Maison Lamartine - Nice",
      "total_price": 1898.0,
      "per_night": 949.0,
      "per_person_night": 135.57,
      "review_score": 9.1,
-     "review_count": 850,
+     "review_count": 851,
      "distance_km": 1.3,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -276,11 +244,43 @@
      "unit_desc": null,
      "multi_unit": false,
      "url": "https://www.booking.com/hotel/fr/residence-lamartine.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Aparthotel AMMI Nice Massena",
+     "total_price": 2080.0,
+     "per_night": 1040.0,
+     "per_person_night": 148.57,
+     "review_score": 8.8,
+     "review_count": 2374,
+     "distance_km": 1.6,
+     "free_cancellation": true,
+     "mobile_deal": false,
+     "genius_deal": false,
+     "unit_desc": "Aparthotel AMMI Nice Massena",
+     "multi_unit": false,
+     "url": "https://www.booking.com/hotel/fr/ajoupa-baie-des-anges.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "Zenitude Hôtel-Résidences Nice",
+     "total_price": 2091.0,
+     "per_night": 1045.5,
+     "per_person_night": 149.36,
+     "review_score": 8.3,
+     "review_count": 835,
+     "distance_km": 0.7,
+     "free_cancellation": true,
+     "mobile_deal": false,
+     "genius_deal": false,
+     "unit_desc": null,
+     "multi_unit": false,
+     "url": "https://www.booking.com/hotel/fr/zenitude-residences-nice.it.html"
     }
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 95.58,
+    "stay": 108.72,
     "total": null
    },
    "errors": [
@@ -334,15 +334,15 @@
     {
      "source": "booking.com",
      "name": "City Break Żurawie II by INA",
-     "total_price": 341.0,
-     "per_night": 170.5,
-     "per_person_night": 21.31,
+     "total_price": 349.0,
+     "per_night": 174.5,
+     "per_person_night": 21.81,
      "review_score": 9.0,
-     "review_count": 1136,
+     "review_count": 1141,
      "distance_km": 2.0,
      "free_cancellation": true,
      "mobile_deal": false,
-     "genius_deal": true,
+     "genius_deal": false,
      "unit_desc": null,
      "multi_unit": false,
      "url": "https://www.booking.com/hotel/pl/city-break-zurawie-ii.it.html"
@@ -350,34 +350,18 @@
     {
      "source": "booking.com",
      "name": "City Break Żurawie I by INA",
-     "total_price": 352.0,
-     "per_night": 176.0,
-     "per_person_night": 22.0,
+     "total_price": 362.0,
+     "per_night": 181.0,
+     "per_person_night": 22.62,
      "review_score": 9.3,
-     "review_count": 110,
+     "review_count": 111,
      "distance_km": 2.0,
-     "free_cancellation": true,
-     "mobile_deal": false,
-     "genius_deal": true,
-     "unit_desc": null,
-     "multi_unit": false,
-     "url": "https://www.booking.com/hotel/pl/city-break-zurawie-i.it.html"
-    },
-    {
-     "source": "booking.com",
-     "name": "DOKI Montownia Foodhall Apartments Parking by Grandviewestate",
-     "total_price": 428.0,
-     "per_night": 214.0,
-     "per_person_night": 26.75,
-     "review_score": 9.3,
-     "review_count": 67,
-     "distance_km": 1.9,
      "free_cancellation": true,
      "mobile_deal": false,
      "genius_deal": false,
      "unit_desc": null,
      "multi_unit": false,
-     "url": "https://www.booking.com/hotel/pl/apartament-doki-colors-by-grandview.it.html"
+     "url": "https://www.booking.com/hotel/pl/city-break-zurawie-i.it.html"
     },
     {
      "source": "airbnb",
@@ -394,9 +378,9 @@
     {
      "source": "airbnb",
      "name": "Primavera di Grand Apartments",
-     "total_price": 2168.0,
-     "per_night": 1084.0,
-     "per_person_night": 135.5,
+     "total_price": 2167.0,
+     "per_night": 1083.5,
+     "per_person_night": 135.44,
      "review_score": 9.7,
      "review_count": "6",
      "distance_km": 1.3,
@@ -406,7 +390,7 @@
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 42.62,
+    "stay": 43.62,
     "total": null
    },
    "errors": [
@@ -464,7 +448,7 @@
      "per_night": 33.25,
      "per_person_night": 33.25,
      "review_score": 9.1,
-     "review_count": 30,
+     "review_count": 31,
      "distance_km": 1.1,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -484,6 +468,18 @@
      "distance_km": 1.12,
      "free_cancellation": true,
      "url": "https://www.airbnb.it/rooms/1376267326643815645"
+    },
+    {
+     "source": "airbnb",
+     "name": "Prossima metropolitana, Expo Center Norte e Anhembi",
+     "total_price": 142.0,
+     "per_night": 35.5,
+     "per_person_night": 35.5,
+     "review_score": 10.0,
+     "review_count": "6",
+     "distance_km": 1.53,
+     "free_cancellation": true,
+     "url": "https://www.airbnb.it/rooms/1601013269279781268"
     },
     {
      "source": "airbnb",
@@ -508,18 +504,6 @@
      "distance_km": 1.25,
      "free_cancellation": true,
      "url": "https://www.airbnb.it/rooms/1473248848477166311"
-    },
-    {
-     "source": "airbnb",
-     "name": "Loft-Canindé-Expo Norte-Brás-Shopping",
-     "total_price": 152.0,
-     "per_night": 38.0,
-     "per_person_night": 38.0,
-     "review_score": 8.7,
-     "review_count": "6",
-     "distance_km": 1.95,
-     "free_cancellation": true,
-     "url": "https://www.airbnb.it/rooms/1615292275648396363"
     }
    ],
    "estimate_pp": {
@@ -584,11 +568,11 @@
     {
      "source": "booking.com",
      "name": "MASEVEN Stuttgart SI Centrum ehem SI-SUITES",
-     "total_price": 468.0,
-     "per_night": 234.0,
-     "per_person_night": 78.0,
+     "total_price": 469.0,
+     "per_night": 234.5,
+     "per_person_night": 78.17,
      "review_score": 8.3,
-     "review_count": 6509,
+     "review_count": 6508,
      "distance_km": 1.9,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -620,7 +604,7 @@
      "per_night": 488.0,
      "per_person_night": 162.67,
      "review_score": 8.4,
-     "review_count": 2241,
+     "review_count": 2238,
      "distance_km": 2.1,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -628,18 +612,6 @@
      "unit_desc": null,
      "multi_unit": false,
      "url": "https://www.booking.com/hotel/de/adagio-access-stuttgart.it.html"
-    },
-    {
-     "source": "airbnb",
-     "name": "NUOVO Self-CheckIn Appartamento vicino alla fiera",
-     "total_price": 1062.0,
-     "per_night": 531.0,
-     "per_person_night": 177.0,
-     "review_score": 9.5,
-     "review_count": "19",
-     "distance_km": 2.12,
-     "free_cancellation": true,
-     "url": "https://www.airbnb.it/rooms/1442001009141359272"
     },
     {
      "source": "booking.com",
@@ -656,6 +628,22 @@
      "unit_desc": "Intero appartamento – 75 m²: 4 letti • 2 camere da letto • 1 zona giorno • 2 bagni • 1 cucina",
      "multi_unit": false,
      "url": "https://www.booking.com/hotel/de/familiendomizil-nahe-flughafen.it.html"
+    },
+    {
+     "source": "booking.com",
+     "name": "LaMiaCasa Green Large Loft City Close Green Area",
+     "total_price": 1426.0,
+     "per_night": 713.0,
+     "per_person_night": 237.67,
+     "review_score": 9.4,
+     "review_count": 52,
+     "distance_km": 1.1,
+     "free_cancellation": true,
+     "mobile_deal": false,
+     "genius_deal": false,
+     "unit_desc": "Intero appartamento – 140 m²: 4 letti • 3 camere da letto • 1 zona giorno • 2 bagni • 1 cucina",
+     "multi_unit": false,
+     "url": "https://www.booking.com/hotel/de/gruppen-amp-familien-in-stuttgart.it.html"
     }
    ],
    "estimate_pp": {
@@ -711,18 +699,6 @@
     },
     {
      "source": "airbnb",
-     "name": "Il nascondiglio",
-     "total_price": 408.0,
-     "per_night": 204.0,
-     "per_person_night": 68.0,
-     "review_score": 10.0,
-     "review_count": "19",
-     "distance_km": 2.62,
-     "free_cancellation": true,
-     "url": "https://www.airbnb.it/rooms/1697058576416685302"
-    },
-    {
-     "source": "airbnb",
      "name": "Camera verde per NEC BP pulse con parcheggio privato e aria condizionata",
      "total_price": 475.0,
      "per_night": 237.5,
@@ -736,9 +712,9 @@
     {
      "source": "airbnb",
      "name": "Agriturismo a Hampton Hill",
-     "total_price": 1574.0,
-     "per_night": 787.0,
-     "per_person_night": 262.33,
+     "total_price": 1575.0,
+     "per_night": 787.5,
+     "per_person_night": 262.5,
      "review_score": 9.8,
      "review_count": "389",
      "distance_km": 2.23,
@@ -805,9 +781,9 @@
     {
      "source": "airbnb",
      "name": "Offerte speciali del 50% a settembre: 3 camere da letto e 1 bagno / Loft / 10 posti letto / Parcheggio",
-     "total_price": 2073.0,
-     "per_night": 518.25,
-     "per_person_night": 51.83,
+     "total_price": 2074.0,
+     "per_night": 518.5,
+     "per_person_night": 51.85,
      "review_score": 9.9,
      "review_count": "31",
      "distance_km": 1.85,
@@ -817,9 +793,9 @@
     {
      "source": "airbnb",
      "name": "Casa con 3 camere da letto in posizione strategica vicino a Excel",
-     "total_price": 2273.0,
-     "per_night": 568.25,
-     "per_person_night": 56.83,
+     "total_price": 2274.0,
+     "per_night": 568.5,
+     "per_person_night": 56.85,
      "review_score": 10.0,
      "review_count": "6",
      "distance_km": 0.71,
@@ -861,9 +837,9 @@
     {
      "source": "booking.com",
      "name": "Fully Serviced Two-Bed Apartment near London Excel",
-     "total_price": 3762.0,
-     "per_night": 940.5,
-     "per_person_night": 94.05,
+     "total_price": 3744.0,
+     "per_night": 936.0,
+     "per_person_night": 93.6,
      "review_score": 8.7,
      "review_count": 38,
      "distance_km": 0.7,
@@ -877,9 +853,9 @@
     {
      "source": "booking.com",
      "name": "London ExCeL Stays - One bed Apartment",
-     "total_price": 4563.0,
-     "per_night": 1140.75,
-     "per_person_night": 114.08,
+     "total_price": 4614.0,
+     "per_night": 1153.5,
+     "per_person_night": 115.35,
      "review_score": 8.1,
      "review_count": 93,
      "distance_km": 0.7,
@@ -893,7 +869,7 @@
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 207.32,
+    "stay": 207.4,
     "total": null
    },
    "errors": [
@@ -1008,9 +984,9 @@
     {
      "source": "airbnb",
      "name": "Due appartamenti nel centro storico di Lisbona",
-     "total_price": 887.0,
-     "per_night": 443.5,
-     "per_person_night": 49.28,
+     "total_price": 882.0,
+     "per_night": 441.0,
+     "per_person_night": 49.0,
      "review_score": 10.0,
      "review_count": "5",
      "distance_km": 0.62,
@@ -1071,28 +1047,16 @@
      "return_flights": []
     }
    ],
-   "stays": [
-    {
-     "source": "airbnb",
-     "name": "Posto fantastico",
-     "total_price": 1637.0,
-     "per_night": 818.5,
-     "per_person_night": 102.31,
-     "review_score": 9.7,
-     "review_count": "12",
-     "distance_km": 2.64,
-     "free_cancellation": true,
-     "url": "https://www.airbnb.it/rooms/938077011418243328"
-    }
-   ],
+   "stays": [],
    "estimate_pp": {
     "flight": null,
-    "stay": 204.62,
+    "stay": null,
     "total": null
    },
    "errors": [
     "google-flights: Invalid impersonate: \"chrome_126\"",
     "booking.com: WAF o zero risultati",
+    "airbnb: 0 utilizzabili su 1 risultati grezzi",
     "LYS: google-flights: Invalid impersonate: \"chrome_126\""
    ]
   },
@@ -1155,19 +1119,19 @@
     },
     {
      "source": "booking.com",
-     "name": "Casa Bonvicini - Tecnopolo - ECMWF - Fiera Bologna",
-     "total_price": 1027.0,
-     "per_night": 513.5,
-     "per_person_night": 57.06,
-     "review_score": 9.0,
-     "review_count": 30,
-     "distance_km": 1.6,
+     "name": "IN FIERA 5 appartamento FRONTE FIERA",
+     "total_price": 1042.0,
+     "per_night": 521.0,
+     "per_person_night": 57.89,
+     "review_score": 8.1,
+     "review_count": 23,
+     "distance_km": 0.5,
      "free_cancellation": true,
      "mobile_deal": false,
-     "genius_deal": false,
-     "unit_desc": null,
+     "genius_deal": true,
+     "unit_desc": "Intero appartamento – 100 m²: 9 letti • 3 camere da letto • 2 bagni • 1 cucina",
      "multi_unit": false,
-     "url": "https://www.booking.com/hotel/it/casa-bonvicini-tecnopolo-ecmwf-fiera-bologna.it.html"
+     "url": "https://www.booking.com/hotel/it/in-fiera-5.it.html"
     },
     {
      "source": "booking.com",
@@ -1181,38 +1145,22 @@
      "free_cancellation": true,
      "mobile_deal": false,
      "genius_deal": false,
-     "unit_desc": "Intero appartamento – 120m²: 5 letti • 2 camere da letto • 1 zona giorno • 2 bagni • 1 cucina",
+     "unit_desc": "Intero appartamento – 120 m²: 5 letti • 2 camere da letto • 1 zona giorno • 2 bagni • 1 cucina",
      "multi_unit": false,
      "url": "https://www.booking.com/hotel/it/royal-house-parcheggio-gratuito-e-wi-fi.it.html"
     },
     {
      "source": "booking.com",
-     "name": "IN FIERA 5 appartamento FRONTE FIERA",
-     "total_price": 1145.0,
-     "per_night": 572.5,
-     "per_person_night": 63.61,
-     "review_score": 8.1,
-     "review_count": 23,
-     "distance_km": 0.5,
-     "free_cancellation": true,
-     "mobile_deal": false,
-     "genius_deal": false,
-     "unit_desc": "Intero appartamento – 100m²: 9 letti • 3 camere da letto • 2 bagni • 1 cucina",
-     "multi_unit": false,
-     "url": "https://www.booking.com/hotel/it/in-fiera-5.it.html"
-    },
-    {
-     "source": "booking.com",
      "name": "AP Appartamenti",
-     "total_price": 1226.0,
-     "per_night": 613.0,
-     "per_person_night": 68.11,
+     "total_price": 1112.0,
+     "per_night": 556.0,
+     "per_person_night": 61.78,
      "review_score": 8.7,
      "review_count": 194,
      "distance_km": 2.0,
      "free_cancellation": true,
      "mobile_deal": false,
-     "genius_deal": false,
+     "genius_deal": true,
      "unit_desc": null,
      "multi_unit": false,
      "url": "https://www.booking.com/hotel/it/moline.it.html"
@@ -1228,6 +1176,18 @@
      "distance_km": 1.38,
      "free_cancellation": true,
      "url": "https://www.airbnb.it/rooms/1405786614615388866"
+    },
+    {
+     "source": "airbnb",
+     "name": "IN FIERA 14 di fronte alla fiera di Bologna",
+     "total_price": 1340.0,
+     "per_night": 670.0,
+     "per_person_night": 74.44,
+     "review_score": 10.0,
+     "review_count": "3",
+     "distance_km": 0.52,
+     "free_cancellation": true,
+     "url": "https://www.airbnb.it/rooms/1062270361820714579"
     }
    ],
    "estimate_pp": {
@@ -1268,9 +1228,9 @@
     {
      "source": "airbnb",
      "name": "Monolocale moderno con cucina e spazio di lavoro",
-     "total_price": 1234.0,
-     "per_night": 308.5,
-     "per_person_night": 77.12,
+     "total_price": 1237.0,
+     "per_night": 309.25,
+     "per_person_night": 77.31,
      "review_score": 9.6,
      "review_count": "15",
      "distance_km": 0.71,
@@ -1280,11 +1240,11 @@
     {
      "source": "airbnb",
      "name": "Elegante monolocale con Wi-Fi e spazio di lavoro",
-     "total_price": 1242.0,
-     "per_night": 310.5,
-     "per_person_night": 77.62,
-     "review_score": 9.1,
-     "review_count": "9",
+     "total_price": 1254.0,
+     "per_night": 313.5,
+     "per_person_night": 78.38,
+     "review_score": 9.0,
+     "review_count": "10",
      "distance_km": 1.43,
      "free_cancellation": true,
      "url": "https://www.airbnb.it/rooms/1594270260905527771"
@@ -1292,9 +1252,9 @@
     {
      "source": "airbnb",
      "name": "Bronzeville Haven a Chicago",
-     "total_price": 1282.0,
-     "per_night": 320.5,
-     "per_person_night": 80.12,
+     "total_price": 1283.0,
+     "per_night": 320.75,
+     "per_person_night": 80.19,
      "review_score": 9.8,
      "review_count": "30",
      "distance_km": 1.86,
@@ -1304,23 +1264,23 @@
     {
      "source": "airbnb",
      "name": "Rifugio con 1 camera da letto, ascensore e palestra",
-     "total_price": 1467.0,
-     "per_night": 366.75,
-     "per_person_night": 91.69,
+     "total_price": 1468.0,
+     "per_night": 367.0,
+     "per_person_night": 91.75,
      "review_score": 8.7,
      "review_count": "18",
-     "distance_km": 1.16,
+     "distance_km": 1.31,
      "free_cancellation": true,
      "url": "https://www.airbnb.it/rooms/1603057714147625869"
     },
     {
      "source": "airbnb",
      "name": "Appartamento a McCormick Place con spazio di lavoro",
-     "total_price": 1704.0,
-     "per_night": 426.0,
-     "per_person_night": 106.5,
+     "total_price": 1705.0,
+     "per_night": 426.25,
+     "per_person_night": 106.56,
      "review_score": 9.7,
-     "review_count": "23",
+     "review_count": "24",
      "distance_km": 1.2,
      "free_cancellation": true,
      "url": "https://www.airbnb.it/rooms/1599308315636243009"
@@ -1328,9 +1288,9 @@
     {
      "source": "airbnb",
      "name": "Monolocale vicino al centro con cucina e palestra",
-     "total_price": 1774.0,
-     "per_night": 443.5,
-     "per_person_night": 110.88,
+     "total_price": 1790.0,
+     "per_night": 447.5,
+     "per_person_night": 111.88,
      "review_score": 8.8,
      "review_count": "10",
      "distance_km": 1.24,
@@ -1340,7 +1300,7 @@
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 308.48,
+    "stay": 309.24,
     "total": null
    },
    "errors": [
