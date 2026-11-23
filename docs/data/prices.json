@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T12:32:36+00:00",
+ "generated_at": "2026-11-23T14:19:08+00:00",
  "origin": "ROM",
  "booking_session": true,
  "settings": {
@@ -53,9 +53,9 @@
     {
      "source": "airbnb",
      "name": "Attico di lusso in posizione centrale vicino alla fiera",
-     "total_price": 2087.0,
-     "per_night": 1043.5,
-     "per_person_night": 149.07,
+     "total_price": 2040.0,
+     "per_night": 1020.0,
+     "per_person_night": 145.71,
      "review_score": 9.3,
      "review_count": "129",
      "distance_km": 0.47,
@@ -65,9 +65,9 @@
     {
      "source": "airbnb",
      "name": "Soggiorno di gruppo in città - Fino a 10 persone",
-     "total_price": 3350.0,
-     "per_night": 1675.0,
-     "per_person_night": 239.29,
+     "total_price": 3320.0,
+     "per_night": 1660.0,
+     "per_person_night": 237.14,
      "review_score": 9.7,
      "review_count": "6",
      "distance_km": 0.76,
@@ -77,7 +77,7 @@
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 298.14,
+    "stay": 291.42,
     "total": null
    },
    "errors": [
@@ -155,10 +155,22 @@
     },
     {
      "source": "airbnb",
+     "name": "Villa di lusso a Nizza",
+     "total_price": 16.0,
+     "per_night": 8.0,
+     "per_person_night": 1.14,
+     "review_score": 10.0,
+     "review_count": "9",
+     "distance_km": 1.55,
+     "free_cancellation": true,
+     "url": "https://www.airbnb.it/rooms/1005509055841592254"
+    },
+    {
+     "source": "airbnb",
      "name": "Big Flat Le Cala l 4 camere da letto spiaggia l 13 pers l AC",
-     "total_price": 595.0,
-     "per_night": 297.5,
-     "per_person_night": 42.5,
+     "total_price": 593.0,
+     "per_night": 296.5,
+     "per_person_night": 42.36,
      "review_score": 9.4,
      "review_count": "84",
      "distance_km": 1.37,
@@ -167,39 +179,27 @@
     },
     {
      "source": "airbnb",
-     "name": "Spazioso appartamento per 8 ospiti a Nizza",
-     "total_price": 667.0,
-     "per_night": 333.5,
-     "per_person_night": 47.64,
-     "review_score": 9.1,
-     "review_count": "9",
-     "distance_km": 1.54,
+     "name": "Suite MOON: comfort e tranquillità nel cuore di Nizza",
+     "total_price": 719.0,
+     "per_night": 359.5,
+     "per_person_night": 51.36,
+     "review_score": 8.7,
+     "review_count": "29",
+     "distance_km": 1.52,
      "free_cancellation": true,
-     "url": "https://www.airbnb.it/rooms/1754221517373775937"
+     "url": "https://www.airbnb.it/rooms/1426824184890551739"
     },
     {
      "source": "airbnb",
-     "name": "Centro storico di Nizza, spiaggia e Saleya",
-     "total_price": 756.0,
-     "per_night": 378.0,
-     "per_person_night": 54.0,
-     "review_score": 8.5,
-     "review_count": "8",
-     "distance_km": 1.39,
+     "name": "Suite MOON: comfort e tranquillità nel cuore di Nizza",
+     "total_price": 719.0,
+     "per_night": 359.5,
+     "per_person_night": 51.36,
+     "review_score": 8.7,
+     "review_count": "29",
+     "distance_km": 1.52,
      "free_cancellation": true,
-     "url": "https://www.airbnb.it/rooms/1060627131923872639"
-    },
-    {
-     "source": "airbnb",
-     "name": "Loft Luxury Triplex Massena - A/C - 4 camere da letto",
-     "total_price": 799.0,
-     "per_night": 399.5,
-     "per_person_night": 57.07,
-     "review_score": 9.3,
-     "review_count": "105",
-     "distance_km": 0.89,
-     "free_cancellation": true,
-     "url": "https://www.airbnb.it/rooms/877333481562382591"
+     "url": "https://www.airbnb.it/rooms/1426824184890551739"
     }
    ],
    "estimate_pp": {
@@ -259,9 +259,9 @@
     {
      "source": "airbnb",
      "name": "Appartamento sul mare",
-     "total_price": 819.0,
-     "per_night": 409.5,
-     "per_person_night": 51.19,
+     "total_price": 818.0,
+     "per_night": 409.0,
+     "per_person_night": 51.12,
      "review_score": 9.6,
      "review_count": "193",
      "distance_km": 1.44,
@@ -271,9 +271,9 @@
     {
      "source": "airbnb",
      "name": "Casa intima nel centro di Danzica con 6 camere da letto",
-     "total_price": 1173.0,
-     "per_night": 586.5,
-     "per_person_night": 73.31,
+     "total_price": 1172.0,
+     "per_night": 586.0,
+     "per_person_night": 73.25,
      "review_score": 9.2,
      "review_count": "47",
      "distance_km": 1.36,
@@ -283,9 +283,9 @@
     {
      "source": "airbnb",
      "name": "Ampio e accogliente appartamento di 105 mq.",
-     "total_price": 1273.0,
-     "per_night": 636.5,
-     "per_person_night": 79.56,
+     "total_price": 1272.0,
+     "per_night": 636.0,
+     "per_person_night": 79.5,
      "review_score": 9.5,
      "review_count": "49",
      "distance_km": 1.2,
@@ -295,9 +295,9 @@
     {
      "source": "airbnb",
      "name": "Appartamento Kamienica Legionów",
-     "total_price": 1570.0,
-     "per_night": 785.0,
-     "per_person_night": 98.12,
+     "total_price": 1569.0,
+     "per_night": 784.5,
+     "per_person_night": 98.06,
      "review_score": 9.8,
      "review_count": "20",
      "distance_km": 1.5,
@@ -307,9 +307,9 @@
     {
      "source": "airbnb",
      "name": "Happiness House - Balcone e grazioso giardino",
-     "total_price": 1711.0,
-     "per_night": 855.5,
-     "per_person_night": 106.94,
+     "total_price": 1710.0,
+     "per_night": 855.0,
+     "per_person_night": 106.88,
      "review_score": 9.9,
      "review_count": "74",
      "distance_km": 1.59,
@@ -319,9 +319,9 @@
     {
      "source": "airbnb",
      "name": "Quattro Loft Big Flat",
-     "total_price": 2336.0,
-     "per_night": 1168.0,
-     "per_person_night": 146.0,
+     "total_price": 2335.0,
+     "per_night": 1167.5,
+     "per_person_night": 145.94,
      "review_score": 8.6,
      "review_count": "13",
      "distance_km": 1.49,
@@ -331,7 +331,7 @@
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 102.38,
+    "stay": 102.24,
     "total": null
    },
    "errors": [
@@ -369,9 +369,9 @@
     {
      "source": "airbnb",
      "name": "SanLoft | Expo Inn Tietê 01 -",
-     "total_price": 125.0,
-     "per_night": 31.25,
-     "per_person_night": 31.25,
+     "total_price": 124.0,
+     "per_night": 31.0,
+     "per_person_night": 31.0,
      "review_score": 9.9,
      "review_count": "125",
      "distance_km": 1.45,
@@ -381,9 +381,9 @@
     {
      "source": "airbnb",
      "name": "Appartamento completo vicino alla Metropolitana Tietê ExpoCN/Anhembi.",
-     "total_price": 127.0,
-     "per_night": 31.75,
-     "per_person_night": 31.75,
+     "total_price": 126.0,
+     "per_night": 31.5,
+     "per_person_night": 31.5,
      "review_score": 9.8,
      "review_count": "243",
      "distance_km": 1.22,
@@ -393,9 +393,9 @@
     {
      "source": "airbnb",
      "name": "SanLoft | Expo Inn Tietê 03 - Preferito!",
-     "total_price": 131.0,
-     "per_night": 32.75,
-     "per_person_night": 32.75,
+     "total_price": 130.0,
+     "per_night": 32.5,
+     "per_person_night": 32.5,
      "review_score": 9.7,
      "review_count": "66",
      "distance_km": 1.45,
@@ -416,32 +416,32 @@
     },
     {
      "source": "airbnb",
-     "name": "Casa Expo Center Norte Anhembi 2",
+     "name": "Monolocale Wise SP - Anhembi e Expo Center",
      "total_price": 144.0,
      "per_night": 36.0,
      "per_person_night": 36.0,
-     "review_score": 9.7,
-     "review_count": "65",
-     "distance_km": 1.92,
-     "free_cancellation": true,
-     "url": "https://www.airbnb.it/rooms/38314142"
-    },
-    {
-     "source": "airbnb",
-     "name": "Monolocale Wise SP - Anhembi e Expo Center",
-     "total_price": 145.0,
-     "per_night": 36.25,
-     "per_person_night": 36.25,
      "review_score": 9.5,
-     "review_count": "21",
+     "review_count": "22",
      "distance_km": 1.42,
      "free_cancellation": true,
      "url": "https://www.airbnb.it/rooms/1509889720794000913"
+    },
+    {
+     "source": "airbnb",
+     "name": "Appartamento completo e accogliente | 5 min Expo Center",
+     "total_price": 146.0,
+     "per_night": 36.5,
+     "per_person_night": 36.5,
+     "review_score": 9.8,
+     "review_count": "42",
+     "distance_km": 1.38,
+     "free_cancellation": true,
+     "url": "https://www.airbnb.it/rooms/1611738978488769002"
     }
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 125.0,
+    "stay": 124.0,
     "total": null
    },
    "errors": [
@@ -485,31 +485,15 @@
      "return_flights": []
     }
    ],
-   "stays": [
-    {
-     "source": "booking.com",
-     "name": "Adagio Access Stuttgart Airport Messe",
-     "total_price": 1046.0,
-     "per_night": 523.0,
-     "per_person_night": 174.33,
-     "review_score": 8.4,
-     "review_count": 2117,
-     "distance_km": 2.1,
-     "free_cancellation": true,
-     "mobile_deal": false,
-     "genius_deal": false,
-     "unit_desc": null,
-     "multi_unit": false,
-     "url": "https://www.booking.com/hotel/de/adagio-access-stuttgart.it.html"
-    }
-   ],
+   "stays": [],
    "estimate_pp": {
     "flight": null,
-    "stay": 348.66,
+    "stay": null,
     "total": null
    },
    "errors": [
     "google-flights: Invalid impersonate: \"chrome_126\"",
+    "booking.com: WAF o zero risultati",
     "airbnb: zero risultati dalla ricerca",
     "LYS: google-flights: Invalid impersonate: \"chrome_126\""
    ]
@@ -550,7 +534,7 @@
      "per_night": 243.0,
      "per_person_night": 81.0,
      "review_score": 9.9,
-     "review_count": "104",
+     "review_count": "105",
      "distance_km": 2.31,
      "free_cancellation": true,
      "url": "https://www.airbnb.it/rooms/1303833503794860744"
@@ -562,7 +546,7 @@
      "per_night": 625.5,
      "per_person_night": 208.5,
      "review_score": 9.7,
-     "review_count": "75",
+     "review_count": "76",
      "distance_km": 0.22,
      "free_cancellation": true,
      "url": "https://www.airbnb.it/rooms/1472382736161893039"
@@ -570,9 +554,9 @@
     {
      "source": "airbnb",
      "name": "Agriturismo a Hampton Hill",
-     "total_price": 1611.0,
-     "per_night": 805.5,
-     "per_person_night": 268.5,
+     "total_price": 1612.0,
+     "per_night": 806.0,
+     "per_person_night": 268.67,
      "review_score": 9.8,
      "review_count": "395",
      "distance_km": 2.23,
@@ -582,9 +566,9 @@
     {
      "source": "airbnb",
      "name": "Casa moderna vicino all'aeroporto e al NEC a Sheldon",
-     "total_price": 525.0,
-     "per_night": 262.5,
-     "per_person_night": 87.5,
+     "total_price": 526.0,
+     "per_night": 263.0,
+     "per_person_night": 87.67,
      "review_score": null,
      "review_count": 0,
      "distance_km": 2.97,
@@ -651,9 +635,9 @@
     {
      "source": "booking.com",
      "name": "Modern Cosy Corner Flat 3 bed and loft sleep 7 people",
-     "total_price": 1181.0,
-     "per_night": 295.25,
-     "per_person_night": 29.52,
+     "total_price": 1178.0,
+     "per_night": 294.5,
+     "per_person_night": 29.45,
      "review_score": 9.4,
      "review_count": 25,
      "distance_km": 1.9,
@@ -683,9 +667,9 @@
     {
      "source": "booking.com",
      "name": "Austin David Executive ExCeL",
-     "total_price": 3400.0,
-     "per_night": 850.0,
-     "per_person_night": 85.0,
+     "total_price": 3381.0,
+     "per_night": 845.25,
+     "per_person_night": 84.53,
      "review_score": 8.1,
      "review_count": 259,
      "distance_km": 0.7,
@@ -699,9 +683,9 @@
     {
      "source": "booking.com",
      "name": "London ExCeL Stays - Three Bed Serviced Apartment",
-     "total_price": 4585.0,
-     "per_night": 1146.25,
-     "per_person_night": 114.62,
+     "total_price": 4589.0,
+     "per_night": 1147.25,
+     "per_person_night": 114.72,
      "review_score": 8.0,
      "review_count": 12,
      "distance_km": 0.7,
@@ -715,9 +699,9 @@
     {
      "source": "booking.com",
      "name": "Deluxe Two Bed Apartment with River & City View",
-     "total_price": 5922.0,
-     "per_night": 1480.5,
-     "per_person_night": 148.05,
+     "total_price": 6310.0,
+     "per_night": 1577.5,
+     "per_person_night": 157.75,
      "review_score": 8.4,
      "review_count": 101,
      "distance_km": 0.7,
@@ -747,12 +731,11 @@
    ],
    "estimate_pp": {
     "flight": null,
-    "stay": 118.08,
+    "stay": 117.8,
     "total": null
    },
    "errors": [
     "google-flights: Invalid impersonate: \"chrome_126\"",
-    "airbnb: 0 utilizzabili su 2 risultati grezzi",
     "LYS: google-flights: Invalid impersonate: \"chrome_126\""
    ]
   },
@@ -817,6 +800,22 @@
      "url": "https://www.booking.com/hotel/pt/200yrs-apart-balcony-wifi-ac.it.html"
     },
     {
+     "source": "booking.com",
+     "name": "19INIntendente",
+     "total_price": 488.0,
+     "per_night": 244.0,
+     "per_person_night": 27.11,
+     "review_score": 8.2,
+     "review_count": 335,
+     "distance_km": 0.45,
+     "free_cancellation": true,
+     "mobile_deal": false,
+     "genius_deal": true,
+     "unit_desc": null,
+     "multi_unit": false,
+     "url": "https://www.booking.com/hotel/pt/19inlisbon-intendente.it.html"
+    },
+    {
      "source": "airbnb",
      "name": "Saint Paul, primo piano",
      "total_price": 593.0,
@@ -847,7 +846,7 @@
      "per_night": 307.5,
      "per_person_night": 34.17,
      "review_score": 8.7,
-     "review_count": 138,
+     "review_count": 139,
      "distance_km": 1.6,
      "free_cancellation": true,
      "mobile_deal": false,
@@ -867,22 +866,6 @@
      "distance_km": 1.13,
      "free_cancellation": true,
      "url": "https://www.airbnb.it/rooms/7502722"
-    },
-    {
-     "source": "booking.com",
-     "name": "Lisbon heart 1-cozy Flat-Family Friendly",
-     "total_price": 634.0,
-     "per_night": 317.0,
-     "per_person_night": 35.22,
-     "review_score": 8.4,
-     "review_count": 332,
-     "distance_km": 1.4,
-     "free_cancellation": true,
-     "mobile_deal": false,
-     "genius_deal": false,
-     "unit_desc": null,
-     "multi_unit": false,
-     "url": "https://www.booking.com/hotel/pt/lisbon-heart-1-cozy-flat-family-friendly.it.html"
     }
    ],
    "estimate_pp": {
@@ -1025,19 +1008,19 @@
     },
     {
      "source": "booking.com",
-     "name": "B&B Bentivogli by Lesdomus - fronte Ospedale Sant'Orsola",
-     "total_price": 1039.0,
-     "per_night": 519.5,
-     "per_person_night": 57.72,
-     "review_score": 8.0,
-     "review_count": 850,
-     "distance_km": 1.7,
+     "name": "ROYAL HOUSE - Parcheggio gratuito e Wi-Fi",
+     "total_price": 1104.0,
+     "per_night": 552.0,
+     "per_person_night": 61.33,
+     "review_score": 9.1,
+     "review_count": 16,
+     "distance_km": 1.4,
      "free_cancellation": true,
      "mobile_deal": false,
      "genius_deal": false,
-     "unit_desc": null,
+     "unit_desc": "Intero appartamento – 120 m²: 5 letti • 2 camere da letto • 1 zona giorno • 2 bagni • 1 cucina",
      "multi_unit": false,
-     "url": "https://www.booking.com/hotel/it/b-amp-b-bentivogli.it.html"
+     "url": "https://www.booking.com/hotel/it/royal-house-parcheggio-gratuito-e-wi-fi.it.html"
     },
     {
      "source": "airbnb",
@@ -1078,9 +1061,9 @@
     {
      "source": "airbnb",
      "name": "Irnerio Apts - Black Widow di Wonderful Italy",
-     "total_price": 1872.0,
-     "per_night": 936.0,
-     "per_person_night": 104.0,
+     "total_price": 1882.0,
+     "per_night": 941.0,
+     "per_person_night": 104.56,
      "review_score": 9.1,
      "review_count": "37",
      "distance_km": 1.87,
@@ -1138,9 +1121,9 @@
     {
      "source": "airbnb",
      "name": "1 camera da letto vicino a McCormick con cucina e spazio di lavoro",
-     "total_price": 1400.0,
-     "per_night": 350.0,
-     "per_person_night": 87.5,
+     "total_price": 1399.0,
+     "per_night": 349.75,
+     "per_person_night": 87.44,
      "review_score": 8.2,
      "review_count": "13",
      "distance_km": 0.71,
@@ -1162,9 +1145,9 @@
     {
      "source": "airbnb",
      "name": "Elegante monolocale | Centro di Chicago | 4 posti letto",
-     "total_price": 1750.0,
-     "per_night": 437.5,
-     "per_person_night": 109.38,
+     "total_price": 1800.0,
+     "per_night": 450.0,
+     "per_person_night": 112.5,
      "review_score": 10.0,
      "review_count": "3",
      "distance_km": 1.19,
@@ -1174,9 +1157,9 @@
     {
      "source": "airbnb",
      "name": "A pochi passi dal McCormick Center/Monolocale/4 posti letto",
-     "total_price": 1750.0,
-     "per_night": 437.5,
-     "per_person_night": 109.38,
+     "total_price": 1800.0,
+     "per_night": 450.0,
+     "per_person_night": 112.5,
      "review_score": 10.0,
      "review_count": "4",
      "distance_km": 1.08,
@@ -1186,9 +1169,9 @@
     {
      "source": "airbnb",
      "name": "Accogliente monolocale con palestra e cucina",
-     "total_price": 1889.0,
-     "per_night": 472.25,
-     "per_person_night": 118.06,
+     "total_price": 1897.0,
+     "per_night": 474.25,
+     "per_person_night": 118.56,
      "review_score": 8.7,
      "review_count": "12",
      "distance_km": 1.42,
