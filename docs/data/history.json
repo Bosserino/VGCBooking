@@ -1,55 +1,6 @@
 {
  "snapshots": [
   {
-   "date": "2026-08-26",
-   "events": {
-    "frankfurt": {
-     "min_flight_pp": 154.0,
-     "min_stay_pp_night": 43.29
-    },
-    "nice": {
-     "min_flight_pp": 98.0,
-     "min_stay_pp_night": 44.29
-    },
-    "gdansk": {
-     "min_flight_pp": 96.0,
-     "min_stay_pp_night": 22.25
-    },
-    "laic-sao-paulo": {
-     "min_flight_pp": 671.0,
-     "min_stay_pp_night": 33.0
-    },
-    "stuttgart": {
-     "min_flight_pp": 163.0,
-     "min_stay_pp_night": 55.0
-    },
-    "birmingham": {
-     "min_flight_pp": null,
-     "min_stay_pp_night": 43.33
-    },
-    "euic-london": {
-     "min_flight_pp": 178.0,
-     "min_stay_pp_night": 51.95
-    },
-    "lisbon": {
-     "min_flight_pp": 117.0,
-     "min_stay_pp_night": 31.72
-    },
-    "prague": {
-     "min_flight_pp": 64.0,
-     "min_stay_pp_night": 103.0
-    },
-    "bologna": {
-     "min_flight_pp": null,
-     "min_stay_pp_night": 33.72
-    },
-    "naic-chicago": {
-     "min_flight_pp": 833.0,
-     "min_stay_pp_night": 70.44
-    }
-   }
-  },
-  {
    "date": "2026-08-27",
    "events": {
     "frankfurt": {
@@ -4407,6 +4358,55 @@
     "naic-chicago": {
      "min_flight_pp": null,
      "min_stay_pp_night": 88.0
+    }
+   }
+  },
+  {
+   "date": "2026-11-25",
+   "events": {
+    "frankfurt": {
+     "min_flight_pp": null,
+     "min_stay_pp_night": 145.71
+    },
+    "nice": {
+     "min_flight_pp": null,
+     "min_stay_pp_night": 1.07
+    },
+    "gdansk": {
+     "min_flight_pp": null,
+     "min_stay_pp_night": 50.75
+    },
+    "laic-sao-paulo": {
+     "min_flight_pp": null,
+     "min_stay_pp_night": 19.0
+    },
+    "stuttgart": {
+     "min_flight_pp": null,
+     "min_stay_pp_night": null
+    },
+    "birmingham": {
+     "min_flight_pp": null,
+     "min_stay_pp_night": 81.17
+    },
+    "euic-london": {
+     "min_flight_pp": null,
+     "min_stay_pp_night": 32.5
+    },
+    "lisbon": {
+     "min_flight_pp": null,
+     "min_stay_pp_night": 26.67
+    },
+    "prague": {
+     "min_flight_pp": null,
+     "min_stay_pp_night": 27.5
+    },
+    "bologna": {
+     "min_flight_pp": null,
+     "min_stay_pp_night": 33.72
+    },
+    "naic-chicago": {
+     "min_flight_pp": null,
+     "min_stay_pp_night": 87.56
     }
    }
   }
